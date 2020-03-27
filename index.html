@@ -6,6 +6,32 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <style>
+      audio {
+        display: hidden;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1 class="navbar">マリンボタン</h1>
+    <button class="btn btn-primary audio-button">
+      みんな、フレアには気をつけよう！
+    </button>
+  </body>
+
+  <script>
+    const base = "audio";
+    const audioNames = ["みんな、フレアには気をつけよう！.wav"];
+    const buttons = document.getElementsByClassName("audio-button");
+
+    let i = 0;
+    for (const button of buttons) {
+      const audio = document.createElement("audio");
+      audio.src = `${base}/${audioNames[i]}`;
+      document.body.appendChild(audio);
+      button.addEventListener("click", async () => {
+        await audio.play();
+      });
+    }
+  </script>
 </html>
