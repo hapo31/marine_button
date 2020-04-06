@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Nico Moji Plus";
+  src: url("../font/nicomoji-plus_1.11.ttf") format("truetype");
+}
+
 body {
   background-color: rgb(164, 109, 79);
 }
@@ -32,14 +37,12 @@ audio {
 
 .border {
   background-color: rgb(192, 98, 102);
-  margin: 5px;
-  display: inline-block;
-  margin-right: calc(100vw - 100%);
+  margin: 10px;
 }
 .btn-container {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .btn-container > button {
   margin: 10px;
@@ -50,12 +53,22 @@ audio {
   font-size: 48px;
 }
 
+.text-mid {
+  font-size: 28px;
+}
+
 .text-small {
   font-size: 16px;
 }
 
+.group-description {
+  color: rgb(160, 45, 58);
+  stroke-width: 2px;
+  stroke: black;
+}
+
 .wf-nicomoji {
-  font-family: "Nico Moji";
+  font-family: "Nico Moji Plus";
 }
 
 .copyright:any-link {

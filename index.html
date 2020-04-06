@@ -1,10 +1,6 @@
 <html>
   <head>
     <link
-      href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -12,7 +8,7 @@
     />
     <link rel="stylesheet" href="css/index.css" />
   </head>
-  <body>
+  <body class="wf-nicomoji">
     <a
       class="fork-me-on-github"
       href="https://github.com/happou31/web_lesson_buttons"
@@ -29,35 +25,74 @@
     <header>
       <nav class="navbar navbar-expand-lg">
         <span class="navbar-brand mb-0 text-large wf-nicomoji">
-          マリンボタン
+          宝鐘マリンボタン
         </span>
       </nav>
     </header>
     <main>
-      <section>
-        <div class="btn-container border">
+      <div class="group-description text-mid">
+        あいさつ
+      </div>
+      <section class="border">
+        <div class="btn-container">
           <button
-            data-file-name="Ahoy_1st.ogg"
-            class="btn btn-primary audio-button"
+            data-file-name="ahoy_1st.ogg"
+            class="mid btn btn-primary audio-button"
           >
             Ahoy!(初回)
           </button>
           <button
-            data-file-name="wazap_mitsuhiko.ogg"
+            data-file-name="ahoy0.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            Ahoy!(通常)
+          </button>
+          <button
+            data-file-name="ahoy_drank.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            Ahoy!(酔)
+          </button>
+        </div>
+        <div class="btn-container">
+          <button
+            data-file-name="aisatsu.ogg"
             class="btn btn-primary audio-button"
           >
-            ワザップ光彦
+            ホロライブ3期生、宝鐘海賊団船長の…
+          </button>
+          <button
+            data-file-name="aisatsu_drank.ogg"
+            class="btn btn-primary audio-button"
+          >
+            (酔)ホロライブ…うん？ホーレー…ん？ほーしょー…うん？
           </button>
         </div>
       </section>
-      <section>
-        <div class="btn-container border">
+      <div class="group-description text-mid">
+        声マネ
+      </div>
+      <section class="border">
+        <div class="btn-container">
+          <button
+            data-file-name="wazap_mitsuhiko.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            ワザップ光彦
+          </button>
           <button
             data-file-name="psychokinesis.ogg"
             class="mid btn btn-primary audio-button"
           >
             サイコキネシス！
           </button>
+        </div>
+      </section>
+      <div class="group-description text-mid">
+        例のアレ
+      </div>
+      <section class="border">
+        <div class="btn-container">
           <button
             data-file-name="cation_flare.ogg"
             class="mid btn btn-primary audio-button"
@@ -66,8 +101,11 @@
           </button>
         </div>
       </section>
-      <section>
-        <div class="btn-container border">
+      <div class="group-description text-mid">
+        話題
+      </div>
+      <section class="border">
+        <div class="btn-container">
           <button
             data-file-name="bakemono0.ogg"
             class="small btn btn-primary audio-button"
@@ -130,6 +168,132 @@
           </button>
         </div>
       </section>
+      <section>
+        <div class="btn-container border">
+          <button
+            data-file-name="buff0.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…1
+          </button>
+          <button
+            data-file-name="buff1.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…2
+          </button>
+          <button
+            data-file-name="buff2.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…3
+          </button>
+          <button
+            data-file-name="buff3.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…4
+          </button>
+          <button
+            data-file-name="buff4.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…5
+          </button>
+          <button
+            data-file-name="buff5.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…6
+          </button>
+          <button
+            data-file-name="buff6.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            バフカケテ…7
+          </button>
+        </div>
+      </section>
+      <section>
+        <div class="btn-container border">
+          <button
+            data-file-name="gao0.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…1
+          </button>
+          <button
+            data-file-name="gao1.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…2
+          </button>
+          <button
+            data-file-name="gao2.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…3
+          </button>
+          <button
+            data-file-name="gao3.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…4
+          </button>
+          <button
+            data-file-name="gao4.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…5
+          </button>
+          <button
+            data-file-name="gao5.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…6
+          </button>
+          <button
+            data-file-name="gao6.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…7
+          </button>
+          <button
+            data-file-name="gao7.ogg"
+            class="small btn btn-primary audio-button"
+          >
+            ガオシテ…8
+          </button>
+        </div>
+      </section>
+      <section>
+        <div class="btn-container border">
+          <button
+            data-file-name="gaogao0.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            ガオーするガオーする、ガオーする
+          </button>
+          <button
+            data-file-name="gaogao1.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            ガオー､ガオガオ…
+          </button>
+          <button
+            data-file-name="gaogao2.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            ガオガオ…ガオガオ…
+          </button>
+          <button
+            data-file-name="gaogao3.ogg"
+            class="mid btn btn-primary audio-button"
+          >
+            ガオガオガオ…
+          </button>
+        </div>
+      </section>
     </main>
     <footer>
       <nav class="navbar navbar-expand-lg">
@@ -163,6 +327,7 @@
     let i = 0;
     for (const button of buttons) {
       document.body.appendChild(audio);
+      button.setAttribute("alt", button.textContent);
       button.addEventListener("click", async () => {
         audio.src = `${base}/${button.getAttribute("data-file-name")}`;
         await audio.play();
