@@ -152,19 +152,19 @@
         </ul>
       </nav>
     </footer>
+    <audio id="player" src="#"></audio>
   </body>
 
   <script>
     const base = "audio";
-    const audioNames = ["みんな、フレアには気をつけよう！.ogg", "Ahoy_1st.ogg"];
     const buttons = document.getElementsByClassName("audio-button");
+    const audio = document.getElementById("player");
 
     let i = 0;
     for (const button of buttons) {
-      const audio = document.createElement("audio");
-      audio.src = `${base}/${button.getAttribute("data-file-name")}`;
       document.body.appendChild(audio);
       button.addEventListener("click", async () => {
+        audio.src = `${base}/${button.getAttribute("data-file-name")}`;
         await audio.play();
       });
     }
