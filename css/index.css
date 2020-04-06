@@ -43,6 +43,10 @@ audio {
   bottom: 0;
 } */
 
+.wf-nicomoji {
+  font-family: "Nico Moji Plus";
+}
+
 .fork-me-on-github {
   position: absolute;
   right: 0;
