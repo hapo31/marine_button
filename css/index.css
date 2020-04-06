@@ -86,8 +86,10 @@ audio {
   margin-left: 10px;
 }
 
-.wf-nicomoji {
-  font-family: "Nico Moji Plus";
+.tweet-button {
+  display: inline-block;
+  height: 100%;
+  margin-top: 5px;
 }
 
 .copyright {
@@ -95,10 +97,27 @@ audio {
   font-weight: bold;
 }
 
+.social-icon-container > a {
+  display: block;
+  width: 32px;
+}
+
 .social-icon-youtube {
+  display: inline-block;
+  margin-top: 28px;
   height: 16px;
 }
 
+.social-icon-youtube > img {
+  width: 30px;
+  margin: 4px 0px;
+}
+
 .social-icon-twitter {
+  margin-top: 22px;
   height: 32px;
+}
+
+.social-icon-twitter > img {
+  width: 40px;
 }
