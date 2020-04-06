@@ -11,6 +11,11 @@ button {
   border-color: rgb(160, 45, 58) !important;
 }
 
+button.large {
+  min-width: 400px;
+  max-width: 450px;
+}
+
 button.mid {
   min-width: 250px;
   max-width: 300px;
@@ -66,6 +71,7 @@ audio {
   color: rgb(160, 45, 58);
   stroke-width: 2px;
   stroke: black;
+  margin-left: 10px;
 }
 
 .wf-nicomoji {
