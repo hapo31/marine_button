@@ -88,8 +88,7 @@ audio {
 
 .tweet-button {
   display: inline-block;
-  height: 100%;
-  margin-top: 5px;
+  margin: 20px 10px 15px;
 }
 
 .copyright {
