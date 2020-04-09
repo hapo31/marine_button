@@ -1,3 +1,3 @@
 import React from "react";
 
-export default () => <div>hoge</div>;
+export default () => <header>header</header>;
