@@ -1,0 +1,272 @@
+[
+  {
+    "label": "いつもの",
+    "audios": [
+      [
+        {
+          "path": "audio/bakemono0.mp3",
+          "label": "バケモノ！1"
+        },
+        {
+          "path": "audio/bakemono1.mp3",
+          "label": "バケモノ！2"
+        },
+        {
+          "path": "audio/bakemono2.mp3",
+          "label": "バケモノ！3"
+        },
+        {
+          "path": "audio/bakemono3.mp3",
+          "label": "バケモノ！4"
+        },
+        {
+          "path": "audio/bakemono4.mp3",
+          "label": "バケモノ！5"
+        },
+        {
+          "path": "audio/bakemono5.mp3",
+          "label": "バケモノ！6"
+        },
+        {
+          "path": "audio/bakemono6.mp3",
+          "label": "バケモノ！7"
+        },
+        {
+          "path": "audio/bakemono7.mp3",
+          "label": "バケモノ！8"
+        },
+        {
+          "path": "audio/bakemono8.mp3",
+          "label": "バケモノ！9"
+        },
+        {
+          "path": "audio/bakemono9.mp3",
+          "label": "バケモノ！10"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "",
+    "audios": [
+      [
+        {
+          "path": "audio/buff0.mp3",
+          "label": "バフカケテ…1"
+        },
+        {
+          "path": "audio/buff1.mp3",
+          "label": "バフカケテ…2"
+        },
+        {
+          "path": "audio/buff2.mp3",
+          "label": "バフカケテ…3"
+        },
+        {
+          "path": "audio/buff3.mp3",
+          "label": "バフカケテ…4"
+        },
+        {
+          "path": "audio/buff4.mp3",
+          "label": "バフカケテ…5"
+        },
+        {
+          "path": "audio/buff5.mp3",
+          "label": "バフカケテ…6"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "",
+    "audios": [
+      [
+        {
+          "path": "audio/gao1.mp3",
+          "label": "ガオシテ…1"
+        },
+        {
+          "path": "audio/gao2.mp3",
+          "label": "ガオシテ…2"
+        },
+        {
+          "path": "audio/gao3.mp3",
+          "label": "ガオシテ…3"
+        },
+        {
+          "path": "audio/gao4.mp3",
+          "label": "ガオシテ…4"
+        },
+        {
+          "path": "audio/gao5.mp3",
+          "label": "ガオシテ…5"
+        },
+        {
+          "path": "audio/gao7.mp3",
+          "label": "ガオシテ…6"
+        },
+        {
+          "path": "audio/gao8.mp3",
+          "label": "ガオシテ…7"
+        }
+      ],
+      [
+        {
+          "path": "audio/gaogao0.mp3",
+          "label": "ガオーするガオーする、ガオーする"
+        },
+        {
+          "path": "audio/gaogao1.mp3",
+          "label": "ガオー､ガオガオ…"
+        },
+        {
+          "path": "audio/gaogao2.mp3",
+          "label": "ガオガオ…ガオガオ…"
+        },
+        {
+          "path": "audio/gaogao3.mp3",
+          "label": "ガオガオガオ…"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "あいさつ",
+    "audios": [
+      [
+        {
+          "path": "audio/ahoy_1st.mp3",
+          "label": "Ahoy!(初回)"
+        },
+        {
+          "path": "audio/ahoy0.mp3",
+          "label": "Ahoy!(通常)"
+        },
+        {
+          "path": "audio/ahoy_drank.mp3",
+          "label": "Ahoy!(酔)"
+        }
+      ],
+      [
+        {
+          "path": "audio/aisatsu.mp3",
+          "label": "ホロライブ3期生、宝鐘海賊団船長の…"
+        },
+        {
+          "path": "audio/aisatsu_drank.mp3",
+          "label": "(酔)ホロライブ…うん？ホーレー…ん？ほーしょー…うん？"
+        }
+      ],
+      [
+        {
+          "path": "audio/bye.mp3",
+          "label": "それでは行きますよ～"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "声マネ",
+    "audios": [
+      [
+        {
+          "path": "audio/lets_begin.mp3",
+          "label": "レッツビギンでございます！"
+        }
+      ],
+      [
+        {
+          "path": "audio/wazap_mitsuhiko.mp3",
+          "label": "ワザップ光彦"
+        },
+        {
+          "path": "audio/kubishime_mitsuhiko.mp3",
+          "label": "首絞め光彦"
+        }
+      ],
+      [
+        {
+          "path": "audio/kubishime_hamutaro.mp3",
+          "label": "首絞めハム太郎"
+        },
+        {
+          "path": "audio/koushi_rap.mp3",
+          "label": "こうしくんラップ"
+        }
+      ],
+      [
+        {
+          "path": "audio/nya-su.mp3",
+          "label": "ニャース"
+        },
+        {
+          "path": "audio/psychokinesis.mp3",
+          "label": "サイコキネシス！"
+        }
+      ],
+      [
+        {
+          "path": "audio/misato_fast.mp3",
+          "label": "高速で通り過ぎるミサトさん"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "若さ",
+    "audios": [
+      [
+        {
+          "path": "audio/babu.mp3",
+          "label": "バブー！"
+        },
+        {
+          "path": "audio/ababababibabubu.mp3",
+          "label": "アバババビビビバブブ"
+        },
+        {
+          "path": "audio/babubabu.mp3",
+          "label": "バブバブ"
+        },
+        {
+          "path": "audio/mommmm.mp3",
+          "label": "ママー！"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "名言",
+    "audios": [
+      [
+        {
+          "path": "audio/nodo_mochi.mp3",
+          "label": "喉に餅が詰まったみたいな声"
+        },
+        {
+          "path": "audio/back_to_baby.mp3",
+          "label": "ベビースターラーメン食べると…"
+        },
+        {
+          "path": "audio/wash_brain.mp3",
+          "label": "ウォ～オ～オ～船長を信じるのです"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "例のアレ",
+    "audios": [
+      [
+        {
+          "path": "audio/krsw.mp3",
+          "label": "インターネットに強い弁護士"
+        },
+        {
+          "path": "audio/cation_flare.mp3",
+          "label": "みんな、フレアには気をつけよう！"
+        }
+      ]
+    ]
+  }
+]

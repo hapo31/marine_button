@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 type Props = {
   size: "small" | "mid" | "large";
-  children: React.ReactChildren;
+  children: string;
   onclick: () => void;
 };
 

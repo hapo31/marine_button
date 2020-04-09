@@ -8,11 +8,19 @@ import Header from "./HeaderContainer/HeaderContainer";
 import Footer from "./FooterContainer/FooterContainer";
 import MainContentContainer from "./MainContent/MainContentContainer";
 
+import "./../../css/index.css";
+
 const store = createStore(rootReducer);
+
 export default () => (
-  <Provider store={store}>
-    <Header></Header>
-    <MainContentContainer></MainContentContainer>
-    <Footer></Footer>
-  </Provider>
+  <>
+    <div className="wf-nicomoji">
+      <Header />
+      <Provider store={store}>
+        <MainContentContainer />
+      </Provider>
+      <Footer />
+      <audio id="player" src="#"></audio>
+    </div>
+  </>
 );
