@@ -2,28 +2,6 @@ import React, { memo } from "react";
 import { Nav, Navbar, NavbarBrand, NavItem } from "react-bootstrap";
 
 export default () => {
-  const TweetButton = memo(
-    () => (
-      <div className="tweet-button">
-        <a
-          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-          className="twitter-share-button"
-          data-text="宝鐘マリンボタン 🏴☠"
-          data-url="https://happou31.github.io/marine_button/"
-          data-show-count="false"
-        >
-          Tweet
-        </a>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        ></script>
-      </div>
-    ),
-    () => true
-  );
-
   return (
     <header>
       <iframe
@@ -83,7 +61,22 @@ export default () => {
           </NavItem>
         </Navbar>
       </Nav>
-      {TweetButton}
+      <div className="tweet-button">
+        <a
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          className="twitter-share-button"
+          data-text="宝鐘マリンボタン 🏴☠"
+          data-url="https://happou31.github.io/marine_button/"
+          data-show-count="false"
+        >
+          Tweet
+        </a>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charSet="utf-8"
+        ></script>
+      </div>
     </header>
   );
 };

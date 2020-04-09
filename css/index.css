@@ -5,6 +5,7 @@
 
 body {
   background-color: rgb(164, 109, 79);
+  font-family: "Nico Moji Plus";
 }
 button {
   background-color: rgb(160, 45, 58) !important;
@@ -42,10 +43,6 @@ audio {
   position: absolute;
   bottom: 0;
 } */
-
-.wf-nicomoji {
-  font-family: "Nico Moji Plus";
-}
 
 .fork-me-on-github {
   position: absolute;

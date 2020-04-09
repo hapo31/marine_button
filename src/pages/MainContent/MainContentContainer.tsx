@@ -10,8 +10,12 @@ export default () => {
   const state: PlayAudioState = useSelector(state => state);
   return (
     <main>
-      {data.map(section => (
-        <ButtonSectionContainer title={section.label} groups={section.audios} />
+      {data.map((section, index) => (
+        <ButtonSectionContainer
+          key={index + section.label}
+          title={section.label}
+          groups={section.audios}
+        />
       ))}
     </main>
   );

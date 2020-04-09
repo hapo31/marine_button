@@ -10,6 +10,7 @@ type Props = {
 };
 
 export default (props: Props) => {
+  console.log(props);
   const onclick = useCallback(() => {
     console.log("clicked");
   }, []);
@@ -28,7 +29,11 @@ export default (props: Props) => {
                   ? "mid"
                   : "large";
               return (
-                <AudioButton size={size} onclick={onclick}>
+                <AudioButton
+                  key={button.path + button.label}
+                  size={size}
+                  onclick={onclick}
+                >
                   {button.label}
                 </AudioButton>
               );
