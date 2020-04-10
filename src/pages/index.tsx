@@ -10,7 +10,6 @@ import Footer from "./FooterContainer/FooterContainer";
 import MainContentContainer from "./MainContent/MainContentContainer";
 
 import "./../../css/index.css";
-
 const store = createStore(
   combineReducers({ app: appReducer, playAudio: playAudioReducer })
 );
@@ -23,7 +22,6 @@ export default () => (
         <MainContentContainer />
       </Provider>
       <Footer />
-      <audio id="player" src="#"></audio>
     </div>
   </>
 );

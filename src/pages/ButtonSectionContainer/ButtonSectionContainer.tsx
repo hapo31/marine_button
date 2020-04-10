@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { PlayAudioAction } from "../../actions/Actions";
 import VoiceButton from "../../components/VoiceButton";
@@ -17,8 +17,8 @@ export default (props: Props) => {
     <>
       <div className="group-description text-mid">{props.title}</div>
       <section className="border">
-        {props.groups.map(group => (
-          <div className="btn-container">
+        {props.groups.map((group, i) => (
+          <div key={`group-${i}`} className="btn-container">
             {group.map(button => {
               const size =
                 button.label.length <= 7

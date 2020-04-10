@@ -1,4 +1,3 @@
-import Reducer from "redux";
 import { Actions, PLAY_AUDIO, STOP_AUDIO } from "../actions/Actions";
 import PlayAudioState from "../state/PlayAudioState/PlayAudioState";
 
