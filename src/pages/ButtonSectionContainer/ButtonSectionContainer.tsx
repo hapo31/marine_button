@@ -10,7 +10,6 @@ type Props = {
 };
 
 export default (props: Props) => {
-  console.log(props);
   const onclick = useCallback(() => {
     console.log("clicked");
   }, []);

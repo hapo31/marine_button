@@ -1,8 +1,9 @@
 import React from "react";
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
-import rootReducer from "../reducers/RootReducer";
+import appReducer from "../reducers/AppReducer";
+import playAudioReducer from "../reducers/PlayAudioReducer";
 
 import Header from "./HeaderContainer/HeaderContainer";
 import Footer from "./FooterContainer/FooterContainer";
@@ -10,7 +11,9 @@ import MainContentContainer from "./MainContent/MainContentContainer";
 
 import "./../../css/index.css";
 
-const store = createStore(rootReducer);
+const store = createStore(
+  combineReducers({ app: appReducer, playAudio: playAudioReducer })
+);
 
 export default () => (
   <>

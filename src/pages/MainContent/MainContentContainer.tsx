@@ -3,14 +3,13 @@ import { useSelector } from "react-redux";
 import PlayAudioState from "../../state/PlayAudioState/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
-// TODO: 仮のテストデータ
-import data from "../../../files.json";
+import { VoiceList } from "../../state/PlayAudioState/AppState";
 
 export default () => {
-  const state: PlayAudioState = useSelector(state => state);
+  const voiceList: VoiceList = useSelector(({ app }) => app.voiceList);
   return (
     <main>
-      {data.map((section, index) => (
+      {voiceList.map((section, index) => (
         <ButtonSectionContainer
           key={index + section.label}
           title={section.label}
