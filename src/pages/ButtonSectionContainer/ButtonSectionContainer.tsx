@@ -1,5 +1,7 @@
 import React, { useCallback } from "react";
-import AudioButton from "../../components/AudioButton";
+import { useDispatch } from "react-redux";
+import { PlayAudioAction } from "../../actions/Actions";
+import VoiceButton from "../../components/VoiceButton";
 
 type Props = {
   title: string;
@@ -10,10 +12,7 @@ type Props = {
 };
 
 export default (props: Props) => {
-  const onclick = useCallback(() => {
-    console.log("clicked");
-  }, []);
-
+  const dispatch = useDispatch();
   return (
     <>
       <div className="group-description text-mid">{props.title}</div>
@@ -28,13 +27,13 @@ export default (props: Props) => {
                   ? "mid"
                   : "large";
               return (
-                <AudioButton
+                <VoiceButton
                   key={button.path + button.label}
                   size={size}
-                  onclick={onclick}
+                  onclick={() => dispatch(PlayAudioAction(button.path))}
                 >
                   {button.label}
-                </AudioButton>
+                </VoiceButton>
               );
             })}
           </div>

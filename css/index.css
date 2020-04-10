@@ -54,6 +54,11 @@ audio {
   background-color: rgb(192, 98, 102);
   margin: 10px;
 }
+
+.voice-button {
+  font-family: "Nico Moji Plus";
+}
+
 .btn-container {
   display: flex;
   flex-wrap: wrap;
