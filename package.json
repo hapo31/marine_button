@@ -33,9 +33,9 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --open --port 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop  --open --port 8000",
+    "start": "npm run develop  ",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
