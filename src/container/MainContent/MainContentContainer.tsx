@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import PlayAudioState from "../../state/PlayAudioState/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
-import AppState, { VoiceList } from "../../state/PlayAudioState/AppState";
+import AppState from "../../state/PlayAudioState/AppState";
 
 export default () => {
   const {

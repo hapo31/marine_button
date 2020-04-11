@@ -5,11 +5,13 @@ import { Provider } from "react-redux";
 import appReducer from "../reducers/AppReducer";
 import playAudioReducer from "../reducers/PlayAudioReducer";
 
-import Header from "./HeaderContainer/HeaderContainer";
-import Footer from "./FooterContainer/FooterContainer";
-import MainContentContainer from "./MainContent/MainContentContainer";
+import Header from "../container/HeaderContainer/HeaderContainer";
+import Footer from "../container/FooterContainer/FooterContainer";
+import MainContentContainer from "../container/MainContent/MainContentContainer";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./../../css/index.css";
+
 const store = createStore(
   combineReducers({ app: appReducer, playAudio: playAudioReducer })
 );
