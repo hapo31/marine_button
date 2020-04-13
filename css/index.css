@@ -35,14 +35,13 @@ button.small {
   max-width: 130px;
 }
 
+footer {
+  color: black;
+}
+
 audio {
   display: hidden;
 }
-
-/* footer {
-  position: absolute;
-  bottom: 0;
-} */
 
 .fork-me-on-github {
   position: absolute;
@@ -93,19 +92,12 @@ audio {
   margin: 20px 10px 15px;
 }
 
-.copyright {
-  color: brown;
-  font-weight: bold;
-}
-
 .social-icon-container > a {
-  display: block;
   width: 32px;
 }
 
 .social-icon-youtube {
   display: inline-block;
-  margin-top: 28px;
   height: 16px;
 }
 
