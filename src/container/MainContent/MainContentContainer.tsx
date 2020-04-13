@@ -1,11 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import PlayAudioState from "../../state/PlayAudioState/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import AppState from "../../state/PlayAudioState/AppState";
+import { withPrefix } from "gatsby";
+import { StopAudioAction } from "../../actions/Actions";
 
 export default () => {
+  const dispatch = useDispatch();
+  const audioRef = useRef<HTMLAudioElement>();
   const {
     app,
     playAudio,
@@ -22,7 +26,15 @@ export default () => {
           groups={section.audios}
         />
       ))}
-      <audio id="player" src={playAudio.filename}></audio>
+      <audio
+        id="player"
+        ref={audioRef}
+        onCanPlay={() => {
+          audioRef.current.play();
+        }}
+        onEnded={() => dispatch(StopAudioAction())}
+        src={withPrefix(playAudio.filename)}
+      ></audio>
     </main>
   );
 };
