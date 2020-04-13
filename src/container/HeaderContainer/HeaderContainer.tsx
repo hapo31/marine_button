@@ -1,5 +1,7 @@
 import React, { memo } from "react";
+import { withPrefix } from "gatsby";
 import { Nav, Navbar, NavbarBrand, NavItem } from "react-bootstrap";
+import Static from "../../components/Static";
 
 export default () => {
   return (
@@ -17,8 +19,8 @@ export default () => {
         rel="noopener"
       >
         <img
-          width="149"
-          height="149"
+          width="120"
+          height="120"
           src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149"
           className="attachment-full size-full"
           alt="Fork me on GitHub"
@@ -39,7 +41,7 @@ export default () => {
               rel="noopener"
             >
               <img
-                src="image/youtube_social_icon_red.png"
+                src={withPrefix("image/youtube_social_icon_red.png")}
                 alt="
           Marine Ch. 宝鐘マリン"
               />
@@ -53,7 +55,7 @@ export default () => {
               rel="noopener"
             >
               <img
-                src="image/Twitter_Logo_Blue.svg"
+                src={withPrefix("image/Twitter_Logo_Blue.svg")}
                 alt="
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />
@@ -62,20 +64,21 @@ export default () => {
         </Navbar>
       </Nav>
       <div className="tweet-button">
-        <a
-          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-          className="twitter-share-button"
-          data-text="宝鐘マリンボタン 🏴☠"
-          data-url="https://happou31.github.io/marine_button/"
-          data-show-count="false"
-        >
-          Tweet
-        </a>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        ></script>
+        <Static>
+          <a
+            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+            className="twitter-share-button"
+            data-text="宝鐘マリンボタン 🏴☠"
+            data-url="https://happou31.github.io/marine_button/"
+            data-show-count="false"
+          >
+            Tweet
+          </a>
+          <script
+            src="https://platform.twitter.com/widgets.js"
+            charSet="utf-8"
+          ></script>
+        </Static>
       </div>
     </header>
   );

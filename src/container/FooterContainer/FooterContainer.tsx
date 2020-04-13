@@ -1,10 +1,10 @@
 import React from "react";
-import { Nav, NavItem, Navbar, NavbarProps } from "react-bootstrap";
+import { Nav, NavItem, Navbar, NavLink } from "react-bootstrap";
 export default () => (
   <footer>
-    <Navbar expand="lg" className="navbar navbar-expand-lg">
-      <Nav bsPrefix="mr-auto" className="navbar-nav">
-        <NavItem className="nav-item">
+    <Navbar expand="lg">
+      <Nav className="mr-auto">
+        <NavItem>
           <span className="font-weight-bold navbar-text mb-0">
             本ページはファン創作による非公式ページです。
             <br />
@@ -31,15 +31,15 @@ export default () => (
         </NavItem>
       </Nav>
       <Nav className="navbar-nav">
-        <NavItem className="nav-item copyright">
-          <a
-            className="nav-link"
+        <NavItem className="nav-item">
+          <NavLink
+            className="copyright"
             target="_blank"
             rel="noopener"
             href="https://www.hololive.tv/terms"
           >
             © cover corp. All Rights Reserved.
-          </a>
+          </NavLink>
         </NavItem>
       </Nav>
     </Navbar>
