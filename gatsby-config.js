@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Hosho Marine Button`,
-    description: `Brain washable Hosho Marine's funny voice everytime.`,
+    title: `宝鐘マリンボタン`,
+    description: `Ahoy!ホロライブ3期生、宝鐘海賊団船長の、宝鐘マリンのボタンですぅ～`,
     author: `@happou31`,
   },
   plugins: [
