@@ -10,7 +10,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `voices`,
-        path: `${__dirname}/static/audio`,
+        path: `${__dirname}/static/audio/`,
+        ignore: [`*.wav`],
       },
     },
     `gatsby-transformer-sharp`,

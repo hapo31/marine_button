@@ -1,13 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PlayAudioState from "../../state/PlayAudioState/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import AppState from "../../state/PlayAudioState/AppState";
 import { withPrefix } from "gatsby";
-import { StopAudioAction } from "../../actions/Actions";
+import { StopAudioAction, FetchVoiceListAction } from "../../actions/Actions";
+import { VoiceDataQueryResult } from "../../model/GraphQLResult/VoiceData";
 
-export default () => {
+export default (data: VoiceDataQueryResult) => {
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
   const {
@@ -17,6 +18,10 @@ export default () => {
     app: AppState;
     playAudio: PlayAudioState;
   } = useSelector(({ app, playAudio }) => ({ app, playAudio }));
+
+  useEffect(() => {
+    dispatch(FetchVoiceListAction(data.data));
+  }, [app]);
   return (
     <main>
       {app.voiceList.map((section, index) => (
