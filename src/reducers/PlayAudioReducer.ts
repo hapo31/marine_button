@@ -22,9 +22,10 @@ const playAudioReducer: (
         filename: "",
         playing: false,
       };
-  }
 
-  return state;
+    default:
+      return state;
+  }
 };
 
 export default playAudioReducer;
