@@ -32,7 +32,7 @@ export default (data: VoiceDataQueryResult) => (
 
 export const query = graphql`
   query {
-    allFile(sort: { fields: [name], order: ASC }) {
+    allFile(sort: { fields: [relativePath], order: ASC }) {
       edges {
         node {
           name
