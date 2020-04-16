@@ -1,9 +1,8 @@
-import data from "../../files.json";
 import AppState from "../state/PlayAudioState/AppState";
 import { FETCH_VOICELIST, Actions } from "../actions/Actions";
 
 const initialState = {
-  voiceList: data,
+  voiceList: [],
 };
 
 const appReducer: (state: AppState, action: Actions) => AppState = (
