@@ -6,7 +6,7 @@ name: Deploy
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,22 +17,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1.4.1
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1.4.1
 
-    # Runs a single command using the runners shell
-    - name: Build a app
-      run: | 
-        cd $GITHUB_WORKSPACE,
-        npm run build
+      # Runs a single command using the runners shell
+      - name: Build a app
+        run: |
+          cd $GITHUB_WORKSPACE,
+          npm run build
 
-    # Runs a set of commands using the runners shell
-    - name: Rename directory
-      run: |
-        rm -rf docs/
-        mv public docs,
-        touch docs/.gitkeep,
-        git add .,
-        git commit -m "built page",
-        git push origin master
+      # Runs a set of commands using the runners shell
+      - name: Rename directory
+        run: |
+          rm -rf docs/
+          mv public docs,
+          touch docs/.gitkeep,
+          git add .,
+          git commit -m "built page",
+          git push origin master
