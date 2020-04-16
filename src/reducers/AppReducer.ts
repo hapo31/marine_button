@@ -1,4 +1,4 @@
-import AppState from "../state/PlayAudioState/AppState";
+import AppState from "../state/AppState";
 import { FETCH_VOICELIST, Actions } from "../actions/Actions";
 
 const initialState = {

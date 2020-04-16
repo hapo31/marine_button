@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { withPrefix } from "gatsby";
 
-import PlayAudioState from "../../state/PlayAudioState/PlayAudioState";
+import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
-import AppState from "../../state/PlayAudioState/AppState";
+import AppState from "../../state/AppState";
 import { StopAudioAction, FetchVoiceListAction } from "../../actions/Actions";
 import { VoiceDataQueryResult } from "../../model/GraphQLResult/VoiceData";
 
