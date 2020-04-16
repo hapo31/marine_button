@@ -53,10 +53,8 @@ export const FetchVoiceListAction = (voiceData: VoiceData) => {
       rowIndex = resultData.length - 1;
     }
     const groupIndex = parseInt(audio.group);
-    if (resultData[rowIndex].audios.length <= groupIndex) {
-      while (resultData[rowIndex].audios.length <= groupIndex) {
-        resultData[rowIndex].audios.push([]);
-      }
+    while (resultData[rowIndex].audios.length <= groupIndex) {
+      resultData[rowIndex].audios.push([]);
     }
     resultData[rowIndex].audios[groupIndex].push({
       path: audio.path,
