@@ -1,5 +1,3 @@
-import data from "../../../files.json";
-
 export type VoiceList = {
   label: string;
   audios: {
