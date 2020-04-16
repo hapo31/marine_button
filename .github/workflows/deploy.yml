@@ -29,8 +29,8 @@ jobs:
       - name: Rename directory
         run: |
           rm -rf docs/
-          mv public docs,
-          touch docs/.gitkeep,
-          git add .,
-          git commit -m "built page",
+          mv public docs
+          touch docs/.gitkeep
+          git add .
+          git commit -m "built page"
           git push origin master
