@@ -22,12 +22,14 @@ jobs:
       - uses: actions/setup-node@v1.4.1
         with:
           node-version: "12.x"
-      - run: yarn
-      - run: yarn build
+      - name: Install
+        run: |
+          yarn
+          yarn build
       - name: Git configure
-      - run: |
-        git config --local user.email "aciton@github.com"
-        git config --local user.name "Github Action"
+        run: |
+          git config --local user.email "aciton@github.com"
+          git config --local user.name "Github Action"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
