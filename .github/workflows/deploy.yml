@@ -22,19 +22,15 @@ jobs:
       - uses: actions/setup-node@v1.4.1
         with:
           node-version: "12.x"
-      - run: npm install
-      - run: npm run build
+      - run: yarn
+      - run: yarn build
+      - name: Git configure
+      - run: |
+        git config --local user.email "aciton@github.com"
+        git config --local user.name "Github Action"
 
-      # Runs a set of commands using the runners shell
-      - name: Rename directory
-        run: |
-          rm -rf docs/
-          mv public docs
-          touch docs/.gitkeep
-          git config --local user.email "aciton@github.com"
-          git config --local user.name "Github Action"
-          git add .
-          git commit -m "built page"
-      - uses: ad-m/github-push-action@master
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

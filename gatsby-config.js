@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/marine_button",
   siteMetadata: {
     title: `宝鐘マリンボタン`,
     description: `Ahoy!ホロライブ3期生、宝鐘海賊団船長の、宝鐘マリンのボタンですぅ～`,
