@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { withPrefix } from "gatsby";
+
 import PlayAudioState from "../../state/PlayAudioState/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import AppState from "../../state/PlayAudioState/AppState";
-import { withPrefix } from "gatsby";
 import { StopAudioAction, FetchVoiceListAction } from "../../actions/Actions";
 import { VoiceDataQueryResult } from "../../model/GraphQLResult/VoiceData";
 
@@ -20,8 +21,10 @@ export default (data: VoiceDataQueryResult) => {
   } = useSelector(({ app, playAudio }) => ({ app, playAudio }));
 
   useEffect(() => {
-    dispatch(FetchVoiceListAction(data.data));
-  }, [app]);
+    if (app.voiceList.length === 0) {
+      dispatch(FetchVoiceListAction(data.data));
+    }
+  });
   return (
     <main>
       {app.voiceList.map((section, index) => (
@@ -34,11 +37,9 @@ export default (data: VoiceDataQueryResult) => {
       <audio
         id="player"
         ref={audioRef}
-        onCanPlay={() => {
-          audioRef.current.play();
-        }}
+        onCanPlay={() => audioRef.current.play()}
         onEnded={() => dispatch(StopAudioAction())}
-        src={withPrefix(playAudio.filename)}
+        src={withPrefix(`audio/${playAudio.filename}`)}
       ></audio>
     </main>
   );
