@@ -5,6 +5,7 @@
 
 body {
   background-color: rgb(164, 109, 79);
+  font-family: "Nico Moji Plus";
 }
 button {
   background-color: rgb(160, 45, 58) !important;
@@ -34,17 +35,12 @@ button.small {
   max-width: 130px;
 }
 
-audio {
-  display: hidden;
+footer {
+  color: black;
 }
 
-/* footer {
-  position: absolute;
-  bottom: 0;
-} */
-
-.wf-nicomoji {
-  font-family: "Nico Moji Plus";
+audio {
+  display: hidden;
 }
 
 .fork-me-on-github {
@@ -57,6 +53,11 @@ audio {
   background-color: rgb(192, 98, 102);
   margin: 10px;
 }
+
+.voice-button {
+  font-family: "Nico Moji Plus";
+}
+
 .btn-container {
   display: flex;
   flex-wrap: wrap;
@@ -91,19 +92,12 @@ audio {
   margin: 20px 10px 15px;
 }
 
-.copyright {
-  color: brown;
-  font-weight: bold;
-}
-
 .social-icon-container > a {
-  display: block;
   width: 32px;
 }
 
 .social-icon-youtube {
   display: inline-block;
-  margin-top: 28px;
   height: 16px;
 }
 
