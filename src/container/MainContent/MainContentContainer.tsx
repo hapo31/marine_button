@@ -1,15 +1,29 @@
 import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { withPrefix } from "gatsby";
+import { withPrefix, useStaticQuery, graphql } from "gatsby";
 
 import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import AppState from "../../state/AppState";
 import { StopAudioAction, FetchVoiceListAction } from "../../actions/Actions";
-import { VoiceDataQueryResult } from "../../model/GraphQLResult/VoiceData";
+import VoiceDataQueryResult from "../../model/GraphQLResult/VoiceData";
 
-export default (data: VoiceDataQueryResult) => {
+export default () => {
+  const data: VoiceDataQueryResult = useStaticQuery(
+    graphql`
+      query {
+        allFile(sort: { fields: [relativePath], order: ASC }) {
+          edges {
+            node {
+              name
+              relativePath
+            }
+          }
+        }
+      }
+    `
+  );
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
   const {
@@ -22,7 +36,7 @@ export default (data: VoiceDataQueryResult) => {
 
   useEffect(() => {
     if (app.voiceList.length === 0) {
-      dispatch(FetchVoiceListAction(data.data));
+      dispatch(FetchVoiceListAction(data));
     }
   });
   return (

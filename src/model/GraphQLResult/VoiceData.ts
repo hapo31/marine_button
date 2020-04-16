@@ -1,8 +1,4 @@
-export interface VoiceDataQueryResult {
-  data: VoiceData;
-}
-
-export default interface VoiceData {
+export default interface VoiceDataQueryResult {
   allFile: AllFile;
 }
 
