@@ -43,12 +43,10 @@ export default () => {
   });
   return (
     <main
-      onClick={() => {
+      onTouchStart={() => {
+        // iOSでの音声再生制限解除のための処理
         if (isFirstPlay) {
-          audioRef.current.muted = true;
           audioRef.current.play();
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
           audioRef.current.muted = false;
           setIsFirstPlay(false);
         }
@@ -67,6 +65,8 @@ export default () => {
         onCanPlay={() => audioRef.current.play()}
         onEnded={() => dispatch(StopAudioAction())}
         src={withPrefix(`audio/${playAudio.filename}`)}
+        muted={true}
+        autoPlay={true}
       ></audio>
     </main>
   );

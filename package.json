@@ -34,7 +34,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop --open --port 8080",
+    "develop": "gatsby develop --open --port 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop  ",
     "serve": "gatsby serve",
