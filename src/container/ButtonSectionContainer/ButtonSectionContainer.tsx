@@ -21,9 +21,9 @@ export default (props: Props) => {
           <div key={`group-${i}`} className="btn-container">
             {group.map(button => {
               const size =
-                button.label.length <= 7
+                button.label.length <= 6
                   ? "small"
-                  : button.label.length <= 13
+                  : button.label.length <= 10
                   ? "mid"
                   : "large";
               return (

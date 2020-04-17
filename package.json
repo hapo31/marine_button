@@ -24,6 +24,7 @@
     "redux": "~4.0.5"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.15",
     "prettier": "~1.19.1",
     "typescript": "~3.8.3"
   },

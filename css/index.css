@@ -5,7 +5,7 @@
 
 body {
   background-color: rgb(164, 109, 79);
-  font-family: "Nico Moji Plus";
+  font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
 }
 button {
   background-color: rgb(160, 45, 58) !important;
@@ -64,6 +64,7 @@ audio {
   justify-content: flex-start;
 }
 .btn-container > button {
+  font-family: "Noto Sans JP", sans-serif;
   margin: 10px;
   flex: auto;
 }
