@@ -45,7 +45,11 @@ export default () => {
     <main
       onClick={() => {
         if (isFirstPlay) {
+          audioRef.current.muted = true;
           audioRef.current.play();
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+          audioRef.current.muted = false;
           setIsFirstPlay(false);
         }
       }}

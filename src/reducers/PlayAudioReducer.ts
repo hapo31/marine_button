@@ -1,6 +1,5 @@
 import { Actions, PLAY_AUDIO, STOP_AUDIO } from "../actions/Actions";
 import PlayAudioState from "../state/PlayAudioState";
-import { withPrefix } from "gatsby";
 
 const initialState: PlayAudioState = {
   filename: "silence.wav",
