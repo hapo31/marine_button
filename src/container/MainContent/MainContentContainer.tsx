@@ -43,7 +43,7 @@ export default () => {
   });
   return (
     <main
-      onTouchStart={() => {
+      onClick={() => {
         // iOSでの音声再生制限解除のための処理
         if (isFirstPlay) {
           audioRef.current.play();
