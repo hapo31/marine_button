@@ -19,7 +19,7 @@ const playAudioReducer: (
 
     case STOP_AUDIO:
       return {
-        filename: "",
+        filename: "silence.wav",
         playing: false,
       };
 
