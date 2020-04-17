@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { withPrefix, useStaticQuery, graphql } from "gatsby";
 
@@ -10,6 +10,8 @@ import { StopAudioAction, FetchVoiceListAction } from "../../actions/Actions";
 import VoiceDataQueryResult from "../../model/GraphQLResult/VoiceData";
 
 export default () => {
+  const [isFirstPlay, setIsFirstPlay] = useState(true);
+
   const data: VoiceDataQueryResult = useStaticQuery(
     graphql`
       query {
@@ -40,7 +42,14 @@ export default () => {
     }
   });
   return (
-    <main>
+    <main
+      onClick={() => {
+        if (isFirstPlay) {
+          audioRef.current.play();
+          setIsFirstPlay(false);
+        }
+      }}
+    >
       {app.voiceList.map((section, index) => (
         <ButtonSectionContainer
           key={index + section.label}
