@@ -6,12 +6,6 @@ import Static from "../../components/Static";
 export default () => {
   return (
     <header>
-      <iframe
-        src="audio/silence.wav"
-        allow="autoplay"
-        style={{ display: "none" }}
-      ></iframe>
-
       <a
         className="fork-me-on-github"
         href="https://github.com/happou31/marine_button"

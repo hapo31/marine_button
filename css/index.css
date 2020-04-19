@@ -21,17 +21,14 @@ a:hover {
 }
 
 button.large {
-  min-width: 400px;
   max-width: 450px;
 }
 
 button.mid {
-  min-width: 250px;
   max-width: 300px;
 }
 
 button.small {
-  min-width: 120px;
   max-width: 130px;
 }
 
@@ -70,7 +67,7 @@ audio {
 }
 
 .text-large {
-  font-size: 48px;
+  font-size: 52px;
 }
 
 .text-mid {
@@ -95,6 +92,7 @@ audio {
 
 .social-icon-container > a {
   width: 32px;
+  z-index: 2;
 }
 
 .social-icon-youtube {
