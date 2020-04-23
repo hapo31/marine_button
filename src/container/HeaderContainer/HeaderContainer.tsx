@@ -1,6 +1,6 @@
-import React, { memo } from "react";
+import React from "react";
 import { withPrefix } from "gatsby";
-import { Nav, Navbar, NavbarBrand, NavItem } from "react-bootstrap";
+import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Static from "../../components/Static";
 
 export default () => {

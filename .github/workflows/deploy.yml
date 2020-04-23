@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v1.4.1
         with:
           node-version: "12.x"
+      - name: Update lastupdatedinfo.json
+        run: ./bin/diff.sh > static/lastupdateinfo.json
       - name: Install
         run: |
           yarn
