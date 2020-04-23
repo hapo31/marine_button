@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default (props: Props) => (
-  <Button className={`voice-button ${props.size}`} onClick={props.onclick}>
+  <Button className={`serif voice-button ${props.size}`} onClick={props.onclick}>
     {props.children}
   </Button>
 );
