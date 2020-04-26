@@ -28,9 +28,9 @@ jobs:
             git config --local user.name "Github Action"
       - name: Update lastupdatedinfo.json
         run: |
-          ./bin/diff.sh > static/lastupdateinfo.json
-          git add static/lastupdateinfo.json
-          git commit -m "update"
+            ./bin/diff.sh > static/lastupdateinfo.json
+            git add static/lastupdateinfo.json
+            git commit -m "update"
       - name: Install
         run: |
           yarn
