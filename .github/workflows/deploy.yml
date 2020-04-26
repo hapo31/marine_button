@@ -23,14 +23,14 @@ jobs:
         with:
           node-version: "12.x"
       - name: Git configure
-          run: |
-            git config --local user.email "aciton@github.com"
-            git config --local user.name "Github Action"
+        run: |
+          git config --local user.email "aciton@github.com"
+          git config --local user.name "Github Action"
       - name: Update lastupdatedinfo.json
         run: |
-            ./bin/diff.sh > static/lastupdateinfo.json
-            git add static/lastupdateinfo.json
-            git commit -m "update"
+          ./bin/diff.sh > static/lastupdateinfo.json
+          git add static/lastupdateinfo.json
+          git commit -m "update"
       - name: Install
         run: |
           yarn
