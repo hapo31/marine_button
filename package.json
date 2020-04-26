@@ -45,7 +45,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "lint-staged": {
-    "*.{ts,txs,js}": [
+    "*.{ts,tsx,js}": [
       "npm run format",
       "git add"
     ]

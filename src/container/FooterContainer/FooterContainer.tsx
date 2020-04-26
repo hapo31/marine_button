@@ -23,7 +23,7 @@ export default () => {
       </Navbar>
       <div className="last-updated-info">
         <div className="border rounded last-updated-info-content">
-          {lastUpdatedInfo.files.map(v => <div className="monospace text-very-small font-weight-bold" key={v}>{v}</div>)}
+          {lastUpdatedInfo.files.map(v => <span className="monospace text-very-small font-weight-bold" key={v}>{v} </span>)}
         </div>
       </div>
       <Navbar expand="lg">
