@@ -19,7 +19,6 @@ export const FETCH_VOICELIST = "FETCH_VOICELIST";
 
 export const FetchVoiceListAction = (voiceData: VoiceData) => {
   const resultData = voiceDataToVoiceList(voiceData);
-  console.log({ voiceData, resultData });
   return {
     type: FETCH_VOICELIST as typeof FETCH_VOICELIST,
     voiceList: resultData,

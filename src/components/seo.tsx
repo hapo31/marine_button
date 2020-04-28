@@ -72,7 +72,7 @@ export default ({ description, lang, meta, title }) => {
       <link
         href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
         rel="stylesheet"
-      ></link>
+      />
       <link rel="stylesheet" href="" />
     </Helmet>
   );

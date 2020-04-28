@@ -3,9 +3,9 @@ import VoiceDataQueryResult from "../model/GraphQLResult/VoiceData";
 export function voiceDataToVoiceList(voiceData: VoiceDataQueryResult) {
   const resultData = [];
   const temp = [];
-  const match = /\d+_([^\/]+)\/([^\/]+)\/\d+_([^\.]+)\.mp3/;
+  const match = /\d+_([^/]+)\/([^/]+)\/\d+_([^.]+)\.mp3/;
   for (const edge of voiceData.allFile.edges) {
-    const relativePath = edge.node.relativePath;
+    const { relativePath } = edge.node;
     const matchResult = match.exec(relativePath);
     if (matchResult) {
       temp.push({

@@ -10,8 +10,8 @@ import Footer from "../container/FooterContainer/FooterContainer";
 import MainContentContainer from "../container/MainContent/MainContentContainer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./../../css/index.css";
-import "./../../css/mobile.css";
+import "../../css/index.css";
+import "../../css/mobile.css";
 
 const store = createStore(
   combineReducers({ app: appReducer, playAudio: playAudioReducer })

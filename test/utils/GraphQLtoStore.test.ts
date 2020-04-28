@@ -9,7 +9,7 @@ describe("voiceDataToVoiceList", () => {
     it("GraphQLから取得される値が正常に変換されるか", () => {
       const testResult = voiceDataToVoiceList(src.data);
       chai.assert.isTrue(JSON.stringify(testResult) === JSON.stringify(result));
-    })
+    });
   });
 
   it("異常系", () => {
@@ -17,11 +17,10 @@ describe("voiceDataToVoiceList", () => {
       chai.assert.throws(() => {
         voiceDataToVoiceList({
           allFile: {
-            edges: []
-          }
-        })
+            edges: [],
+          },
+        });
       });
     });
-
   });
 });

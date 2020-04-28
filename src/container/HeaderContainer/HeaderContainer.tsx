@@ -71,7 +71,7 @@ export default () => {
           <script
             src="https://platform.twitter.com/widgets.js"
             charSet="utf-8"
-          ></script>
+          />
         </Static>
       </div>
     </header>
