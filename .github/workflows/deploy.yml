@@ -28,6 +28,7 @@ jobs:
           git config --local user.name "Github Action"
       - name: Update lastupdateinfo.json
         run: |
+          git fetch
           git checkout master origin/master
           ./bin/diff.sh > static/lastupdateinfo.json
           git add static/lastupdateinfo.json
