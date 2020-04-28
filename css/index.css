@@ -75,11 +75,12 @@ audio {
   font-family: monospace;
 }
 
-.last-updated-info-new {
+.notice-title {
   color: rgb(160, 45, 58);
+  padding-left: 10px;
 }
 
-.last-updated-info-content {
+.notice-content {
   padding: 10px;
   color: black;
 }
