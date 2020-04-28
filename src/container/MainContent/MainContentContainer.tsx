@@ -65,9 +65,9 @@ export default () => {
         onCanPlay={() => audioRef.current.play()}
         onEnded={() => dispatch(StopAudioAction())}
         src={withPrefix(`audio/${playAudio.filename}`)}
-        muted={true}
-        autoPlay={true}
-      ></audio>
+        muted
+        autoPlay
+      />
     </main>
   );
 };
