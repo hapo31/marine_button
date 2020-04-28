@@ -54,17 +54,17 @@
     "clean": "gatsby clean",
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
-  "lint-staged": {
+  "husky": {
     "hooks": {
       "pre-push": "bin/prepush.sh",
       "pre-commit": "lint-staged"
-    },
-    "lint-staged": {
-      "*.{ts,tsx,js}": [
-        "npm run format",
-        "git add"
-      ]
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "npm run format",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
