@@ -40,7 +40,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged",
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop --open --port 8000",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
@@ -50,10 +49,16 @@
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "lint-staged": {
-    "*.{ts,tsx,js}": [
-      "npm run format",
-      "git add"
-    ]
+    "hooks": {
+      "pre-push": "bin/prepush.sh",
+      "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+      "*.{ts,tsx,js}": [
+        "npm run format",
+        "git add"
+      ]
+    }
   },
   "repository": {
     "type": "git",
