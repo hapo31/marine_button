@@ -8,9 +8,9 @@ export default () => {
     <footer>
       <Navbar className="last-updated-info">
         <Nav className="mr-auto font-weight-bold last-updated-info-new">
-          <NavItem className="font-weight-bold last-updated-info-new">
+          {/* <NavItem className="font-weight-bold last-updated-info-new">
             New!
-          </NavItem>
+          </NavItem> */}
         </Nav>
         <Nav>
           <NavItem>
@@ -21,7 +21,7 @@ export default () => {
           </NavItem>
         </Nav>
       </Navbar>
-      <div className="last-updated-info">
+      {/* <div className="last-updated-info">
         <div className="border rounded last-updated-info-content">
           {lastUpdatedInfo.files.map(v => (
             <span
@@ -32,7 +32,7 @@ export default () => {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
       <Navbar expand="lg">
         <Nav className="mr-auto">
           <NavItem>
