@@ -29,6 +29,7 @@ jobs:
       - name: Update lastupdateinfo.json
         run: |
           git fetch
+          git checkout develop origin/develop
           ./bin/diff.sh > static/lastupdateinfo.json
           git add static/lastupdateinfo.json
           git commit -m "update lastupdateinfo.json"
