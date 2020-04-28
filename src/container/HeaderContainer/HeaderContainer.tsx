@@ -2,6 +2,7 @@ import React from "react";
 import { withPrefix } from "gatsby";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Static from "../../components/Static";
+import Notice from "../../components/Notice";
 
 export default () => {
   return (
@@ -73,6 +74,13 @@ export default () => {
             charSet="utf-8"
           />
         </Static>
+      </div>
+      <div>
+        <Notice>
+          <div style={{ fontSize: "30px" }}>
+            船長チャンネル登録者数３０万人おめでとう！！！！！！！！！！！！！！
+          </div>
+        </Notice>
       </div>
     </header>
   );
