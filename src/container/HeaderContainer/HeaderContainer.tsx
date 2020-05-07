@@ -77,8 +77,8 @@ export default () => {
       </div>
       <div>
         <Notice>
-          <div style={{ fontSize: "30px" }}>
-            船長チャンネル登録者数３０万人おめでとう！！！！！！！！！！！！！！
+          <div style={{ fontSize: "30px", maxWidth: "100vw" }}>
+            船長チャンネル登録者数３０万人おめでとう！！！！！
           </div>
         </Notice>
       </div>
