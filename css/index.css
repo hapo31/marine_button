@@ -13,11 +13,11 @@ button {
   border-color: rgb(160, 45, 58) !important;
 }
 
-a:any-link {
+a.mb-link:any-link {
   color: inherit;
 }
 
-a:hover {
+a.mb-link:hover {
   text-decoration: none;
 }
 
