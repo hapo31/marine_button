@@ -45,7 +45,7 @@ export default () => {
                 href="https://twitter.com/happou31"
                 style={{ color: "blue" }}
               >
-                Twitter
+                作者のTwitter
               </Link>
               または
               <Link
@@ -55,6 +55,8 @@ export default () => {
                 GithubのIssue
               </Link>
               にご報告ください。
+              <br />
+              ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
             </span>
           </NavItem>
         </Nav>
