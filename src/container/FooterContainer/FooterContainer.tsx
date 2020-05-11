@@ -1,16 +1,17 @@
 import React from "react";
 import { Nav, NavItem, Navbar, NavLink } from "react-bootstrap";
-import lastUpdatedInfo from "../../model/Updated/LastUpdatedInfo";
+import Link from "../../components/Link";
+// import lastUpdatedInfo from "../../model/Updated/LastUpdatedInfo";
 
 export default () => {
-  const date = new Date(lastUpdatedInfo.date);
+  // const date = new Date(lastUpdatedInfo.date);
   return (
     <footer>
-      <Navbar className="last-updated-info">
+      {/* <Navbar className="last-updated-info">
         <Nav className="mr-auto font-weight-bold last-updated-info-new">
-          {/* <NavItem className="font-weight-bold last-updated-info-new">
+          <NavItem className="font-weight-bold last-updated-info-new">
             New!
-          </NavItem> */}
+          </NavItem>
         </Nav>
         <Nav>
           <NavItem>
@@ -21,7 +22,7 @@ export default () => {
           </NavItem>
         </Nav>
       </Navbar>
-      {/* <div className="last-updated-info">
+      <div className="last-updated-info">
         <div className="border rounded last-updated-info-content">
           {lastUpdatedInfo.files.map(v => (
             <span
@@ -40,23 +41,19 @@ export default () => {
               本ページはファン創作による非公式ページです。
               <br />
               問題点を見つけたら
-              <a
+              <Link
                 href="https://twitter.com/happou31"
                 style={{ color: "blue" }}
-                target="_blank"
-                rel="noopener"
               >
                 Twitter
-              </a>
+              </Link>
               または
-              <a
+              <Link
                 href="https://github.com/happou31/marine_button/issues"
                 style={{ color: "black" }}
-                target="_blank"
-                rel="noopener"
               >
                 GithubのIssue
-              </a>
+              </Link>
               にご報告ください。
             </span>
           </NavItem>

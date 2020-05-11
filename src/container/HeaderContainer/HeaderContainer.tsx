@@ -3,15 +3,14 @@ import { withPrefix } from "gatsby";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Static from "../../components/Static";
 import Notice from "../../components/Notice";
+import Link from "../../components/Link";
 
 export default () => {
   return (
     <header>
-      <a
+      <Link
         className="fork-me-on-github"
         href="https://github.com/happou31/marine_button"
-        target="_blank"
-        rel="noopener"
       >
         <img
           width="120"
@@ -21,7 +20,7 @@ export default () => {
           alt="Fork me on GitHub"
           data-recalc-dims="1"
         />
-      </a>
+      </Link>
 
       <Nav className="navbar navbar-expand-lg">
         <Navbar className="navbar-nav">
@@ -29,32 +28,28 @@ export default () => {
             宝鐘マリンボタン
           </NavItem>
           <NavItem className="social-icon-container">
-            <a
+            <Link
               className="social-icon-youtube"
               href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
-              target="_blank"
-              rel="noopener"
             >
               <img
                 src={withPrefix("image/youtube_social_icon_red.png")}
                 alt="
           Marine Ch. 宝鐘マリン"
               />
-            </a>
+            </Link>
           </NavItem>
           <NavItem className="social-icon-container">
-            <a
+            <Link
               className="social-icon-twitter"
               href="https://twitter.com/houshoumarine"
-              target="_blank"
-              rel="noopener"
             >
               <img
                 src={withPrefix("image/Twitter_Logo_Blue.svg")}
                 alt="
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />
-            </a>
+            </Link>
           </NavItem>
         </Navbar>
       </Nav>
