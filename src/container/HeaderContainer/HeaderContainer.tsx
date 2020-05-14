@@ -55,6 +55,7 @@ export default () => {
       </Nav>
       <div className="tweet-button">
         <Static>
+          トゥイッターで共有→
           <a
             href="https://twitter.com/share?ref_src=twsrc%5Etfw"
             className="twitter-share-button"
