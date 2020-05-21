@@ -3,7 +3,7 @@
 module.exports = {
   pathPrefix: "/marine_button",
   siteMetadata: {
-    title: `宝鐘マリンボタン`,
+    title: `宝鐘マリンボタン🏴☠`,
     description: `Ahoy!ホロライブ3期生、宝鐘海賊団船長の、宝鐘マリンのボタンですぅ～`,
     author: `@happou31`,
   },
@@ -28,7 +28,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `static/image/icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,
