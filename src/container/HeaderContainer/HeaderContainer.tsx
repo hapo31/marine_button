@@ -25,6 +25,11 @@ export default () => {
       <Nav className="navbar navbar-expand-lg">
         <Navbar className="navbar-nav">
           <NavItem className="mb-0 text-large wf-nicomoji">
+            <img
+              alt=""
+              className="site-logo"
+              src={withPrefix("image/icon.png")}
+            />
             宝鐘マリンボタン
           </NavItem>
           <NavItem className="social-icon-container">
@@ -74,7 +79,31 @@ export default () => {
       <div>
         <Notice>
           <div style={{ fontSize: "30px", maxWidth: "100vw" }}>
-            船長チャンネル登録者数３０万人おめでとう！！！！！
+            <span
+              style={{
+                textShadow: `
+                1px 1px 0 #000,
+               -1px 1px 0 #000,
+               1px -1px 0 #000,
+               -1px -1px 0 #000
+               `,
+              }}
+            >
+              <Link
+                style={{ textDecoration: "underline" }}
+                href="https://hibiki-radio.jp/description/skdw/detail"
+              >
+                <span style={{ color: "yellow" }}>V</span>
+                <span style={{ color: "gray" }}>の</span>
+                <span style={{ color: "aqua" }}>すこん</span>
+                <span style={{ color: "gray" }}>な</span>
+                <span style={{ color: "yellow" }}>オタ活</span>
+                <span style={{ color: "maroon" }}>なんだワ</span>
+                <span style={{ color: "gray" }}>！</span>
+              </Link>
+            </span>
+            <br />
+            響-RadioStationで隔週水曜日更新で大好評配信中！！！
           </div>
         </Notice>
       </div>

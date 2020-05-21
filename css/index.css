@@ -47,6 +47,12 @@ audio {
   z-index: 1;
 }
 
+.site-logo {
+  width: 52px;
+  line-height: 52px;
+  padding-bottom: 11px;
+}
+
 .border {
   background-color: rgb(192, 98, 102);
   margin: 10px;

@@ -18,13 +18,11 @@ const store = createStore(
 );
 
 export default () => (
-  <>
-    <div className="wf-nicomoji">
-      <Header />
-      <Provider store={store}>
-        <MainContentContainer />
-      </Provider>
-      <Footer />
-    </div>
-  </>
+  <div className="wf-nicomoji">
+    <Header />
+    <Provider store={store}>
+      <MainContentContainer />
+    </Provider>
+    <Footer />
+  </div>
 );
