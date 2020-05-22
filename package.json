@@ -48,7 +48,7 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop --open --port 8000",
-    "format": "eslint --fix ./src/**/*.{ts,tsx,js}",
+    "format": "eslint --fix ./src/**/*.{ts,tsx}",
     "start": "npm run develop  ",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
