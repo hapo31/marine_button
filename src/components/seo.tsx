@@ -7,10 +7,20 @@
 
 import React from "react";
 import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, withPrefix } from "gatsby";
 
-export default ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+export default () => {
+  const {
+    site,
+  }: {
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+        author: string;
+      };
+    };
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -24,15 +34,14 @@ export default ({ description, lang, meta, title }) => {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = site.siteMetadata.description;
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "ja",
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={site.siteMetadata.title}
       meta={[
         {
           name: `description`,
@@ -40,7 +49,7 @@ export default ({ description, lang, meta, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: site.siteMetadata.title,
         },
         {
           property: `og:description`,
@@ -60,20 +69,18 @@ export default ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: site.siteMetadata.title,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     >
       <meta charSet="utf-8" />
-      <link
-        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
-        rel="stylesheet"
-      />
-      <link rel="stylesheet" href="" />
+      <link rel="stylesheet" href={withPrefix("css/index.css")} />
+      <link rel="stylesheet" href={withPrefix("css/mobile.css")} />
     </Helmet>
   );
+  1;
 };
