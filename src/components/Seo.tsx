@@ -78,6 +78,7 @@ export default () => {
       ]}
     >
       <meta charSet="utf-8" />
+      <link rel="stylesheet" href={withPrefix("css/bootstrap.min.css")} />
       <link rel="stylesheet" href={withPrefix("css/index.css")} />
       <link rel="stylesheet" href={withPrefix("css/mobile.css")} />
     </Helmet>
