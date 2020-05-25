@@ -3,14 +3,11 @@ import { FETCH_VOICELIST, Actions } from "../actions/Actions";
 import audioList from "../../.temp/audiolist.json";
 import AudioList2Store from "../utils/AudioList2Store";
 
-const initialState = {
+const initialState: AppState = {
   voiceList: AudioList2Store(audioList),
 };
 
-const appReducer: (state: AppState, action: Actions) => AppState = (
-  state = initialState,
-  action: Actions
-) => {
+const appReducer = (state = initialState, action: Actions) => {
   switch (action.type) {
     case FETCH_VOICELIST:
       return {

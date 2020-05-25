@@ -1,5 +1,7 @@
 .devcontainer
 .temp
+.next
+
 static/css/bootstrap.min.css
 
 # Logs
