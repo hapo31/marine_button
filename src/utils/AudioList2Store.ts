@@ -1,18 +1,15 @@
-import VoiceDataQueryResult from "../model/GraphQLResult/VoiceData";
-
-export function voiceDataToVoiceList(voiceData: VoiceDataQueryResult) {
+export default function AudioList2Store(audioList: string[]) {
   const resultData = [];
   const temp = [];
   const match = /\d+_([^/]+)\/([^/]+)\/\d+_([^.]+)\.mp3/;
-  for (const edge of voiceData.allFile.edges) {
-    const { relativePath } = edge.node;
-    const matchResult = match.exec(relativePath);
+  for (const path of audioList) {
+    const matchResult = match.exec(path);
     if (matchResult) {
       temp.push({
         label: matchResult[1],
         group: matchResult[2],
         name: matchResult[3],
-        path: relativePath,
+        path: path,
       });
     }
   }

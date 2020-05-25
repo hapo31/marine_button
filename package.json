@@ -46,12 +46,16 @@
   ],
   "license": "MIT",
   "scripts": {
+    "updateResources": "bin/audiolist.sh > .temp/audiolist.json && cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/",
+    "postinstall": "mkdir .temp && npm run updateResources",
+    "prebuild": "npm run updateResources",
     "build": "gatsby build --prefix-paths",
+    "predevelop": "npm run updateResources",
     "develop": "gatsby develop --open --port 8000",
     "format": "eslint --fix ./src/**/*.{ts,tsx}",
     "start": "npm run develop  ",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "gatsby clean && rm .temp/*",
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "husky": {

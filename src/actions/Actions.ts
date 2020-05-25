@@ -1,5 +1,4 @@
-import VoiceData from "../model/GraphQLResult/VoiceData";
-import { voiceDataToVoiceList } from "../utils/GraphQLtoStore";
+import { AudioList2Store } from "../utils/AudioList2Store";
 
 export type Actions = ReturnType<
   typeof PlayAudioAction | typeof StopAudioAction | typeof FetchVoiceListAction
@@ -17,8 +16,8 @@ export const StopAudioAction = () => ({
 
 export const FETCH_VOICELIST = "FETCH_VOICELIST";
 
-export const FetchVoiceListAction = (voiceData: VoiceData) => {
-  const resultData = voiceDataToVoiceList(voiceData);
+export const FetchVoiceListAction = (audioList: string[]) => {
+  const resultData = AudioList2Store(audioList);
   return {
     type: FETCH_VOICELIST as typeof FETCH_VOICELIST,
     voiceList: resultData,
