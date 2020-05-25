@@ -5,7 +5,7 @@ cd static/audio
 OLDIFS=$IFS
 IFS=$'\n'
 
-files=$(find . -type f)
+files=$(find . -type f | sort)
 
 _echo() {
     echo -n $@
