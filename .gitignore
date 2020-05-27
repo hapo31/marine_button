@@ -1,5 +1,6 @@
 .devcontainer
 .temp
+
 static/css/bootstrap.min.css
 
 # Logs
@@ -58,9 +59,10 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
+# next.js files
+.next
+.cache
+out
 
 # Mac files
 .DS_Store

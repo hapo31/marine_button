@@ -1,4 +1,4 @@
-import { AudioList2Store } from "../utils/AudioList2Store";
+import AudioList2Store from "../utils/AudioList2Store";
 
 export type Actions = ReturnType<
   typeof PlayAudioAction | typeof StopAudioAction | typeof FetchVoiceListAction
