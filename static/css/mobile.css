@@ -1,0 +1,8 @@
+@media screen and (max-width:500px) {
+  .fork-me-on-github {
+    display: none;
+  }
+  .text-large {
+    font-size: 40px;
+  }
+}
