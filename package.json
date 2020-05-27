@@ -42,7 +42,8 @@
     "predevelop": "npm run updateResources",
     "build": "next build",
     "start": "next start",
-    "develop": "next",
+    "export": "next build && next export",
+    "dev": "next",
     "format": "eslint --fix ./src/**/*.{ts,tsx}",
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
