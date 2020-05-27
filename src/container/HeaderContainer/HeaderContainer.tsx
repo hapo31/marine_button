@@ -1,5 +1,4 @@
 import React from "react";
-import { withPrefix } from "gatsby";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Static from "../../components/Static";
 import Notice from "../../components/Notice";
@@ -25,11 +24,7 @@ export default () => {
       <Nav className="navbar navbar-expand-lg">
         <Navbar className="navbar-nav">
           <NavItem className="mb-0 text-large wf-nicomoji">
-            <img
-              alt=""
-              className="site-logo"
-              src={withPrefix("image/icon.png")}
-            />
+            <img alt="" className="site-logo" src="static/image/icon.png" />
             宝鐘マリンボタン
           </NavItem>
           <NavItem className="social-icon-container">
@@ -38,7 +33,7 @@ export default () => {
               href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
             >
               <img
-                src={withPrefix("image/youtube_social_icon_red.png")}
+                src={"static/image/youtube_social_icon_red.png"}
                 alt="
           Marine Ch. 宝鐘マリン"
               />
@@ -50,7 +45,7 @@ export default () => {
               href="https://twitter.com/houshoumarine"
             >
               <img
-                src={withPrefix("image/Twitter_Logo_Blue.svg")}
+                src="static/image/Twitter_Logo_Blue.svg"
                 alt="
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />

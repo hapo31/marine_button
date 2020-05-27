@@ -6,16 +6,8 @@
   "author": "happo31 <happo31@gmail.com>",
   "dependencies": {
     "bootstrap": "~4.4.1",
-    "gatsby": "~2.20.12",
-    "gatsby-image": "~2.3.1",
-    "gatsby-plugin-manifest": "~2.3.3",
-    "gatsby-plugin-offline": "~3.1.2",
-    "gatsby-plugin-react-helmet": "~3.2.1",
-    "gatsby-plugin-sharp": "~2.5.3",
-    "gatsby-plugin-typescript": "~2.3.1",
-    "gatsby-source-filesystem": "~2.2.2",
-    "gatsby-transformer-sharp": "~2.4.3",
     "gh-pages": "^2.2.0",
+    "next": "^9.4.2",
     "react": "~16.12.0",
     "react-bootstrap": "~1.0.0",
     "react-dom": "~16.12.0",
@@ -26,6 +18,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.5",
     "@types/react-helmet": "^5.0.15",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
@@ -41,21 +34,17 @@
     "ts-node": "^8.9.1",
     "typescript": "~3.8.3"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "updateResources": "bin/audiolist.sh > .temp/audiolist.json && cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/",
-    "postinstall": "mkdir .temp && npm run updateResources",
+    "postinstall": "mkdir .temp || true && npm run updateResources",
     "prebuild": "npm run updateResources",
-    "build": "gatsby build --prefix-paths",
     "predevelop": "npm run updateResources",
-    "develop": "gatsby develop --open --port 8000",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "dev": "next",
     "format": "eslint --fix ./src/**/*.{ts,tsx}",
-    "start": "npm run develop  ",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean && rm .temp/*",
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "husky": {
