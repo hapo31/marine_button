@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import appReducer from "../src/reducers/AppReducer";
 import playAudioReducer from "../src/reducers/PlayAudioReducer";
 
-import Helmet from "../src/components/Helmet";
 import Header from "../src/container/HeaderContainer/HeaderContainer";
 import Footer from "../src/container/FooterContainer/FooterContainer";
 import MainContentContainer from "../src/container/MainContent/MainContentContainer";
@@ -14,9 +13,12 @@ const store = createStore(
   combineReducers({ app: appReducer, playAudio: playAudioReducer })
 );
 
-export default () => (
+type StaticProps = {
+  updateDate: number;
+};
+
+export default (props: StaticProps) => (
   <>
-    <Helmet />
     <div className="wf-nicomoji">
       <Header />
       <Provider store={store}>
@@ -26,3 +28,7 @@ export default () => (
     </div>
   </>
 );
+
+export function getStaticProps() {
+  return { props: { updateDate: new Date().getTime() } };
+}
