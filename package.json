@@ -43,7 +43,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "dev": "next",
+    "dev": "npm run updateResources && next",
     "format": "eslint --fix ./src/**/*.{ts,tsx}",
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
