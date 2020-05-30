@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap": "~4.4.1",
     "gh-pages": "^2.2.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.4.2",
     "react": "~16.12.0",
     "react-bootstrap": "~1.0.0",
@@ -36,10 +37,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "updateResources": "bin/audiolist.sh > .temp/audiolist.json && cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/",
-    "postinstall": "mkdir .temp || true && npm run updateResources",
+    "updateResources": "bin/audiolist.sh > static/audiolist.json",
+    "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/ && npm run updateResources",
     "prebuild": "npm run updateResources",
-    "predevelop": "npm run updateResources",
+    "predev": "npm run updateResources",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
