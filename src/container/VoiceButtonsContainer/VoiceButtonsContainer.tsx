@@ -4,20 +4,22 @@ import { useSelector, useDispatch } from "react-redux";
 import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
-import AppState from "../../state/AppState";
+import { VoiceList } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/Actions";
 
-export default () => {
+type Props = {
+  voiceList: VoiceList;
+};
+
+export default (props: Props) => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
   const {
-    app,
     playAudio,
   }: {
-    app: AppState;
     playAudio: PlayAudioState;
-  } = useSelector(({ app, playAudio }) => ({ app, playAudio }));
+  } = useSelector(({ playAudio }) => ({ playAudio }));
 
   return (
     <main
@@ -30,7 +32,7 @@ export default () => {
         }
       }}
     >
-      {app.voiceList.map((section, index) => (
+      {props.voiceList.map((section, index) => (
         <ButtonSectionContainer
           key={index + section.label}
           title={section.label}
