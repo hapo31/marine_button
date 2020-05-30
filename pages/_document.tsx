@@ -14,8 +14,10 @@ export default class Doc extends Document {
           <link rel="stylesheet" href="static/css/mobile.css" />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+          <div className="wf-nicomoji">
+            <Main />
+            <NextScript />
+          </div>
         </body>
       </Html>
     );
