@@ -2,6 +2,7 @@
 .temp
 
 static/css/bootstrap.min.css
+static/audiolist.json
 
 # Logs
 logs
