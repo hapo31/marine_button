@@ -7,28 +7,23 @@ import playAudioReducer from "../src/reducers/PlayAudioReducer";
 
 import Header from "../src/container/HeaderContainer/HeaderContainer";
 import Footer from "../src/container/FooterContainer/FooterContainer";
-import MainContentContainer from "../src/container/MainContent/MainContentContainer";
+import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";
+import fetch from "isomorphic-unfetch";
 
 const store = createStore(
   combineReducers({ app: appReducer, playAudio: playAudioReducer })
 );
 
-type StaticProps = {
-  updateDate: number;
+type Props = {
+  isStatic: boolean;
 };
 
-export default (props: StaticProps) => (
+export default (props: Props) => (
   <>
-    <div className="wf-nicomoji">
-      <Header />
-      <Provider store={store}>
-        <MainContentContainer />
-      </Provider>
-      <Footer />
-    </div>
+    <Header />
+    <Provider store={store}>
+      <VoiceButtonsContainer />
+    </Provider>
+    <Footer />
   </>
 );
-
-export function getStaticProps() {
-  return { props: { updateDate: new Date().getTime() } };
-}
