@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, NavItem, Navbar, NavLink } from "react-bootstrap";
-import Link from "../../components/Link";
+import ExternalLink from "../../components/ExternalLink";
 // import lastUpdatedInfo from "../../model/Updated/LastUpdatedInfo";
 
 export default () => {
@@ -41,19 +41,19 @@ export default () => {
               本ページはファン創作による非公式ページです。
               <br />
               問題点を見つけたら
-              <Link
+              <ExternalLink
                 href="https://twitter.com/happou31"
                 style={{ color: "blue" }}
               >
                 作者のTwitter
-              </Link>
+              </ExternalLink>
               または
-              <Link
+              <ExternalLink
                 href="https://github.com/happou31/marine_button/issues"
                 style={{ color: "black" }}
               >
                 GithubのIssue
-              </Link>
+              </ExternalLink>
               にご報告ください。
               <br />
               ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
