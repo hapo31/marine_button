@@ -8,6 +8,8 @@ import playAudioReducer from "../src/reducers/PlayAudioReducer";
 import Header from "../src/container/HeaderContainer/HeaderContainer";
 import Footer from "../src/container/FooterContainer/FooterContainer";
 import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";
+import NoticeSSRBannerContainer from "../src/container/NoticeSSRBannerContainer/NoticeSSRBannerContainer";
+
 import { VoiceList } from "../src/state/AppState";
 import AudioList2Store from "../src/utils/AudioList2Store";
 
@@ -22,15 +24,18 @@ type Props = {
   voiceList: VoiceList;
 };
 
-export default (props: Props) => (
-  <>
-    <Header />
-    <Provider store={store}>
-      <VoiceButtonsContainer voiceList={props.voiceList} />
-    </Provider>
-    <Footer />
-  </>
-);
+export default (props: Props) => {
+  return (
+    <>
+      {props.isStatic ? <NoticeSSRBannerContainer /> : null}
+      <Header />
+      <Provider store={store}>
+        <VoiceButtonsContainer voiceList={props.voiceList} />
+      </Provider>
+      <Footer />
+    </>
+  );
+};
 
 export async function getStaticProps() {
   const voiceList = AudioList2Store(audioList);
