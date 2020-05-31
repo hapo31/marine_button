@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 type Props = {};
 
-function useInputWithHandler(type: string) {
-  const [value, setValue] = useState<string>(null);
+function useInputWithValue<ValueType = string>(type: string) {
+  const [value, setValue] = useState<ValueType | null>(null);
 
   return [
     value,
@@ -11,15 +11,15 @@ function useInputWithHandler(type: string) {
       type={type}
       onChange={event => {
         const input = event.target as HTMLInputElement;
-        setValue(input.value);
+        setValue(input.value as any);
       }}
     />,
-  ];
+  ] as const;
 }
 
 export default (props: Props) => {
-  const [fileValue, fileInput] = useInputWithHandler("file");
-  const [textValue, textInput] = useInputWithHandler("text");
+  const [fileValue, fileInput] = useInputWithValue<File>("file");
+  const [textValue, textInput] = useInputWithValue<string>("text");
 
   return (
     <div className="text-large">
