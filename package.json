@@ -40,7 +40,6 @@
     "updateResources": "bin/audiolist.sh > static/audiolist.json",
     "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/ && npm run updateResources",
     "prebuild": "npm run updateResources",
-    "predev": "npm run updateResources",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
