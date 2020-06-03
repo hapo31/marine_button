@@ -6,7 +6,6 @@ export default class Doc extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <title>宝鐘マリンボタン🏴☠</title>
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href="static/image/icon.png"></link>
           <link rel="stylesheet" href="static/css/bootstrap.min.css" />

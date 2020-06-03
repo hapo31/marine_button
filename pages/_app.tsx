@@ -17,7 +17,10 @@ export default ({
   Component: React.ComponentClass;
   pageProps: Record<string, unknown>;
 }) => (
-  <Provider store={store}>
-    <Component {...pageProps} />
-  </Provider>
+  <>
+    <title>宝鐘マリンボタン🏴☠</title>
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  </>
 );
