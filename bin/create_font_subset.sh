@@ -19,6 +19,10 @@ echo "font file is older, font bulding..."
 mkdir -p .temp
 rm -rf .temp/*
 
+yarn export
+
+now=$(uniq_chars_from_file out/index.html)
+
 docker build -t happou31/font-create .
 echo $now > .temp/chars.txt
 docker run --rm -v $PWD/.temp/:/root/ happou31/font-create
