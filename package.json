@@ -45,7 +45,8 @@
     "export": "next build && next export",
     "dev": "npm run updateResources && next",
     "format": "eslint --fix ./src/**/*.{ts,tsx} && eslint --fix ./pages/*.tsx",
-    "test": "mocha -r ts-node/register test/**/*.test.ts"
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "clean": "rm -rf .cache && rm -rf .temp && rm -rf out/"
   },
   "husky": {
     "hooks": {
