@@ -37,7 +37,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "updateResources": "bin/create_font_subset.sh && bin/audiolist.sh > static/audiolist.json",
+    "updateResources": "./bin/update_resources.sh",
     "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/ && npm run updateResources",
     "prebuild": "npm run updateResources",
     "build": "next build",
