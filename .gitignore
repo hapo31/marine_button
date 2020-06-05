@@ -2,7 +2,10 @@
 .temp
 
 static/css/bootstrap.min.css
-static/audiolist.json
+static/voicelist.json
+static/font/sub_nicomoji-plus.woff2
+
+src/**/*.js
 
 # Logs
 logs

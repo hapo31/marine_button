@@ -5,9 +5,8 @@ import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceB
 import NoticeSSRBannerContainer from "../src/container/NoticeSSRBannerContainer/NoticeSSRBannerContainer";
 
 import { VoiceList } from "../src/state/AppState";
-import AudioList2Store from "../src/utils/AudioList2Store";
 
-import audioList from "../static/audiolist.json";
+import voiceList from "../static/voicelist.json";
 
 type Props = {
   isStatic: boolean;
@@ -26,13 +25,9 @@ export default (props: Props) => {
 };
 
 export async function getStaticProps() {
-  const voiceList = AudioList2Store(audioList);
-
   return { props: { isStatic: true, voiceList } };
 }
 
 export async function getInitialProps() {
-  const voiceList = AudioList2Store(audioList);
-
   return { isStatic: false, voiceList };
 }
