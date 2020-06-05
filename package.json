@@ -12,7 +12,6 @@
     "react": "~16.12.0",
     "react-bootstrap": "~1.0.0",
     "react-dom": "~16.12.0",
-    "react-helmet": "~5.2.1",
     "react-redux": "~7.2.0",
     "redux": "~4.0.5"
   },
@@ -20,7 +19,7 @@
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
     "@types/node": "^14.0.5",
-    "@types/react-helmet": "^5.0.15",
+    "@types/react-redux": "^7.1.9",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "chai": "^4.2.0",
@@ -32,13 +31,13 @@
     "lint-staged": "^10.1.6",
     "mocha": "^7.1.2",
     "prettier": "~1.19.1",
-    "ts-node": "^8.9.1",
+    "ts-node": "^8.10.2",
     "typescript": "~3.8.3"
   },
   "license": "MIT",
   "scripts": {
     "updateResources": "./bin/update_resources.sh",
-    "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/ && npm run updateResources",
+    "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/",
     "prebuild": "npm run updateResources",
     "build": "next build",
     "start": "next start",
@@ -46,7 +45,7 @@
     "dev": "npm run updateResources && next",
     "format": "eslint --fix ./src/**/*.{ts,tsx} && eslint --fix ./pages/*.tsx",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
-    "clean": "rm -rf .cache && rm -rf .temp && rm -rf out/"
+    "clean": "rm -rf .cache && rm -rf .temp && rm -rf out"
   },
   "husky": {
     "hooks": {

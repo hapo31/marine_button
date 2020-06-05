@@ -16,7 +16,6 @@ fi
 
 echo "font file is older, font bulding..."
 
-mkdir -p .temp
 rm -rf .temp/*
 
 yarn export
