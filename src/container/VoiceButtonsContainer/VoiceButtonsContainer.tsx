@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import { VoiceList } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/Actions";
+import PlayAudioState from "../../state/PlayAudioState";
 
 type Props = {
   voiceList: VoiceList;
@@ -14,18 +14,14 @@ type Props = {
 export default (props: Props) => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
-  const audioRef = useRef<HTMLAudioElement>();
-  const {
-    playAudio,
-  }: {
-    playAudio: PlayAudioState;
-  } = useSelector(({ playAudio }) => ({ playAudio }));
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const playAudio = useSelector((playAudio: PlayAudioState) => playAudio);
 
   return (
     <main
       onClick={() => {
         // iOSでの音声再生制限解除のための処理
-        if (isFirstPlay) {
+        if (isFirstPlay && audioRef != null && audioRef.current != null) {
           audioRef.current.play();
           audioRef.current.muted = false;
           setIsFirstPlay(false);
@@ -42,7 +38,11 @@ export default (props: Props) => {
       <audio
         id="player"
         ref={audioRef}
-        onCanPlay={() => audioRef.current.play()}
+        onCanPlay={() => {
+          if (audioRef !== null && audioRef.current !== null) {
+            audioRef.current.play();
+          }
+        }}
         onEnded={() => dispatch(StopAudioAction())}
         src={`static/audio/${playAudio.filename}`}
         muted

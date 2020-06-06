@@ -1,9 +1,9 @@
 import React from "react";
-import { createStore, combineReducers } from "redux";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import playAudioReducer from "../src/reducers/PlayAudioReducer";
 
-const store = createStore(combineReducers({ playAudio: playAudioReducer }));
+const store = createStore(playAudioReducer);
 
 export default ({
   Component,

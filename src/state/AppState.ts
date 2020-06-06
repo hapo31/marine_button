@@ -6,6 +6,8 @@ export type VoiceList = {
   }[][];
 }[];
 
+export type AudioList = string[];
+
 type AppState = {
   voiceList: VoiceList;
 };

@@ -1,15 +1,16 @@
 import { Actions, PLAY_AUDIO, STOP_AUDIO } from "../actions/Actions";
 import PlayAudioState from "../state/PlayAudioState";
+import { Reducer } from "redux";
 
 const initialState: PlayAudioState = {
   filename: "silence.wav",
   playing: false,
 };
 
-const playAudioReducer: (
-  state: PlayAudioState,
+const playAudioReducer: Reducer<PlayAudioState, Actions> = (
+  state = initialState,
   action: Actions
-) => PlayAudioState = (state = initialState, action: Actions) => {
+) => {
   switch (action.type) {
     case PLAY_AUDIO:
       return {
