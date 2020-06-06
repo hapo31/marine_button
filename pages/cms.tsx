@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
-import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";
+import VoiceButtonsContainer from "@containers/VoiceButtonsContainer/VoiceButtonsContainer";
 
-import useInputWithValue from "../src/custom-hooks/useInputWithValue";
+import useInputWithValue from "@src/custom-hooks/useInputWithValue";
 
 import voiceList from "../static/voicelist.json";
-import useAudioListToVoiceList from "../src/custom-hooks/useAudioListToVoiceList";
+import useAudioListToVoiceList from "@src/custom-hooks/useAudioListToVoiceList";
 
 type Props = {};
 

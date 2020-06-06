@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../src/container/HeaderContainer/HeaderContainer";
-import Footer from "../src/container/FooterContainer/FooterContainer";
-import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";
-import NoticeSSRBannerContainer from "../src/container/NoticeSSRBannerContainer/NoticeSSRBannerContainer";
+import Header from "@containers/HeaderContainer/HeaderContainer";
+import Footer from "@containers/FooterContainer/FooterContainer";
+import VoiceButtonsContainer from "@containers/VoiceButtonsContainer/VoiceButtonsContainer";
+import NoticeSSRBannerContainer from "@containers/NoticeSSRBannerContainer/NoticeSSRBannerContainer";
 
-import { VoiceList } from "../src/state/AppState";
+import { VoiceList } from "@states/AppState";
 
 import voiceList from "../static/voicelist.json";
 

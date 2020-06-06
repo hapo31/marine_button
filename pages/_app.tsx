@@ -1,7 +1,7 @@
 import React from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import playAudioReducer from "../src/reducers/PlayAudioReducer";
+import playAudioReducer from "@reducers/PlayAudioReducer";
 
 const store = createStore(playAudioReducer);
 
