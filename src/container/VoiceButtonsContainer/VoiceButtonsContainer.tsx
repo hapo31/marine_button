@@ -5,27 +5,34 @@ import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionConta
 
 import { VoiceList } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/Actions";
-import PlayAudioState from "../../state/PlayAudioState";
+import PlayAudioState, { PlayAudio } from "../../state/PlayAudioState";
 
 type Props = {
   voiceList: VoiceList;
 };
 
+function usePlayAudio() {
+  const [playAudio] = useState(new PlayAudio());
+  const playAudioState = useSelector(
+    (playAudioState: PlayAudioState) => playAudioState
+  );
+
+  //return [playAudio, playAudio.audioContext.];
+}
+
 export default (props: Props) => {
-  const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const playAudio = useSelector((playAudio: PlayAudioState) => playAudio);
+  //const [playAudio, audioElement] = usePlayAudio();
 
   return (
     <main
       onClick={() => {
         // iOSでの音声再生制限解除のための処理
-        if (isFirstPlay && audioRef != null && audioRef.current != null) {
-          audioRef.current.play();
-          audioRef.current.muted = false;
-          setIsFirstPlay(false);
-        }
+        // if (isFirstPlay && audioRef != null && audioRef.current != null) {
+        //   audioRef.current.play();
+        //   audioRef.current.muted = false;
+        //   setIsFirstPlay(false);
+        // }
       }}
     >
       {props.voiceList.map((section, index) => (
@@ -35,7 +42,7 @@ export default (props: Props) => {
           groups={section.audios}
         />
       ))}
-      <audio
+      {/* <audio
         id="player"
         ref={audioRef}
         onCanPlay={() => {
@@ -44,10 +51,10 @@ export default (props: Props) => {
           }
         }}
         onEnded={() => dispatch(StopAudioAction())}
-        src={`static/audio/${playAudio.filename}`}
+        src={`static/audio/${playAudioState.filename}`}
         muted
         autoPlay
-      />
+      /> */}
     </main>
   );
 };
