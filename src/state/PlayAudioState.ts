@@ -7,18 +7,15 @@ export default class PlayAudioState {
 }
 
 export class PlayAudio {
-  public readonly audioContext: AudioContext;
+  public readonly audioContext = new AudioContext();
 
   private arrayBuffers: Record<string, AudioBuffer> = {};
 
   private playingSrc?: AudioBufferSourceNode;
 
-  constructor(silenceAudioUrl?: string) {
-    this.audioContext = new AudioContext();
-    if (silenceAudioUrl) {
-      (async () => {
-        const audioBuffer = await this.fetchAudioBuffer(silenceAudioUrl);
-      })();
+  constructor(doResume = true) {
+    if (doResume) {
+      this.audioContext.resume();
     }
   }
 
@@ -48,9 +45,7 @@ export class PlayAudio {
       }
     }
 
-    const src = this.audioContext.createBufferSource();
-    src.connect(this.audioContext.destination);
-    src.start(0);
+    this.audioPlayStart();
   }
 
   private async fetchAudioBuffer(url: string) {
@@ -60,8 +55,8 @@ export class PlayAudio {
   }
 
   private audioPlayStart() {
-    const src = this.audioContext.createBufferSource();
-    src.connect(this.audioContext.destination);
-    src.start();
+    this.playingSrc = this.audioContext.createBufferSource();
+    this.playingSrc.connect(this.audioContext.destination);
+    this.playingSrc.start(0);
   }
 }

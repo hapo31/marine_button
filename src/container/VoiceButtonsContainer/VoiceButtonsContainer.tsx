@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
@@ -11,18 +11,26 @@ type Props = {
   voiceList: VoiceList;
 };
 
-function usePlayAudio() {
+function usePlayAudio(audioRef?: React.RefObject<HTMLAudioElement>) {
   const [playAudio] = useState(new PlayAudio());
   const playAudioState = useSelector(
     (playAudioState: PlayAudioState) => playAudioState
   );
 
-  //return [playAudio, playAudio.audioContext.];
+  useEffect(() => {
+    // if (!audioRef.current) {
+    //   playAudio.audioContext.createMediaElementSource();
+    // }
+    playAudio.loadAndPlaySound(playAudioState.filename);
+  }, [playAudioState.filename]);
+
+  return [playAudio, playAudioState] as const;
 }
 
 export default (props: Props) => {
   const dispatch = useDispatch();
-  //const [playAudio, audioElement] = usePlayAudio();
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playAudio, playAudioState] = usePlayAudio();
 
   return (
     <main
@@ -42,7 +50,7 @@ export default (props: Props) => {
           groups={section.audios}
         />
       ))}
-      {/* <audio
+      <audio
         id="player"
         ref={audioRef}
         onCanPlay={() => {
@@ -54,7 +62,7 @@ export default (props: Props) => {
         src={`static/audio/${playAudioState.filename}`}
         muted
         autoPlay
-      /> */}
+      />
     </main>
   );
 };
