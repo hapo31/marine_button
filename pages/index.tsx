@@ -17,7 +17,6 @@ type Props = {
 export default (props: Props) => {
   return (
     <>
-      {props.isStatic ? <NoticeSSRBannerContainer /> : null}
       <Header />
       <VoiceButtonsContainer voiceList={props.voiceList} />
       <Footer />
