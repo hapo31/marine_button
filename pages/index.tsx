@@ -1,34 +1,38 @@
 import React from "react";
-import { createStore, combineReducers } from "redux";
-import { Provider } from "react-redux";
-
-import appReducer from "../src/reducers/AppReducer";
-import playAudioReducer from "../src/reducers/PlayAudioReducer";
-
 import Header from "../src/container/HeaderContainer/HeaderContainer";
 import Footer from "../src/container/FooterContainer/FooterContainer";
-import MainContentContainer from "../src/container/MainContent/MainContentContainer";
+import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";
+import NoticeSSRBannerContainer from "../src/container/NoticeSSRBannerContainer/NoticeSSRBannerContainer";
 
-const store = createStore(
-  combineReducers({ app: appReducer, playAudio: playAudioReducer })
-);
+import { VoiceList } from "../src/state/AppState";
+import AudioList2Store from "../src/utils/AudioList2Store";
 
-type StaticProps = {
-  updateDate: number;
+import audioList from "../static/audiolist.json";
+
+type Props = {
+  isStatic: boolean;
+  voiceList: VoiceList;
 };
 
-export default (props: StaticProps) => (
-  <>
-    <div className="wf-nicomoji">
+export default (props: Props) => {
+  return (
+    <>
+      {props.isStatic ? <NoticeSSRBannerContainer /> : null}
       <Header />
-      <Provider store={store}>
-        <MainContentContainer />
-      </Provider>
+      <VoiceButtonsContainer voiceList={props.voiceList} />
       <Footer />
-    </div>
-  </>
-);
+    </>
+  );
+};
 
-export function getStaticProps() {
-  return { props: { updateDate: new Date().getTime() } };
+export async function getStaticProps() {
+  const voiceList = AudioList2Store(audioList);
+
+  return { props: { isStatic: true, voiceList } };
+}
+
+export async function getInitialProps() {
+  const voiceList = AudioList2Store(audioList);
+
+  return { isStatic: false, voiceList };
 }

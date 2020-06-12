@@ -2,12 +2,12 @@ import React from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import Static from "../../components/Static";
 import Notice from "../../components/Notice";
-import Link from "../../components/Link";
+import ExternalLink from "../../components/ExternalLink";
 
 export default () => {
   return (
     <header>
-      <Link
+      <ExternalLink
         className="fork-me-on-github"
         href="https://github.com/happou31/marine_button"
       >
@@ -19,7 +19,7 @@ export default () => {
           alt="Fork me on GitHub"
           data-recalc-dims="1"
         />
-      </Link>
+      </ExternalLink>
 
       <Nav className="navbar navbar-expand-lg">
         <Navbar className="navbar-nav">
@@ -28,7 +28,7 @@ export default () => {
             宝鐘マリンボタン
           </NavItem>
           <NavItem className="social-icon-container">
-            <Link
+            <ExternalLink
               className="social-icon-youtube"
               href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
             >
@@ -37,10 +37,10 @@ export default () => {
                 alt="
           Marine Ch. 宝鐘マリン"
               />
-            </Link>
+            </ExternalLink>
           </NavItem>
           <NavItem className="social-icon-container">
-            <Link
+            <ExternalLink
               className="social-icon-twitter"
               href="https://twitter.com/houshoumarine"
             >
@@ -49,7 +49,7 @@ export default () => {
                 alt="
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />
-            </Link>
+            </ExternalLink>
           </NavItem>
         </Navbar>
       </Nav>
@@ -84,7 +84,7 @@ export default () => {
                `,
               }}
             >
-              <Link
+              <ExternalLink
                 style={{ textDecoration: "underline" }}
                 href="https://hibiki-radio.jp/description/skdw/detail"
               >
@@ -95,7 +95,7 @@ export default () => {
                 <span style={{ color: "yellow" }}>オタ活</span>
                 <span style={{ color: "maroon" }}>なんだワ</span>
                 <span style={{ color: "gray" }}>！</span>
-              </Link>
+              </ExternalLink>
             </span>
             <br />
             響-RadioStationで隔週水曜日更新で大好評配信中！！！

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Nico Moji Plus";
-  src: url("../font/sub_nicomoji-plus_1.11.woff") format("woff");
+  src: url("../font/sub_nicomoji-plus.woff2") format("woff");
 }
 
 body {
@@ -56,10 +56,6 @@ audio {
 .border {
   background-color: rgb(192, 98, 102);
   margin: 10px;
-}
-
-.voice-button {
-  font-family: "Nico Moji Plus";
 }
 
 .btn-container {
