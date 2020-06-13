@@ -9,7 +9,7 @@ npm install -g yarn && yarn
 # Develop
 
 ```
-yarn start
+yarn dev
 ```
 
 # CSS Rule
