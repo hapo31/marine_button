@@ -1,6 +1,6 @@
 # Setup
 
-Need node.js 10.x higher.(Recommended 12.x)
+Require node.js 10.x higher.(Recommended 12.x)
 
 ```
 npm install -g yarn && yarn
