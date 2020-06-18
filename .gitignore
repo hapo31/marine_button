@@ -3,6 +3,7 @@
 
 static/css/bootstrap.min.css
 static/voicelist.json
+static/audiolist.json
 static/font/sub_nicomoji-plus.woff2
 
 src/**/*.js
