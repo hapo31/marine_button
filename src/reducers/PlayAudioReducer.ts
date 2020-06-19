@@ -3,7 +3,7 @@ import {
   PLAY_AUDIO,
   STOP_AUDIO,
   CHANGE_VOLUME,
-} from "../actions/Actions";
+} from "../actions/PlayAudioActions";
 import PlayAudioState from "../state/PlayAudioState";
 
 const initialState: PlayAudioState = {

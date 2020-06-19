@@ -2,6 +2,7 @@ import React from "react";
 
 declare module "react-bootstrap-slider" {
   type Props = {
+    className?: string;
     value?: string | number;
     max?: number;
     min?: number;
