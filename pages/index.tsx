@@ -30,7 +30,7 @@ export async function getStaticProps() {
   return { props: { isStatic: true, voiceList } };
 }
 
-export async function getInitialProps() {
+export async function getServerSideProps() {
   const voiceList = AudioList2Store(audioList);
 
   return { isStatic: false, voiceList };

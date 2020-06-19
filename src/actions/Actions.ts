@@ -1,7 +1,7 @@
 import AudioList2Store from "../utils/AudioList2Store";
 
 export type Actions = ReturnType<
-  typeof PlayAudioAction | typeof StopAudioAction | typeof FetchVoiceListAction
+  typeof PlayAudioAction | typeof StopAudioAction | typeof ChangeVolume
 >;
 export const PLAY_AUDIO = "PLAY_AUDIO";
 export const PlayAudioAction = (filename: string) => ({
@@ -14,12 +14,11 @@ export const StopAudioAction = () => ({
   type: STOP_AUDIO as typeof STOP_AUDIO,
 });
 
-export const FETCH_VOICELIST = "FETCH_VOICELIST";
+export const CHANGE_VOLUME = "CHANGE_VOLUME";
 
-export const FetchVoiceListAction = (audioList: string[]) => {
-  const resultData = AudioList2Store(audioList);
+export const ChangeVolume = (volume: number) => {
   return {
-    type: FETCH_VOICELIST as typeof FETCH_VOICELIST,
-    voiceList: resultData,
+    type: CHANGE_VOLUME as typeof CHANGE_VOLUME,
+    volume,
   };
 };
