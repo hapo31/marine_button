@@ -1,7 +1,8 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 type Props = {
-  children?: React.ReactChild;
+  children?: React.ReactChild | React.ReactChild[];
+  style?: CSSProperties;
 };
 
 export default (props: Props) => {
@@ -9,15 +10,12 @@ export default (props: Props) => {
     return (
       <>
         <div className="font-weight-bold notice-title">お知らせ</div>
-        <div className="last-updated-info">
-          <div className="border rounded notice-content">
-            {React.Children.map(props.children, child => (
-              <span className="monospace text-very-small font-weight-bold">
-                {child}
-              </span>
-            ))}
-          </div>
+        <div className="border rounded notice-content text-mid font-weight-bold">
+          {React.Children.map(props.children, child => (
+            <div className="notice-content monospace">{child}</div>
+          ))}
         </div>
+        <div className="last-updated-info"></div>
       </>
     );
   } else {

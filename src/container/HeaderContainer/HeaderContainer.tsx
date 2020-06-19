@@ -4,6 +4,9 @@ import Static from "../../components/Static";
 import Notice from "../../components/Notice";
 import ExternalLink from "../../components/ExternalLink";
 
+import metainfo from "../../../static/metainfo.json";
+
+const lastUpdated = new Date(metainfo.lastupdated);
 export default () => {
   return (
     <>
@@ -74,8 +77,9 @@ export default () => {
         </Static>
       </div>
       <div>
-        <Notice>
-          <div style={{ fontSize: "30px", maxWidth: "100vw" }}>
+        <Notice style={{ fontSize: "30px", maxWidth: "100vw" }}>
+          <div>チャンネル登録者40万人おめでとう！！！！！！！！！！</div>
+          <div>
             <span
               style={{
                 textShadow: `
@@ -101,6 +105,12 @@ export default () => {
             </span>
             <br />
             響-RadioStationで隔週水曜日更新で大好評配信中！！！
+          </div>
+          <div className="text-very-small" style={{ textAlign: "right" }}>
+            last updated:
+            {`${lastUpdated.getFullYear()}/${lastUpdated.getMonth() +
+              1}/${lastUpdated.getDay()} `}
+            Button count:{` ${metainfo.count}`}
           </div>
         </Notice>
       </div>
