@@ -16,6 +16,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "react-bootstrap-slider": ["types/react-bootstrap-slider"]
+    },
+    "typeRoots": ["types"],
     "jsx": "preserve"
   },
   "exclude": [
