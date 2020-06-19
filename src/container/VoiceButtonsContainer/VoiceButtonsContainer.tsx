@@ -5,7 +5,10 @@ import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import { VoiceList } from "../../state/AppState";
-import { StopAudioAction } from "../../actions/Actions";
+import { StopAudioAction } from "../../actions/PlayAudioActions";
+import AudioControllerContainer from "../AudioControllerContainer.tsx/AudioControllerContainer";
+
+import MarineButtonRootState from "../../../types/RootState";
 
 type Props = {
   voiceList: VoiceList;
@@ -15,11 +18,10 @@ export default (props: Props) => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
-  const {
+  const { playAudio, app: _ } = useSelector<unknown>(({ playAudio, app }) => ({
     playAudio,
-  }: {
-    playAudio: PlayAudioState;
-  } = useSelector(({ playAudio }) => ({ playAudio }));
+    app,
+  })) as typeof MarineButtonRootState;
 
   return (
     <main
@@ -47,6 +49,11 @@ export default (props: Props) => {
         src={`static/audio/${playAudio.filename}`}
         muted
         autoPlay
+      />
+
+      <AudioControllerContainer
+        className="fixed-bottom-container"
+        target={audioRef.current}
       />
     </main>
   );
