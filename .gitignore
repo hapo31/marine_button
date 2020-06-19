@@ -5,6 +5,8 @@ static/css/bootstrap.min.css
 static/audiolist.json
 static/font/sub_nicomoji-plus.woff2
 
+static/metainfo.json
+
 # Logs
 logs
 *.log
