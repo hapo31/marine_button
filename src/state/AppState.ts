@@ -8,7 +8,7 @@ export type VoiceList = {
 
 type AppState = {
   voiceList: VoiceList;
-  localStorageRef: typeof localStorage | null;
+  localStorageRef: Storage | null;
 };
 
 export default AppState;

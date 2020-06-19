@@ -143,3 +143,9 @@ audio {
 .social-icon-twitter > img {
   width: 120%;
 }
+
+.fixed-bottom-container {
+  position: fixed;
+  width: 100vw;
+  margin: 5px;
+}
