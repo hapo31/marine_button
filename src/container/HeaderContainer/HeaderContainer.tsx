@@ -109,7 +109,7 @@ export default () => {
           <div className="text-very-small" style={{ textAlign: "right" }}>
             last updated:
             {`${lastUpdated.getFullYear()}/${lastUpdated.getMonth() +
-              1}/${lastUpdated.getDay()} `}
+              1}/${lastUpdated.getDate()} `}
             Button count:{` ${metainfo.count}`}
           </div>
         </Notice>
