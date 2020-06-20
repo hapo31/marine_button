@@ -27,8 +27,8 @@ jobs:
           git config --local user.email "aciton@github.com"
           git config --local user.name "Github Action"
 
-      - uses: actions/cache@v1
-      - name: cache-node_modules
+      - name: Cache node_modules
+        uses: actions/cache@v1
         env:
           cache-name: node_modules
         with:
@@ -39,8 +39,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - uses: actions/cache@v1
-      - name: cache-font
+      - name: Cache font
+        uses: actions/cache@v1
         env:
           cache-name-font: sub_nicomoji-plus.woff2
         with:
@@ -49,8 +49,8 @@ jobs:
           restore-keys: |
             build-${{ env.cache-name }}
 
-      - uses: actions/cache@v1
-      - name: dotcache
+      - name: Dotfolder cache
+        uses: actions/cache@v1
         env:
           cache-name: dotcache
         with:
