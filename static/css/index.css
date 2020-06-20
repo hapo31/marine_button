@@ -3,14 +3,24 @@
   src: url("../font/sub_nicomoji-plus.woff2") format("woff");
 }
 
+:root {
+  --marine-main-color: rgb(160, 45, 58);
+  --marine-sub-color:  rgb(164, 109, 79);
+}
+
 body {
-  background-color: rgb(164, 109, 79);
+  background-color: var(--marine-sub-color);
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
 }
 
+header.header-bar > * {
+  background-color: var(--marine-sub-color);
+  color: black;
+}
+
 button {
-  background-color: rgb(160, 45, 58) !important;
-  border-color: rgb(160, 45, 58) !important;
+  background-color: var(--marine-main-color) !important;
+  border-color: var(--marine-main-color) !important;
 }
 
 a.mb-link:any-link {
@@ -65,6 +75,8 @@ audio {
 }
 .btn-container > button {
   font-family: "Noto Sans JP", sans-serif;
+  color: white;
+  font-weight: bold;
   margin: 10px;
   flex: auto;
 }
@@ -78,7 +90,7 @@ audio {
 }
 
 .notice-title {
-  color: rgb(160, 45, 58);
+  color: var(--marine-main-color);;
   padding-left: 10px;
 }
 
@@ -104,7 +116,7 @@ audio {
 }
 
 .group-description {
-  color: rgb(160, 45, 58);
+  color: var(--marine-main-color);
   stroke-width: 2px;
   stroke: black;
   margin-left: 10px;
@@ -145,7 +157,16 @@ audio {
 }
 
 .fixed-bottom-container {
+  background-color: var(--marine-sub-color);
   position: fixed;
   width: 100vw;
   margin: 5px;
+}
+
+footer.footer-bar > * {
+  background-color: var(--marine-sub-color);
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactBootstrapSlider from "react-bootstrap-slider";
 import { useDispatch, useSelector } from "react-redux";
 
 import MarineButtonRootState from "../../../types/RootState";
