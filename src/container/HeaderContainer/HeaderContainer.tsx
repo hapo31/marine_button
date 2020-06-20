@@ -106,7 +106,10 @@ export default () => {
             <br />
             響-RadioStationで隔週水曜日更新で大好評配信中！！！
           </div>
-          <div className="text-very-small" style={{ textAlign: "right" }}>
+          <div
+            className="last-updated-info text-very-small"
+            style={{ textAlign: "right" }}
+          >
             last updated:
             {`${lastUpdated.getFullYear()}/${lastUpdated.getMonth() +
               1}/${lastUpdated.getDate()} `}
