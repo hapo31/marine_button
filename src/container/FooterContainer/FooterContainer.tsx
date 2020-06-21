@@ -1,10 +1,12 @@
 import React from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import ExternalLink from "../../components/ExternalLink";
+import useStyles from "src/theme/Styles";
 
-export default () => (
-  <footer className="footer-bar">
-    <AppBar position="static">
+export default () => {
+  const classes = useStyles();
+  return (
+    <AppBar className={classes.footer} position="static">
       <Toolbar className="footer-bar-toolbar">
         <article className="footer-bar-toolbar-cation">
           <span className="font-weight-bold">
@@ -39,5 +41,5 @@ export default () => (
         </article>
       </Toolbar>
     </AppBar>
-  </footer>
-);
+  );
+};

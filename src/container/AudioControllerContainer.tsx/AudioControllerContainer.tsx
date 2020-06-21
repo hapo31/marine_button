@@ -1,52 +1,47 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { Slider, AppBar, Toolbar } from "@material-ui/core";
+import VolumeUp from "@material-ui/icons/VolumeUp";
+import VolumeDown from "@material-ui/icons/VolumeDown";
 
-import MarineButtonRootState from "../../../types/RootState";
-import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
-import { ClientRenderedAction } from "src/actions/AppActions";
+import useStyles from "src/theme/Styles";
 
 type Props = {
   target: HTMLAudioElement;
   className?: string;
+  defaultVolume: number;
+  onChange: (event: React.ChangeEvent<{}>, newValue: number) => void;
+  onChangeCommited: (event: React.ChangeEvent<{}>, newValue: number) => void;
 };
 
 export default (props: Props) => {
-  const [volume, setVolume] = useState(0);
-  const dispatch = useDispatch();
-  const { playAudio: _, app } = useSelector<unknown>(({ playAudio, app }) => ({
-    playAudio,
-    app,
-  })) as typeof MarineButtonRootState;
+  const [volume, setVolume] = useState(props.defaultVolume);
+  const classes = useStyles(props);
 
-  useDidMount(() => {
-    dispatch(ClientRenderedAction(localStorage));
-  });
-
-  useEffect(() => {
-    if (app.localStorageRef != null) {
-      setVolume(parseInt(app.localStorageRef.getItem("volume")) || 75);
-    }
-  }, [app.localStorageRef]);
-
-  // return (
-  //   <ReactBootstrapSlider
-  //     className={props.className}
-  //     min={0}
-  //     max={100}
-  //     orientation="horizontal"
-  //     step={1}
-  //     value={volume}
-  //     change={e => {
-  //       const target = e.target as HTMLInputElement;
-  //       const newVolume = parseInt(target.value);
-  //       setVolume(newVolume);
-  //       props.target.volume = newVolume;
-  //     }}
-  //     slideStop={() => {
-  //       app.localStorageRef.setItem("volume", volume.toString());
-  //     }}
-  //   />
-  // );
-
-  return <div />;
+  return (
+    <div className={classes.volumeContoroller}>
+      <AppBar color="default" position="fixed">
+        <Toolbar>
+          <div className="volume-icon">
+            <VolumeDown />
+          </div>
+          <Slider
+            onChange={(event, newValue) => {
+              if (!Array.isArray(newValue)) {
+                setVolume(newValue);
+                props.onChange(event, newValue);
+              }
+            }}
+            onChangeCommitted={props.onChangeCommited}
+            value={volume}
+            step={0.01}
+            min={0}
+            max={1}
+          />
+          <div className="volume-icon">
+            <VolumeUp />
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 };

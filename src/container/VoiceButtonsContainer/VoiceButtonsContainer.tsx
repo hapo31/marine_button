@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import PlayAudioState from "../../state/PlayAudioState";
@@ -9,19 +9,33 @@ import { StopAudioAction } from "../../actions/PlayAudioActions";
 import AudioControllerContainer from "../AudioControllerContainer.tsx/AudioControllerContainer";
 
 import MarineButtonRootState from "../../../types/RootState";
+import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
+import { ClientRenderedAction } from "src/actions/AppActions";
 
 type Props = {
   voiceList: VoiceList;
 };
 
 export default (props: Props) => {
+  const [volume, setVolume] = useState(0);
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
-  const { playAudio, app: _ } = useSelector<unknown>(({ playAudio, app }) => ({
+  const { playAudio, app } = useSelector<unknown>(({ playAudio, app }) => ({
     playAudio,
     app,
   })) as typeof MarineButtonRootState;
+
+  useDidMount(() => {
+    dispatch(ClientRenderedAction(localStorage));
+  });
+
+  useEffect(() => {
+    if (app.localStorageRef != null) {
+      const recentVolume = app.localStorageRef.getItem("volume");
+      setVolume(recentVolume != null ? parseInt(recentVolume) : 75);
+    }
+  }, [app.localStorageRef]);
 
   return (
     <main
@@ -52,7 +66,13 @@ export default (props: Props) => {
       />
 
       <AudioControllerContainer
-        className="fixed-bottom-container"
+        onChange={(_, newValue) => {
+          audioRef.current.volume = newValue;
+        }}
+        onChangeCommited={(_, newValue) => {
+          app.localStorageRef.setItem("volume", newValue.toString());
+        }}
+        defaultVolume={volume}
         target={audioRef.current}
       />
     </main>

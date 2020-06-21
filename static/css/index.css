@@ -50,6 +50,11 @@ footer {
 .footer-bar-toolbar {
   display: flex;
   margin-bottom: 10px;
+  background-color: var(--marine-sub-color);
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 article.footer-bar-toolbar-copyright {
@@ -166,17 +171,6 @@ audio {
   width: 120%;
 }
 
-.fixed-bottom-container {
-  background-color: var(--marine-sub-color);
-  position: fixed;
-  width: 100vw;
-  margin: 5px;
-}
-
-footer.footer-bar > * {
-  background-color: var(--marine-sub-color);
-  color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.volume-icon {
+  margin: 0 12px 0;
 }
