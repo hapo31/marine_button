@@ -1,25 +1,35 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import { VoiceList } from "../../state/AppState";
-import { StopAudioAction } from "../../actions/Actions";
+import { StopAudioAction } from "../../actions/PlayAudioActions";
+import AudioControllerContainer from "../AudioControllerContainer.tsx/AudioControllerContainer";
+
+import MarineButtonRootState from "../../../types/RootState";
+import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
+import { ClientRenderedAction } from "src/actions/AppActions";
 
 type Props = {
   voiceList: VoiceList;
 };
 
 export default (props: Props) => {
+  const [volume, setVolume] = useState(0);
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
-  const {
+  const { playAudio, app } = useSelector<unknown>(({ playAudio, app }) => ({
     playAudio,
-  }: {
-    playAudio: PlayAudioState;
-  } = useSelector(({ playAudio }) => ({ playAudio }));
+    app,
+  })) as typeof MarineButtonRootState;
+
+  useDidMount(() => {
+    dispatch(ClientRenderedAction(localStorage));
+    const recentVolume = localStorage.getItem("volume");
+    setVolume(recentVolume != null ? parseInt(recentVolume) : 75);
+  });
 
   return (
     <main
@@ -48,6 +58,19 @@ export default (props: Props) => {
         muted
         autoPlay
       />
+
+      {app.localStorageRef != null ? (
+        <AudioControllerContainer
+          onChange={(_, newValue) => {
+            audioRef.current.volume = newValue / 100;
+          }}
+          onChangeCommited={(_, newValue) => {
+            app.localStorageRef.setItem("volume", newValue.toString());
+          }}
+          defaultVolume={volume}
+          target={audioRef.current}
+        />
+      ) : null}
     </main>
   );
 };

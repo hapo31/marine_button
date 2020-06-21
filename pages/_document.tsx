@@ -7,8 +7,7 @@ export default class Doc extends Document {
       <Html lang="ja">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="static/image/icon.png"></link>
-          <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+          <link rel="shortcut icon" href="static/image/icon.png" />
           <link rel="stylesheet" href="static/css/index.css" />
           <link rel="stylesheet" href="static/css/mobile.css" />
         </Head>

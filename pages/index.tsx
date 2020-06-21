@@ -14,24 +14,18 @@ type Props = {
   voiceList: VoiceList;
 };
 
-export default (props: Props) => {
-  return (
-    <>
-      <Header />
-      <VoiceButtonsContainer voiceList={props.voiceList} />
-      <Footer />
-    </>
-  );
-};
+export default (props: Props) => (
+  <>
+    <Header />
+    <VoiceButtonsContainer voiceList={props.voiceList} />
+    <Footer />
+  </>
+);
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<{ props: Props }> {
   const voiceList = AudioList2Store(audioList);
 
-  return { props: { isStatic: true, voiceList } };
-}
-
-export async function getInitialProps() {
-  const voiceList = AudioList2Store(audioList);
-
-  return { isStatic: false, voiceList };
+  return {
+    props: { isStatic: true, voiceList },
+  };
 }

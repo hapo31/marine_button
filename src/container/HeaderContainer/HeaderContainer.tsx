@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
+import { AppBar, Toolbar } from "@material-ui/core";
 import Static from "../../components/Static";
 import Notice from "../../components/Notice";
 import ExternalLink from "../../components/ExternalLink";
@@ -9,8 +9,8 @@ import metainfo from "../../../static/metainfo.json";
 const lastUpdated = new Date(metainfo.lastupdated);
 export default () => {
   return (
-    <>
-      <Nav className="navbar navbar-expand-lg nav-fill">
+    <header className="header-bar">
+      <AppBar position="static">
         <ExternalLink
           className="fork-me-on-github"
           href="https://github.com/happou31/marine_button"
@@ -25,14 +25,12 @@ export default () => {
           />
         </ExternalLink>
 
-        <Navbar className="navbar-nav">
-          <NavItem className="mb-0 header-contantainer-title text-large wf-nicomoji">
+        <Toolbar>
+          <div className="header-contantainer-title text-large wf-nicomoji">
             <img alt="" className="site-logo" src="static/image/icon.png" />
             宝鐘マリンボタン
-          </NavItem>
-        </Navbar>
-        <Navbar className="navbar-nav">
-          <NavItem className="social-icon-container">
+          </div>
+          <div className="social-icon-container">
             <ExternalLink
               className="social-icon-youtube"
               href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
@@ -43,8 +41,8 @@ export default () => {
           Marine Ch. 宝鐘マリン"
               />
             </ExternalLink>
-          </NavItem>
-          <NavItem className="social-icon-container">
+          </div>
+          <div className="social-icon-container">
             <ExternalLink
               className="social-icon-twitter"
               href="https://twitter.com/houshoumarine"
@@ -55,9 +53,9 @@ export default () => {
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />
             </ExternalLink>
-          </NavItem>
-        </Navbar>
-      </Nav>
+          </div>
+        </Toolbar>
+      </AppBar>
       <div className="tweet-button">
         <Static>
           トゥイッターで共有→
@@ -117,6 +115,6 @@ export default () => {
           </div>
         </Notice>
       </div>
-    </>
+    </header>
   );
 };
