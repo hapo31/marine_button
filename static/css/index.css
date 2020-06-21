@@ -129,6 +129,7 @@ audio {
 
 .social-icon-container {
   width: 32px;
+  margin: 5px;
   z-index: 2;
 }
 
