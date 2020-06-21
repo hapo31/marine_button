@@ -3,14 +3,27 @@
   src: url("../font/sub_nicomoji-plus.woff2") format("woff");
 }
 
+:root {
+  --marine-main-color: rgb(160, 45, 58);
+  --marine-primary-color: rgb(192, 98, 102);
+  --marine-sub-color:  rgb(164, 109, 79);
+}
+
 body {
-  background-color: rgb(164, 109, 79);
+  margin: 0;
+  padding-bottom: 64px; /* See volumeContorollerHeight in src/theme/Styles.ts */
+  background-color: var(--marine-sub-color);
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
 }
 
+header.header-bar > * {
+  background-color: var(--marine-sub-color);
+  color: black;
+}
+
 button {
-  background-color: rgb(160, 45, 58) !important;
-  border-color: rgb(160, 45, 58) !important;
+  background-color: var(--marine-main-color) !important;
+  border-color: var(--marine-main-color) !important;
 }
 
 a.mb-link:any-link {
@@ -37,6 +50,24 @@ footer {
   color: black;
 }
 
+.footer-bar {
+  background-color: var(--marine-sub-color);
+  font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
+}
+
+.footer-bar-toolbar {
+  display: flex;
+  background-color: var(--marine-sub-color);
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+article.footer-bar-toolbar-copyright {
+  margin-left: auto;
+}
+
 audio {
   display: hidden;
 }
@@ -54,7 +85,9 @@ audio {
 }
 
 .border {
-  background-color: rgb(192, 98, 102);
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  background-color: var(--marine-primary-color);
   margin: 10px;
 }
 
@@ -65,6 +98,8 @@ audio {
 }
 .btn-container > button {
   font-family: "Noto Sans JP", sans-serif;
+  color: white;
+  font-weight: bold;
   margin: 10px;
   flex: auto;
 }
@@ -78,7 +113,7 @@ audio {
 }
 
 .notice-title {
-  color: rgb(160, 45, 58);
+  color: var(--marine-main-color);;
   padding-left: 10px;
 }
 
@@ -110,7 +145,7 @@ audio {
 }
 
 .group-description {
-  color: rgb(160, 45, 58);
+  color: var(--marine-main-color);
   stroke-width: 2px;
   stroke: black;
   margin-left: 10px;
@@ -123,6 +158,7 @@ audio {
 
 .social-icon-container {
   width: 32px;
+  margin: 5px;
   z-index: 2;
 }
 
@@ -148,4 +184,8 @@ audio {
 
 .social-icon-twitter > img {
   width: 120%;
+}
+
+.volume-icon {
+  margin: 0 12px 0;
 }
