@@ -3,10 +3,10 @@ import { AppBar, Toolbar } from "@material-ui/core";
 import ExternalLink from "../../components/ExternalLink";
 import useStyles from "src/theme/Styles";
 
-export default () => {
-  const classes = useStyles();
+export default (props?: unknown) => {
+  const classes = useStyles(props);
   return (
-    <AppBar className={classes.footer} position="static">
+    <AppBar color="default" className={classes.footer} position="static">
       <Toolbar className="footer-bar-toolbar">
         <article className="footer-bar-toolbar-cation">
           <span className="font-weight-bold">

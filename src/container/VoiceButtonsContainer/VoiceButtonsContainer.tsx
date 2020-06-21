@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import PlayAudioState from "../../state/PlayAudioState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
 import { VoiceList } from "../../state/AppState";
@@ -28,14 +27,9 @@ export default (props: Props) => {
 
   useDidMount(() => {
     dispatch(ClientRenderedAction(localStorage));
+    const recentVolume = localStorage.getItem("volume");
+    setVolume(recentVolume != null ? parseInt(recentVolume) : 75);
   });
-
-  useEffect(() => {
-    if (app.localStorageRef != null) {
-      const recentVolume = app.localStorageRef.getItem("volume");
-      setVolume(recentVolume != null ? parseInt(recentVolume) : 75);
-    }
-  }, [app.localStorageRef]);
 
   return (
     <main
@@ -65,16 +59,18 @@ export default (props: Props) => {
         autoPlay
       />
 
-      <AudioControllerContainer
-        onChange={(_, newValue) => {
-          audioRef.current.volume = newValue;
-        }}
-        onChangeCommited={(_, newValue) => {
-          app.localStorageRef.setItem("volume", newValue.toString());
-        }}
-        defaultVolume={volume}
-        target={audioRef.current}
-      />
+      {app.localStorageRef != null ? (
+        <AudioControllerContainer
+          onChange={(_, newValue) => {
+            audioRef.current.volume = newValue / 100;
+          }}
+          onChangeCommited={(_, newValue) => {
+            app.localStorageRef.setItem("volume", newValue.toString());
+          }}
+          defaultVolume={volume}
+          target={audioRef.current}
+        />
+      ) : null}
     </main>
   );
 };

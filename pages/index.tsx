@@ -1,6 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-
 import Header from "../src/container/HeaderContainer/HeaderContainer";
 import Footer from "../src/container/FooterContainer/FooterContainer";
 import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";
@@ -16,16 +14,13 @@ type Props = {
   voiceList: VoiceList;
 };
 
-export default (props: Props) => {
-  const dispatch = useDispatch();
-  return (
-    <>
-      <Header />
-      <VoiceButtonsContainer voiceList={props.voiceList} />
-      <Footer />
-    </>
-  );
-};
+export default (props: Props) => (
+  <>
+    <Header />
+    <VoiceButtonsContainer voiceList={props.voiceList} />
+    <Footer />
+  </>
+);
 
 export async function getStaticProps(): Promise<{ props: Props }> {
   const voiceList = AudioList2Store(audioList);

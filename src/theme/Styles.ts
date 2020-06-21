@@ -15,7 +15,6 @@ const useStyles = makeStyles({
 
   volumeContoroller: {
     height: volumeContorollerHeight,
-    width: "90vw",
     margin: "auto",
     borderColor: "black",
     top: "initial",

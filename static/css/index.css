@@ -5,10 +5,13 @@
 
 :root {
   --marine-main-color: rgb(160, 45, 58);
+  --marine-primary-color: rgb(192, 98, 102);
   --marine-sub-color:  rgb(164, 109, 79);
 }
 
 body {
+  margin: 0;
+  padding-bottom: 64px; /* See volumeContorollerHeight in src/theme/Styles.ts */
   background-color: var(--marine-sub-color);
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
 }
@@ -47,9 +50,13 @@ footer {
   color: black;
 }
 
+.footer-bar {
+  background-color: var(--marine-sub-color);
+  font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
+}
+
 .footer-bar-toolbar {
   display: flex;
-  margin-bottom: 10px;
   background-color: var(--marine-sub-color);
   color: black;
   display: flex;
@@ -78,7 +85,9 @@ audio {
 }
 
 .border {
-  background-color: rgb(192, 98, 102);
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  background-color: var(--marine-primary-color);
   margin: 10px;
 }
 
