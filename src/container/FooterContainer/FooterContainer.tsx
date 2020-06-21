@@ -5,36 +5,38 @@ import ExternalLink from "../../components/ExternalLink";
 export default () => (
   <footer className="footer-bar">
     <AppBar position="static">
-      <Toolbar>
-        <span className="font-weight-bold">
-          本ページはファン創作による非公式ページです。
-          <br />
-          問題点を見つけたら
+      <Toolbar className="footer-bar-toolbar">
+        <article className="footer-bar-toolbar-cation">
+          <span className="font-weight-bold">
+            本ページはファン創作による非公式ページです。
+            <br />
+            問題点を見つけたら
+            <ExternalLink
+              href="https://twitter.com/happou31"
+              style={{ color: "blue" }}
+            >
+              作者のTwitter
+            </ExternalLink>
+            または
+            <ExternalLink
+              href="https://github.com/happou31/marine_button/issues"
+              style={{ color: "black" }}
+            >
+              GithubのIssue
+            </ExternalLink>
+            にご報告ください。
+            <br />
+            ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
+          </span>
+        </article>
+        <article className="footer-bar-toolbar-copyright">
           <ExternalLink
-            href="https://twitter.com/happou31"
-            style={{ color: "blue" }}
+            className="copyright"
+            href="https://www.hololive.tv/terms"
           >
-            作者のTwitter
+            © cover corp. All Rights Reserved.
           </ExternalLink>
-          または
-          <ExternalLink
-            href="https://github.com/happou31/marine_button/issues"
-            style={{ color: "black" }}
-          >
-            GithubのIssue
-          </ExternalLink>
-          にご報告ください。
-          <br />
-          ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
-        </span>
-      </Toolbar>
-      <Toolbar>
-        <ExternalLink
-          className="copyright"
-          href="https://www.hololive.tv/terms"
-        >
-          © cover corp. All Rights Reserved.
-        </ExternalLink>
+        </article>
       </Toolbar>
     </AppBar>
   </footer>

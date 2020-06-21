@@ -47,6 +47,15 @@ footer {
   color: black;
 }
 
+.footer-bar-toolbar {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+article.footer-bar-toolbar-copyright {
+  margin-left: auto;
+}
+
 audio {
   display: hidden;
 }
