@@ -18,4 +18,10 @@ yarn dev
 
 # LICENCE
 
+## static/audio/ 以下に配置されている音声ファイル(silence.wavを除く)につきまして
+
+ここに配置されているファイルは、カバー株式会社(cover corp.)の所有物です。  
+よって、[公式の二次創作ガイドライン](https://www.hololive.tv/terms) に従うものとします
+
+## それ以外
 MIT

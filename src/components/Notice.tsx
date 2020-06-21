@@ -8,15 +8,14 @@ type Props = {
 export default (props: Props) => {
   if (props.children) {
     return (
-      <>
+      <article className="notice-container">
         <div className="font-weight-bold notice-title">お知らせ</div>
-        <div className="border rounded notice-content text-mid font-weight-bold">
+        <div className="border rounded text-mid font-weight-bold">
           {React.Children.map(props.children, child => (
             <div className="notice-content monospace">{child}</div>
           ))}
         </div>
-        <div className="last-updated-info"></div>
-      </>
+      </article>
     );
   } else {
     return <></>;

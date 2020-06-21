@@ -109,8 +109,14 @@ audio {
 }
 
 .notice-content {
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
   color: black;
+}
+
+.last-updated-info {
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 .text-large {
