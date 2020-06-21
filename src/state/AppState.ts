@@ -7,7 +7,6 @@ export type VoiceList = {
 }[];
 
 type AppState = {
-  voiceList: VoiceList;
   localStorageRef: Storage | null;
 };
 
