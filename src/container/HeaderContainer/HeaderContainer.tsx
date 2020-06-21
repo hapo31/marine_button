@@ -30,8 +30,6 @@ export default () => {
             <img alt="" className="site-logo" src="static/image/icon.png" />
             宝鐘マリンボタン
           </div>
-        </Toolbar>
-        <Toolbar className="navbar-nav">
           <div className="social-icon-container">
             <ExternalLink
               className="social-icon-youtube"
@@ -44,7 +42,7 @@ export default () => {
               />
             </ExternalLink>
           </div>
-          <Toolbar className="social-icon-container">
+          <div className="social-icon-container">
             <ExternalLink
               className="social-icon-twitter"
               href="https://twitter.com/houshoumarine"
@@ -55,7 +53,7 @@ export default () => {
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />
             </ExternalLink>
-          </Toolbar>
+          </div>
         </Toolbar>
       </AppBar>
       <div className="tweet-button">
