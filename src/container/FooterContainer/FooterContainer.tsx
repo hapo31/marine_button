@@ -1,45 +1,41 @@
 import React from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import ExternalLink from "../../components/ExternalLink";
-// import lastUpdatedInfo from "../../model/Updated/LastUpdatedInfo";
 
-export default () => {
-  // const date = new Date(lastUpdatedInfo.date);
-  return (
-    <footer className="footer-bar">
-      <AppBar position="static">
-        <Toolbar>
-          <span className="font-weight-bold">
-            本ページはファン創作による非公式ページです。
-            <br />
-            問題点を見つけたら
-            <ExternalLink
-              href="https://twitter.com/happou31"
-              style={{ color: "blue" }}
-            >
-              作者のTwitter
-            </ExternalLink>
-            または
-            <ExternalLink
-              href="https://github.com/happou31/marine_button/issues"
-              style={{ color: "black" }}
-            >
-              GithubのIssue
-            </ExternalLink>
-            にご報告ください。
-            <br />
-            ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
-          </span>
-        </Toolbar>
-        <Toolbar>
+export default () => (
+  <footer className="footer-bar">
+    <AppBar position="static">
+      <Toolbar>
+        <span className="font-weight-bold">
+          本ページはファン創作による非公式ページです。
+          <br />
+          問題点を見つけたら
           <ExternalLink
-            className="copyright"
-            href="https://www.hololive.tv/terms"
+            href="https://twitter.com/happou31"
+            style={{ color: "blue" }}
           >
-            © cover corp. All Rights Reserved.
+            作者のTwitter
           </ExternalLink>
-        </Toolbar>
-      </AppBar>
-    </footer>
-  );
-};
+          または
+          <ExternalLink
+            href="https://github.com/happou31/marine_button/issues"
+            style={{ color: "black" }}
+          >
+            GithubのIssue
+          </ExternalLink>
+          にご報告ください。
+          <br />
+          ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
+        </span>
+      </Toolbar>
+      <Toolbar>
+        <ExternalLink
+          className="copyright"
+          href="https://www.hololive.tv/terms"
+        >
+          © cover corp. All Rights Reserved.
+        </ExternalLink>
+      </Toolbar>
+    </AppBar>
+  </footer>
+);
