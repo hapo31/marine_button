@@ -12,7 +12,6 @@ const useStyles = makeStyles({
     backgroundColor: "var(--marine-sub-color)",
     paddingBottom: volumeContorollerHeight,
   },
-
   volumeContoroller: {
     height: volumeContorollerHeight,
     margin: "auto",

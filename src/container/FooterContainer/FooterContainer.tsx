@@ -1,10 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, Toolbar, Grid, makeStyles } from "@material-ui/core";
 import ExternalLink from "../../components/ExternalLink";
-import useStyles from "src/theme/Styles";
+import { useAppState } from "src/state/AppState";
 
-export default (props?: unknown) => {
-  const classes = useStyles(props);
+export default () => {
+  const { classes } = useAppState();
   return (
     <AppBar color="default" className={classes.footer} position="static">
       <Toolbar className="footer-bar-toolbar">

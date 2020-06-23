@@ -5,11 +5,14 @@ import Notice from "../../components/Notice";
 import ExternalLink from "../../components/ExternalLink";
 
 import metainfo from "../../../static/metainfo.json";
+import { useAppState } from "src/state/AppState";
 
 const lastUpdated = new Date(metainfo.lastupdated);
+
 export default () => {
+  const { classes } = useAppState();
   return (
-    <header className="header-bar">
+    <header className={`header-bar ${classes.header}`}>
       <AppBar position="static">
         <ExternalLink
           className="fork-me-on-github"

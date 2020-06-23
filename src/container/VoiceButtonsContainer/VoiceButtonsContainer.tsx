@@ -1,15 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
-import { VoiceList } from "../../state/AppState";
+import { VoiceList, useAppState } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/PlayAudioActions";
 import AudioControllerContainer from "../AudioControllerContainer.tsx/AudioControllerContainer";
 
-import MarineButtonRootState from "../../../types/RootState";
 import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
 import { ClientRenderedAction } from "src/actions/AppActions";
+import { usePlayAudioState } from "src/state/PlayAudioState";
 
 type Props = {
   voiceList: VoiceList;
@@ -20,10 +20,8 @@ export default (props: Props) => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>();
-  const { playAudio, app } = useSelector<unknown>(({ playAudio, app }) => ({
-    playAudio,
-    app,
-  })) as typeof MarineButtonRootState;
+  const { filename } = usePlayAudioState();
+  const { localStorageRef } = useAppState();
 
   useDidMount(() => {
     dispatch(ClientRenderedAction(localStorage));
@@ -54,18 +52,18 @@ export default (props: Props) => {
         ref={audioRef}
         onCanPlay={() => audioRef.current.play()}
         onEnded={() => dispatch(StopAudioAction())}
-        src={`static/audio/${playAudio.filename}`}
+        src={`static/audio/${filename}`}
         muted
         autoPlay
       />
 
-      {app.localStorageRef != null ? (
+      {localStorageRef != null ? (
         <AudioControllerContainer
           onChange={(_, newValue) => {
             audioRef.current.volume = newValue / 100;
           }}
           onChangeCommited={(_, newValue) => {
-            app.localStorageRef.setItem("volume", newValue.toString());
+            localStorageRef.setItem("volume", newValue.toString());
           }}
           defaultVolume={volume}
           target={audioRef.current}
