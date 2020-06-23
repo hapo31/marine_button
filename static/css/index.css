@@ -11,14 +11,16 @@
 
 body {
   margin: 0;
-  padding-bottom: 64px; /* See volumeContorollerHeight in src/theme/Styles.ts */
   background-color: var(--marine-sub-color);
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
 }
 
-header.header-bar > * {
-  background-color: var(--marine-sub-color);
-  color: black;
+iframe.twitter-share-button {
+  display: inline-block;
+}
+
+img.site-logo#text {
+  margin-bottom: -1px;
 }
 
 button {
@@ -81,7 +83,6 @@ audio {
 .site-logo {
   width: 52px;
   line-height: 52px;
-  padding-bottom: 11px;
 }
 
 .border {
@@ -165,25 +166,6 @@ audio {
 .social-icon-container > a {
   width: 100%;
   height: 100%;
-}
-
-.social-icon-youtube {
-  display: inline-block;
-  height: 50%;
-}
-
-.social-icon-youtube > img {
-  width: 98%;
-  margin: 12% 0px;
-}
-
-.social-icon-twitter {
-  margin-top: 10%;
-  height: 100%;
-}
-
-.social-icon-twitter > img {
-  width: 120%;
 }
 
 .volume-icon {
