@@ -42,11 +42,11 @@ const useStyles = makeStyles({
   },
   headerContainer: {
     alignContent: "center",
-    height: "80px",
+    height: "100%",
   },
 
   headerItem: {
-    display: "flex-box",
+    display: "flex",
     verticalAlign: "top",
     justifyContent: "center",
     height: "52px",
@@ -54,14 +54,19 @@ const useStyles = makeStyles({
   },
 
   siteLogo: {
+    objectFit: "contain",
     verticalAlign: "top",
+  },
+
+  headerSocialIconContainer: {
+    minWidth: "71px",
+    marginTop: "10px",
   },
 
   headerSocialIconYoutube: {
     objectFit: "contain",
     display: "inline-block",
     height: "32px",
-    marginTop: "12px",
   },
 
   headerSocialIconTwitter: {
@@ -69,8 +74,8 @@ const useStyles = makeStyles({
     display: "inline-block",
     width: "100%",
     height: "130%",
-    marginTop: "-2px",
-    marginLeft: "-50px",
+    minHeight: "130%",
+    marginTop: "-10px",
     zIndex: 1,
   },
 
@@ -81,7 +86,7 @@ const useStyles = makeStyles({
   },
   volumeContoroller: {
     height: volumeContorollerHeight,
-    borderColor: "black",
+    borderTop: "solid lightgray 2px",
     top: "initial",
     bottom: 0,
     fontFamily: `"Nico Moji Plus", "Nico Moji", "Noto Sans JP"`,

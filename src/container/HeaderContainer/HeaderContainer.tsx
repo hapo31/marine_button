@@ -12,7 +12,7 @@ const lastUpdated = new Date(metainfo.lastupdated);
 export default () => {
   const { classes } = useAppState();
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} app-header`}>
       <article className={classes.headerArticle}>
         <ExternalLink
           className="fork-me-on-github"
@@ -29,20 +29,24 @@ export default () => {
         </ExternalLink>
 
         <Grid className={classes.headerContainer} container spacing={1}>
-          <Grid
-            item
-            className={`${classes.headerItem} ${classes.textLarge} header-contantainer-title`}
-          >
+          <Grid item className={`${classes.headerItem} ${classes.textLarge}`}>
             <img
               alt="宝鐘マリンボタン"
               className={`${classes.siteLogo} site-logo`}
               src="static/image/icon.png"
             />
-            <Typography variant="h3" className={classes.nicomoji}>
+            <Typography
+              variant="h3"
+              className={`${classes.nicomoji} header-contantainer-title`}
+            >
               宝鐘マリンボタン
             </Typography>
           </Grid>
-          <Grid item xs={1} className={`${classes.headerItem}`}>
+          <Grid
+            item
+            xs={1}
+            className={`${classes.headerItem} ${classes.headerSocialIconContainer} header-social-container`}
+          >
             <ExternalLink
               className="social-icon-youtube"
               href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
@@ -55,13 +59,17 @@ export default () => {
               />
             </ExternalLink>
           </Grid>
-          <Grid item xs={1} className={`${classes.headerItem}`}>
+          <Grid
+            item
+            xs={1}
+            className={`${classes.headerItem} ${classes.headerSocialIconContainer} header-social-container`}
+          >
             <ExternalLink
               className="social-icon-twitter"
               href="https://twitter.com/houshoumarine"
             >
               <img
-                className={classes.headerSocialIconTwitter}
+                className={`${classes.headerSocialIconTwitter} twitter-logo`}
                 src="static/image/Twitter_Logo_Blue.svg"
                 alt="
             宝鐘マリン🏴‍☠️＠ホロライブ3期生"
