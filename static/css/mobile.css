@@ -4,17 +4,26 @@
   }
 }
 
+/* FIXME: !importamt が付いてるのは全部WIPだからなんとかしてくれ */
+
 @media screen and (max-width:500px) {
   .fork-me-on-github {
     display: none;
   }
-  .header-contantainer-title {
+  .app-header {
+    padding-top: 20px !important;
+  }
+  .header-social-container {
+    padding-top: 20px !important;
     font-size: 30px;
   }
 
   .site-logo {
-    width: 32px;
+    height: 48px;
     line-height: 32px;
-    padding-bottom: 5px;
+  }
+
+  .twitter-logo {
+    height: 200% !important;
   }
 }
