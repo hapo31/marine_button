@@ -19,7 +19,7 @@ export default (props: Props) => {
   const [volume, setVolume] = useState(0);
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
-  const audioRef = useRef<HTMLAudioElement>();
+  const audioRef = useRef<HTMLAudioElement>(null);
   const { filename } = usePlayAudioState();
   const { localStorageRef } = useAppState();
 
@@ -33,7 +33,7 @@ export default (props: Props) => {
     <main
       onClick={() => {
         // iOSでの音声再生制限解除のための処理
-        if (isFirstPlay) {
+        if (isFirstPlay && audioRef.current != null) {
           audioRef.current.play();
           audioRef.current.muted = false;
           setIsFirstPlay(false);
@@ -50,7 +50,7 @@ export default (props: Props) => {
       <audio
         id="player"
         ref={audioRef}
-        onCanPlay={() => audioRef.current.play()}
+        onCanPlay={() => audioRef.current == null || audioRef.current.play()}
         onEnded={() => dispatch(StopAudioAction())}
         src={`static/audio/${filename}`}
         muted
@@ -60,13 +60,14 @@ export default (props: Props) => {
       {localStorageRef != null ? (
         <AudioControllerContainer
           onChange={(_, newValue) => {
-            audioRef.current.volume = newValue / 100;
+            if (audioRef.current && !Array.isArray(newValue))
+              audioRef.current.volume = newValue / 100;
           }}
           onChangeCommited={(_, newValue) => {
             localStorageRef.setItem("volume", newValue.toString());
           }}
           defaultVolume={volume}
-          target={audioRef.current}
+          target={audioRef.current || undefined}
         />
       ) : null}
     </main>
