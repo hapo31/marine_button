@@ -11,7 +11,7 @@ export type VoiceList = {
 
 type AppState = {
   localStorageRef: Storage | null;
-  classes: ReturnType<typeof useStyles>;
+  classes: Partial<ReturnType<typeof useStyles>>;
 };
 
 export function useAppState() {
