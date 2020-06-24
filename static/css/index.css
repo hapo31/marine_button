@@ -15,8 +15,9 @@ body {
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
 }
 
-iframe.twitter-share-button {
+.twitter-share-button {
   display: inline-block;
+  text-decoration: none;
 }
 
 img.site-logo#text {

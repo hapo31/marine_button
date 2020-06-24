@@ -1,7 +1,8 @@
 import { VoiceList } from "../state/AppState";
 
 export default function AudioList2Store(audioList: string[]): VoiceList {
-  const resultData = [];
+  // eslint-disable-next-line
+  const resultData: any[] = [];
   const temp = [];
   const match = /\d+_([^/]+)\/([^/]+)\/\d+_([^.]+)\.mp3/;
   for (const path of audioList) {

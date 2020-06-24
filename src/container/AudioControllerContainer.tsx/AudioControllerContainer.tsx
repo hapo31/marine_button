@@ -6,11 +6,14 @@ import VolumeDown from "@material-ui/icons/VolumeDown";
 import useStyles from "src/theme/Styles";
 
 type Props = {
-  target: HTMLAudioElement;
+  target?: HTMLAudioElement;
   className?: string;
   defaultVolume: number;
-  onChange: (event: React.ChangeEvent<{}>, newValue: number) => void;
-  onChangeCommited: (event: React.ChangeEvent<{}>, newValue: number) => void;
+  onChange: (event: React.ChangeEvent<{}>, newValue: number | number[]) => void;
+  onChangeCommited: (
+    event: React.ChangeEvent<{}>,
+    newValue: number | number[]
+  ) => void;
 };
 
 export default (props: Props) => {
