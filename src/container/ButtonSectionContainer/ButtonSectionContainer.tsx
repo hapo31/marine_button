@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { PlayAudioAction } from "../../actions/Actions";
+import { PlayAudioAction } from "../../actions/PlayAudioActions";
 import VoiceButton from "../../components/VoiceButton";
 
 type Props = {

@@ -26,13 +26,38 @@ jobs:
         run: |
           git config --local user.email "aciton@github.com"
           git config --local user.name "Github Action"
-      # - name: Update lastupdateinfo.json
-      #   run: |
-      #     git fetch
-      #     git checkout develop origin/develop
-      #     ./bin/diff.sh > static/lastupdateinfo.json
-      #     git add static/lastupdateinfo.json
-      #     git commit -m "update lastupdateinfo.json"
+
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        env:
+          cache-name: node_modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Cache font
+        uses: actions/cache@v1
+        env:
+          cache-name-font: sub_nicomoji-plus.woff2
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-
+          restore-keys: |
+            build-${{ env.cache-name }}
+
+      - name: Dotfolder cache
+        uses: actions/cache@v1
+        env:
+          cache-name: dotcache
+        with:
+          path: ./.cache
+          key: ${{ env.cache-name }}-${{ hashFiles('./.cache/chars.txt') }}
+          restore-keys: |
+            ${{ env.cache-name }}
 
       - name: Install
         run: |
@@ -40,6 +65,7 @@ jobs:
           yarn export
         env:
           GH_PAGES: true
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

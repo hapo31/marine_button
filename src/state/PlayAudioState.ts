@@ -1,9 +1,10 @@
 import fetch from "isomorphic-unfetch";
+import { useSelector } from "react-redux";
 
-export default class PlayAudioState {
-  filename = "";
-
-  playing = false;
+export default interface PlayAudioState {
+  filename: string;
+  volume: number;
+  playing: boolean;
 }
 
 export class PlayAudio {
@@ -59,4 +60,15 @@ export class PlayAudio {
     this.playingSrc.connect(this.audioContext.destination);
     this.playingSrc.start(0);
   }
+}
+
+export function usePlayAudioState() {
+  // eslint-disable-next-line
+  const { playAudio } = useSelector<any>(({ playAudio }) => ({
+    playAudio,
+  })) as {
+    playAudio: PlayAudioState;
+  };
+
+  return playAudio;
 }

@@ -1,78 +1,45 @@
 import React from "react";
-import { Nav, NavItem, Navbar, NavLink } from "react-bootstrap";
+import { AppBar, Toolbar, Grid, makeStyles } from "@material-ui/core";
 import ExternalLink from "../../components/ExternalLink";
-// import lastUpdatedInfo from "../../model/Updated/LastUpdatedInfo";
+import { useAppState } from "src/state/AppState";
 
 export default () => {
-  // const date = new Date(lastUpdatedInfo.date);
+  const { classes } = useAppState();
   return (
-    <footer>
-      {/* <Navbar className="last-updated-info">
-        <Nav className="mr-auto font-weight-bold last-updated-info-new">
-          <NavItem className="font-weight-bold last-updated-info-new">
-            New!
-          </NavItem>
-        </Nav>
-        <Nav>
-          <NavItem>
-            <div className="last-updated-info self text-very-small">
-              最近の更新:{" "}
-              {`${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`}
-            </div>
-          </NavItem>
-        </Nav>
-      </Navbar>
-      <div className="last-updated-info">
-        <div className="border rounded last-updated-info-content">
-          {lastUpdatedInfo.files.map(v => (
-            <span
-              className="monospace text-very-small font-weight-bold"
-              key={v}
+    <AppBar color="default" className={classes.footer} position="static">
+      <Toolbar className="footer-bar-toolbar">
+        <article className="footer-bar-toolbar-cation">
+          <span className="font-weight-bold">
+            本ページはファン創作による非公式ページです。
+            <br />
+            問題点を見つけたら
+            <ExternalLink
+              href="https://twitter.com/happou31"
+              style={{ color: "blue" }}
             >
-              {`${v} `}
-            </span>
-          ))}
-        </div>
-      </div> */}
-      <Navbar expand="lg">
-        <Nav className="mr-auto">
-          <NavItem>
-            <span className="font-weight-bold navbar-text mb-0">
-              本ページはファン創作による非公式ページです。
-              <br />
-              問題点を見つけたら
-              <ExternalLink
-                href="https://twitter.com/happou31"
-                style={{ color: "blue" }}
-              >
-                作者のTwitter
-              </ExternalLink>
-              または
-              <ExternalLink
-                href="https://github.com/happou31/marine_button/issues"
-                style={{ color: "black" }}
-              >
-                GithubのIssue
-              </ExternalLink>
-              にご報告ください。
-              <br />
-              ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
-            </span>
-          </NavItem>
-        </Nav>
-        <Nav>
-          <NavItem>
-            <NavLink
-              className="copyright"
-              target="_blank"
-              rel="noopener"
-              href="https://www.hololive.tv/terms"
+              作者のTwitter
+            </ExternalLink>
+            または
+            <ExternalLink
+              href="https://github.com/happou31/marine_button/issues"
+              style={{ color: "black" }}
             >
-              © cover corp. All Rights Reserved.
-            </NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
-    </footer>
+              GithubのIssue
+            </ExternalLink>
+            にご報告ください。
+            <br />
+            ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
+          </span>
+        </article>
+        <article className="footer-bar-toolbar-copyright">
+          <ExternalLink
+            className="copyright"
+            href="https://www.hololive.tv/terms"
+          >
+            © cover corp. All Rights Reserved.
+          </ExternalLink>
+        </article>
+      </Toolbar>
+    </AppBar>
   );
 };

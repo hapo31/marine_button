@@ -3,9 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
-import { VoiceList } from "../../state/AppState";
-import { StopAudioAction } from "../../actions/Actions";
 import PlayAudioState, { PlayAudio } from "../../state/PlayAudioState";
+
+import { VoiceList, useAppState } from "../../state/AppState";
+import { StopAudioAction } from "../../actions/PlayAudioActions";
+import AudioControllerContainer from "../AudioControllerContainer.tsx/AudioControllerContainer";
+
+import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
+import { ClientRenderedAction } from "src/actions/AppActions";
+import { usePlayAudioState } from "src/state/PlayAudioState";
+import { isArray } from "util";
 
 type Props = {
   voiceList: VoiceList;
@@ -28,9 +35,18 @@ function usePlayAudio(audioRef?: React.RefObject<HTMLAudioElement>) {
 }
 
 export default (props: Props) => {
+  const [volume, setVolume] = useState(0);
+  const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [playAudio, playAudioState] = usePlayAudio();
+  const { filename } = usePlayAudioState();
+  const { localStorageRef } = useAppState();
+
+  useDidMount(() => {
+    dispatch(ClientRenderedAction(localStorage));
+    const recentVolume = localStorage.getItem("volume");
+    setVolume(recentVolume != null ? parseInt(recentVolume) : 75);
+  });
 
   return (
     <main
@@ -54,15 +70,30 @@ export default (props: Props) => {
         id="player"
         ref={audioRef}
         onCanPlay={() => {
-          if (audioRef !== null && audioRef.current !== null) {
+          if (audioRef !== null && audioRef.current != null) {
             audioRef.current.play();
           }
         }}
         onEnded={() => dispatch(StopAudioAction())}
-        src={`static/audio/${playAudioState.filename}`}
+        src={`static/audio/${filename}`}
         muted
         autoPlay
       />
+
+      {localStorageRef != null ? (
+        <AudioControllerContainer
+          onChange={(_, newValue) => {
+            if (audioRef.current && !isArray(newValue)) {
+              audioRef.current.volume = newValue / 100;
+            }
+          }}
+          onChangeCommited={(_, newValue) => {
+            localStorageRef.setItem("volume", newValue.toString());
+          }}
+          defaultVolume={volume}
+          target={audioRef.current || undefined}
+        />
+      ) : null}
     </main>
   );
 };

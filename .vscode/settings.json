@@ -1,3 +1,8 @@
 {
-  // "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe"
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "./static/audio": true
+  }
 }

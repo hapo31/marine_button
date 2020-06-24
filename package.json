@@ -5,12 +5,13 @@
   "version": "0.1.0",
   "author": "happo31 <happo31@gmail.com>",
   "dependencies": {
-    "bootstrap": "~4.4.1",
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
     "gh-pages": "^2.2.0",
     "isomorphic-unfetch": "^3.0.0",
+    "material-ui": "^0.20.2",
     "next": "^9.4.2",
     "react": "~16.12.0",
-    "react-bootstrap": "~1.0.0",
     "react-dom": "~16.12.0",
     "react-redux": "~7.2.0",
     "redux": "~4.0.5"
@@ -31,19 +32,20 @@
     "lint-staged": "^10.1.6",
     "mocha": "^7.1.2",
     "prettier": "~1.19.1",
-    "ts-node": "^8.10.2",
-    "typescript": "~3.8.3"
+    "ts-node": "^8.9.1",
+    "typescript": "~3.8.3",
+    "yarn": "^1.22.4"
   },
   "license": "MIT",
   "scripts": {
     "updateResources": "./bin/update_resources.sh",
-    "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css static/css/",
-    "prebuild": "npm run updateResources",
+    "postinstall": "yarn updateResources",
+    "prebuild": "yarn updateResources",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "dev": "npm run updateResources && next",
-    "format": "eslint --fix ./src/**/*.{ts,tsx} && eslint --fix ./pages/*.tsx",
+    "dev": "yarn updateResources && next",
+    "format": "eslint --fix './src/**/*.{ts,tsx}' && eslint --fix './pages/*.tsx'",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
     "clean": "rm -rf .cache && rm -rf .temp && rm -rf out"
   },

@@ -1,8 +1,29 @@
+@media screen and (max-width:991px) {
+  .fork-me-on-github {
+    display: none;
+  }
+}
+
+/* FIXME: !importamt が付いてるのは全部WIPだからなんとかしてくれ */
+
 @media screen and (max-width:500px) {
   .fork-me-on-github {
     display: none;
   }
-  .text-large {
-    font-size: 40px;
+  .app-header {
+    padding-top: 20px !important;
+  }
+  .header-social-container {
+    padding-top: 20px !important;
+    font-size: 30px;
+  }
+
+  .site-logo {
+    height: 48px;
+    line-height: 32px;
+  }
+
+  .twitter-logo {
+    height: 200% !important;
   }
 }

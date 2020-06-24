@@ -7,6 +7,7 @@ static/audiolist.json
 static/font/sub_nicomoji-plus.woff2
 
 src/**/*.js
+static/metainfo.json
 
 # Logs
 logs

@@ -1,6 +1,6 @@
 # Setup
 
-Need node.js 10.x higher.(Recommended 12.x)
+Require node.js 10.x higher.(Recommended 12.x)
 
 ```
 npm install -g yarn && yarn
@@ -9,7 +9,7 @@ npm install -g yarn && yarn
 # Develop
 
 ```
-yarn start
+yarn dev
 ```
 
 # CSS Rule
@@ -18,4 +18,10 @@ yarn start
 
 # LICENCE
 
+## static/audio/ 以下に配置されている音声ファイル(silence.wavを除く)につきまして
+
+ここに配置されているファイルは、カバー株式会社(cover corp.)の所有物です。  
+よって、[公式の二次創作ガイドライン](https://www.hololive.tv/terms) に従うものとします
+
+## それ以外
 MIT
