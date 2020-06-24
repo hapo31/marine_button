@@ -15,11 +15,9 @@ type AppState = {
 };
 
 export function useAppState() {
-  const { app } = useSelector<unknown>(({ app }) => ({
+  const { app } = useSelector(({ app }: { app: AppState }) => ({
     app,
-  })) as {
-    app: AppState;
-  };
+  }));
 
   return app;
 }
