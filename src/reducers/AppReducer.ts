@@ -8,11 +8,7 @@ import AppState from "../state/AppState";
 
 const initialState: AppState = {
   localStorageRef: null,
-  classes: {
-    header: "",
-    footer: "",
-    volumeContoroller: "",
-  },
+  classes: {},
 };
 
 const appReducer = (state = initialState, action: Actions): AppState => {
