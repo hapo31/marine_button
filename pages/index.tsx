@@ -35,7 +35,37 @@ export default (props: Props) => {
     <>
       <Header />
       <Notice style={{ fontSize: "30px", maxWidth: "100vw" }}>
-        <div>チャンネル登録者40万人おめでとう！！！！！！！！！！</div>
+        <div>
+          <span
+            style={{
+              textShadow: `
+                1px 1px 0 #000,
+               -1px 1px 0 #000,
+               1px -1px 0 #000,
+               -1px -1px 0 #000
+               `,
+            }}
+          >
+            <ExternalLink
+              style={{ textDecoration: "underline" }}
+              href="http://cool-create.cc/cd/cccd60/"
+            >
+              <span style={{ color: "aqua" }}>#</span>
+              <span style={{ color: "red" }}>幻想郷</span>
+              <span style={{ color: "aqua" }}>ホロイズム</span>
+            </ExternalLink>
+          </span>
+          <div>
+            DLsite版は
+            <ExternalLink
+              style={{ textDecoration: "underline" }}
+              href="https://www.dlsite.com/home/work/=/product_id/RJ291344"
+            >
+              こちら
+            </ExternalLink>
+            から
+          </div>
+        </div>
         <div>
           <span
             style={{
