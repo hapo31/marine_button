@@ -84,7 +84,7 @@ export default () => {
               href="https://twitter.com/share?ref_src=twsrc%5Etfw"
               className="twitter-share-button"
               data-text="宝鐘マリンボタン 🏴☠"
-              data-url="https://happou31.github.io/marine_button/"
+              data-url="https://button.houshou-marine.love"
               data-show-count="false"
             >
               Tweet
