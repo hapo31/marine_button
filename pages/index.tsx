@@ -36,6 +36,15 @@ export default (props: Props) => {
       <Header />
       <Notice style={{ fontSize: "30px", maxWidth: "100vw" }}>
         <div>
+          <h1
+            style={{
+              margin: "0",
+            }}
+          >
+            船長17歳のお誕生日おめでとう！！！！！！
+          </h1>
+        </div>
+        <div>
           <span
             style={{
               textShadow: `
