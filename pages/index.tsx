@@ -41,6 +41,24 @@ export default (props: Props) => {
               margin: "0",
             }}
           >
+            <p>チャンネル登録者数50万人おめでとう！！！！！！</p>
+          </h1>
+          <h6
+            style={{
+              textAlign: "right",
+              fontSize: "5px",
+            }}
+          >
+            <p>
+              ちなみに英語では Thanks for half million subscribers
+              って言うとかっこいいよ！！
+            </p>
+          </h6>
+          <h1
+            style={{
+              margin: "0",
+            }}
+          >
             船長17歳のお誕生日おめでとう！！！！！！
           </h1>
         </div>
