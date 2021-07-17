@@ -3,7 +3,11 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import playAudioReducer from "../src/reducers/PlayAudioReducer";
 import appReducer from "src/reducers/AppReducer";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import {
+  createMuiTheme,
+  StylesProvider,
+  ThemeProvider,
+} from "@material-ui/core";
 
 const theme = createMuiTheme({
   // eslint-disable-next-line
@@ -28,9 +32,11 @@ export default ({
   pageProps: Record<string, unknown>;
 }) => (
   <ThemeProvider theme={theme}>
-    <title>宝鐘マリンボタン🏴☠</title>
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <StylesProvider injectFirst>
+      <title>宝鐘マリンボタン🏴☠</title>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </StylesProvider>
   </ThemeProvider>
 );

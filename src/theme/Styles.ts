@@ -72,11 +72,6 @@ const useStyles = makeStyles({
   headerSocialIconTwitter: {
     objectFit: "contain",
     display: "inline-block",
-    width: "100%",
-    height: "130%",
-    minHeight: "130%",
-    marginTop: "-10px",
-    zIndex: 1,
   },
 
   footer: {
