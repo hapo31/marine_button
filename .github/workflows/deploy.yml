@@ -63,7 +63,7 @@ jobs:
         run: |
           yarn
           yarn export
-          echo button.houshou-marine.love > ./out/CNAME
+          echo hapo31.github.io > ./out/CNAME
         env:
           GH_PAGES: true
           NEXT_TELEMETRY_DISABLED: 1

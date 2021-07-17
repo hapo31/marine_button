@@ -42,7 +42,7 @@ export default (props: Props) => {
               textDecoration: "underline",
             }}
           >
-            <p>Congratulations for 1st Anniversary!</p>
+            <p>Congratulations for 1 million subscribers!</p>
           </h1>
         </div>
         <div>
