@@ -27,8 +27,6 @@ export default () => {
               GithubのIssue
             </ExternalLink>
             にご報告ください。
-            <br />
-            ※ボタンにして欲しい声があればアーカイブのURLと再生位置と内容のリプライをください。
           </span>
         </article>
         <article className="footer-bar-toolbar-copyright">

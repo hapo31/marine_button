@@ -42,13 +42,14 @@ export default () => {
             </Typography>
           </article>
         </div>
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <ExternalLink
             className="social-icon-youtube"
             href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
           >
             <div className={classes.headerSocialIconYoutube}>
               <img
+                height="30px"
                 src="static/image/youtube_social_icon_red.png"
                 alt="Marine Ch. 宝鐘マリン"
               />
