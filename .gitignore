@@ -62,6 +62,7 @@ typings/
 
 # dotenv environment variable files
 .env*
+!.env.template
 
 # next.js files
 .next

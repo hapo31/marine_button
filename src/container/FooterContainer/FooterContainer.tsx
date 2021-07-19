@@ -14,14 +14,14 @@ export default () => {
             <br />
             問題点を見つけたら
             <ExternalLink
-              href="https://twitter.com/happou31"
+              href="https://twitter.com/hapo31_t"
               style={{ color: "blue" }}
             >
               作者のTwitter
             </ExternalLink>
             または
             <ExternalLink
-              href="https://github.com/happou31/marine_button/issues"
+              href="https://github.com/hapo31/marine_button/issues"
               style={{ color: "black" }}
             >
               GithubのIssue
