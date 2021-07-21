@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 
 export type VoiceList = {
   label: string;
-  audios: {
-    path: string;
-    label: string;
-  }[][];
+  sections: AudioData[][];
 }[];
+
+export type AudioData = {
+  path: string;
+  label: string;
+};
 
 type AppState = {
   localStorageRef: Storage | null;
