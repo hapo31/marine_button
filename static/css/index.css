@@ -38,7 +38,7 @@ a.mb-link:hover {
 }
 
 button.large {
-  max-width: 450px;
+  max-width: fit-content;
 }
 
 button.mid {
