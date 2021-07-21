@@ -3,13 +3,9 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import playAudioReducer from "../src/reducers/PlayAudioReducer";
 import appReducer from "src/reducers/AppReducer";
-import {
-  createMuiTheme,
-  StylesProvider,
-  ThemeProvider,
-} from "@material-ui/core";
+import { createTheme, StylesProvider, ThemeProvider } from "@material-ui/core";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   // eslint-disable-next-line
   shadows: ["none"] as any,
   palette: {
