@@ -24,7 +24,7 @@ const oauthUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId
 
 let accessToken = env["ACCESS_TOKEN"];
 
-if (accessToken == null) {
+if (accessToken == null || accessToken.length === 0) {
   open(oauthUrl);
 
   server.get("/redirect", async (req, response) => {
