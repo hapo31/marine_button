@@ -80,3 +80,5 @@ yarn-error.log
 .yarn-integrity
 
 .cache
+
+.tmp/

@@ -8,6 +8,7 @@ const { google } = require("googleapis");
 const express = require("express");
 const fetch = require("node-fetch");
 const fs = require("fs/promises");
+const format = require("date-fns/format");
 
 const server = express();
 
@@ -69,17 +70,40 @@ async function getFiles() {
         const [, date, body, , name, ext] = match;
         fileName = `${date}_${body}${ext}`;
         isValidFileName = true;
+      } else {
+        // 形式が守られてないファイルへの対処
+        const match = fileName.match(/([^ ]*)\s-\s.*\.mp3$/);
+        if (match) {
+          const [, body] = match;
+          const dateStr = format(new Date(), "yyyyMMdd");
+          fileName = `${dateStr}_${body}.mp3`;
+        }
       }
       return { name: fileName, id: file.id, isValidFileName };
     });
-
+  try {
+    fs.mkdir(".tmp/invalid/", { recursive: true });
+  } finally {
+    /* nop */
+  }
   await Promise.all(
     files.map(async file => {
       const res = await fetchWithCredential(
         `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media`
       );
       const arrayBuffer = await res.arrayBuffer();
-      return await fs.writeFile(`.tmp/${file.name}`, Buffer.from(arrayBuffer));
+
+      if (file.isValidFileName) {
+        return await fs.writeFile(
+          `.tmp/${file.name}`,
+          Buffer.from(arrayBuffer)
+        );
+      } else {
+        return await fs.writeFile(
+          `.tmp/invalid/${file.name}`,
+          Buffer.from(arrayBuffer)
+        );
+      }
     })
   );
 
