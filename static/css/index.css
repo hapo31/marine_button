@@ -37,16 +37,13 @@ a.mb-link:hover {
   text-decoration: none;
 }
 
-button.large {
-  max-width: 450px;
+button.voice-button {
+  max-width: fit-content;
 }
 
-button.mid {
-  max-width: 300px;
-}
-
-button.small {
-  max-width: 130px;
+span.button-label {
+  min-width: 140px;
+  width: 100%;
 }
 
 footer {
