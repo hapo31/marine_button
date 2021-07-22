@@ -1,14 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { AudioData } from "src/state/AppState";
 import { PlayAudioAction } from "../../actions/PlayAudioActions";
 import VoiceButton from "../../components/VoiceButton";
 
 type Props = {
   title: string;
-  groups: {
-    path: string;
-    label: string;
-  }[][];
+  groups: AudioData[][];
 };
 
 export default (props: Props) => {
