@@ -20,16 +20,9 @@ export default (props: Props) => {
         {props.groups.map((group, i) => (
           <div key={`group-${i}`} className="btn-container">
             {group.map(button => {
-              const size =
-                button.label.length <= 6
-                  ? "small"
-                  : button.label.length <= 10
-                  ? "mid"
-                  : "large";
               return (
                 <VoiceButton
                   key={button.path + button.label}
-                  size={size}
                   onclick={() => dispatch(PlayAudioAction(button.path))}
                 >
                   {button.label}
