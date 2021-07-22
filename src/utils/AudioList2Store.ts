@@ -32,15 +32,15 @@ export default function AudioList2Store(audioList: string[]): VoiceList {
     if (rowIndex < 0) {
       resultData.push({
         label: audio.label,
-        audios: [],
+        sections: [],
       });
       rowIndex = resultData.length - 1;
     }
     const groupIndex = parseInt(audio.group);
-    while (resultData[rowIndex].audios.length <= groupIndex) {
-      resultData[rowIndex].audios.push([]);
+    while (resultData[rowIndex].sections.length <= groupIndex) {
+      resultData[rowIndex].sections.push([]);
     }
-    resultData[rowIndex].audios[groupIndex].push({
+    resultData[rowIndex].sections[groupIndex].push({
       path: audio.path,
       label: audio.name,
     });

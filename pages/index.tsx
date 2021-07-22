@@ -17,8 +17,6 @@ import ExternalLink from "src/components/ExternalLink";
 
 import metainfo from "../static/metainfo.json";
 
-const lastUpdated = new Date(metainfo.lastupdated);
-
 type Props = {
   isStatic: boolean;
   voiceList: VoiceList;
@@ -116,9 +114,6 @@ export default (props: Props) => {
           className="last-updated-info text-very-small"
           style={{ textAlign: "right" }}
         >
-          last updated:
-          {`${lastUpdated.getFullYear()}/${lastUpdated.getMonth() +
-            1}/${lastUpdated.getDate()} `}
           Button count:{` ${metainfo.count}`}
         </div>
       </Notice>
