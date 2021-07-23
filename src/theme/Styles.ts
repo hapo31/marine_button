@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import zIndex from "@material-ui/core/styles/zIndex";
 
-const volumeContorollerHeight = "64px";
+export const volumeContorollerHeight = "64px";
 
 const mainColor = "rgb(160, 45, 58)";
 const primaryColor = "rgb(192, 98, 102)";
