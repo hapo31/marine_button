@@ -9,6 +9,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
+    "plugin:react-hooks/recommended"
   ],
   globals: {
     Atomics: "readonly",
