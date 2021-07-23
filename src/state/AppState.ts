@@ -13,6 +13,7 @@ export type AudioData = {
 
 type AppState = {
   localStorageRef: Storage | null;
+  buttonHistory: AudioData[];
   classes: Partial<ReturnType<typeof useStyles>>;
 };
 
