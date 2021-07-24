@@ -57,7 +57,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "dev": "yarn updateResources && next",
+    "dev": "NODE_ENV=development yarn updateResources && next",
     "format": "eslint --fix './src/**/*.{ts,tsx}' && eslint --fix './pages/*.tsx'",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register test/**/*.test.ts",
     "clean": "rm -rf .cache && rm -rf .temp && rm -rf out/",

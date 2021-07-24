@@ -8,6 +8,9 @@ export default class Doc extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href="static/image/icon.png" />
+          {process.env["NODE_ENV"] === "development" ? (
+            <link rel="stylesheet" href="static/css/dev.css" />
+          ) : null}
           <link rel="stylesheet" href="static/css/index.css" />
           <link rel="stylesheet" href="static/css/mobile.css" />
         </Head>
