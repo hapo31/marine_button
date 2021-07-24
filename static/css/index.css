@@ -7,6 +7,7 @@
   --marine-main-color: rgb(160, 45, 58);
   --marine-primary-color: rgb(192, 98, 102);
   --marine-sub-color:  rgb(164, 109, 79);
+  --volume-controller-height: 64px;
 }
 
 body {

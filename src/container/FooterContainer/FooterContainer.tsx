@@ -2,11 +2,11 @@ import React from "react";
 import { AppBar, Toolbar, Grid, makeStyles } from "@material-ui/core";
 import ExternalLink from "../../components/ExternalLink";
 import { useAppState } from "src/state/AppState";
+import styled from "styled-components";
 
 export default () => {
-  const { classes } = useAppState();
   return (
-    <AppBar color="default" className={classes.footer} position="static">
+    <Footer color="default" position="static">
       <Toolbar className="footer-bar-toolbar">
         <article className="footer-bar-toolbar-cation">
           <span className="font-weight-bold">
@@ -38,6 +38,12 @@ export default () => {
           </ExternalLink>
         </article>
       </Toolbar>
-    </AppBar>
+    </Footer>
   );
 };
+
+const Footer = styled(AppBar)`
+  font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
+  background-color: var(--marine-sub-color);
+  padding-bottom: var(--volume-controller-height);
+`;
