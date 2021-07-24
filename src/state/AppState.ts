@@ -1,4 +1,3 @@
-import useStyles from "src/theme/Styles";
 import { useSelector } from "react-redux";
 
 export type VoiceList = {
@@ -14,7 +13,6 @@ export type AudioData = {
 type AppState = {
   localStorageRef: Storage | null;
   buttonHistory: AudioData[];
-  classes: Partial<ReturnType<typeof useStyles>>;
 };
 
 export function useAppState() {
