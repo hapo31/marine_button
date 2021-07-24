@@ -1,19 +1,17 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import Static from "../../components/Static";
 import ExternalLink from "../../components/ExternalLink";
 
-import { useAppState } from "src/state/AppState";
 import DelayedShow from "src/components/DelayedShow";
 import styled from "styled-components";
 
 export default () => {
-  const { classes } = useAppState();
   return (
     <DelayedShow delayMs={1000}>
-      <header className={`${classes.header} app-header`}>
+      <Header className="app-header">
         <div>
-          <article className={classes.headerArticle}>
+          <HeaderArticle>
             <ExternalLink
               className="fork-me-on-github"
               href="https://github.com/happou31/marine_button"
@@ -28,36 +26,33 @@ export default () => {
               />
             </ExternalLink>
 
-            <img
+            <Logo
               alt="宝鐘マリンボタン"
-              className={`${classes.siteLogo} site-logo`}
+              className="site-logo"
               src="static/image/icon.png"
             />
 
-            <Typography
-              variant="h3"
-              className={`${classes.nicomoji} header-contantainer-title`}
-            >
+            <Nicomoji variant="h3" className="header-contantainer-title">
               宝鐘マリンボタン
-            </Typography>
-          </article>
+            </Nicomoji>
+          </HeaderArticle>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <ExternalLink
             className="social-icon-youtube"
             href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
           >
-            <div className={classes.headerSocialIconYoutube}>
+            <YoutubeContainer>
               <img
                 height="30px"
                 src="static/image/youtube_social_icon_red.png"
                 alt="Marine Ch. 宝鐘マリン"
               />
-            </div>
+            </YoutubeContainer>
           </ExternalLink>
 
           <ExternalLink href="https://twitter.com/houshoumarine">
-            <div className={classes.headerSocialIconTwitter}>
+            <TwitterContainer>
               <img
                 width="50px"
                 height="50px"
@@ -65,10 +60,10 @@ export default () => {
                 alt="
               宝鐘マリン🏴‍☠️＠ホロライブ3期生"
               />
-            </div>
+            </TwitterContainer>
           </ExternalLink>
         </div>
-        <article className={`${classes.headerArticle} tweet-button`}>
+        <HeaderArticle className="tweet-button">
           <Static>
             トゥイッターで共有→
             <a
@@ -85,8 +80,40 @@ export default () => {
               charSet="utf-8"
             />
           </Static>
-        </article>
-      </header>
+        </HeaderArticle>
+      </Header>
     </DelayedShow>
   );
 };
+
+const Header = styled.header`
+  font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
+  color: "black";
+  margin: "5px";
+`;
+
+const Nicomoji = styled(Typography)`
+  display: inline;
+  font-family: "Nico Moji Plus";
+`;
+
+const HeaderArticle = styled.article`
+  margin-bottom: 10px;
+  vertical-align: center;
+`;
+
+const Logo = styled.img`
+  object-fit: contain;
+  vertical-align: top;
+`;
+
+const TwitterContainer = styled.div`
+  object-fit: contain;
+  display: inline-block;
+`;
+
+const YoutubeContainer = styled.div`
+  object-fit: contain;
+  display: inline-block;
+  height: 32px;
+`;

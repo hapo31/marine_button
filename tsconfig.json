@@ -18,6 +18,7 @@
     "isolatedModules": true,
     "baseUrl": "./",
     "paths": {},
+    "types": ["mocha", "node"],
     "typeRoots": ["types"],
     "jsx": "preserve"
   },

@@ -8,10 +8,6 @@ import { VoiceList } from "../src/state/AppState";
 import AudioList2Store from "../src/utils/AudioList2Store";
 
 import audioList from "../static/audiolist.json";
-import { useDispatch } from "react-redux";
-import useStyles from "src/theme/Styles";
-import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
-import { ApplyPageStylesAction } from "src/actions/AppActions";
 import Notice from "src/components/Notice";
 import ExternalLink from "src/components/ExternalLink";
 
@@ -23,12 +19,6 @@ type Props = {
 };
 
 export default (props: Props) => {
-  const dispatch = useDispatch();
-  const classes = useStyles();
-  useDidMount(() => {
-    dispatch(ApplyPageStylesAction(classes));
-  });
-
   return (
     <>
       <Header />
