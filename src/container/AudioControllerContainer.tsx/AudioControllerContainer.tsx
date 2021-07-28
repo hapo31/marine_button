@@ -83,6 +83,7 @@ const StreachAppBar = styled(AppBar)`
   background-color: var(--marine-sub-color);
   &.expand {
     height: auto;
+    max-height: 90vh;
   }
 `;
 

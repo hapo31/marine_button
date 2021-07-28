@@ -1,7 +1,6 @@
 import {
   Actions,
   CLIENT_RENDERED,
-  APPLYPAGESTYLES,
   SET_HISTORY,
   ADD_HISTORY,
 } from "../actions/AppActions";
@@ -12,7 +11,6 @@ const MAX_HISTORY = 20;
 
 const initialState: AppState = {
   localStorageRef: null,
-  classes: {},
   buttonHistory: [],
 };
 
@@ -22,12 +20,6 @@ const appReducer = (state = initialState, action: Actions): AppState => {
       return {
         ...state,
         localStorageRef: localStorage,
-      };
-
-    case APPLYPAGESTYLES:
-      return {
-        ...state,
-        classes: action.classes,
       };
 
     case SET_HISTORY:
