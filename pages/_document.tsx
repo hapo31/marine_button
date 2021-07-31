@@ -10,6 +10,9 @@ export default class Doc extends Document {
           <link rel="shortcut icon" href="static/image/icon.png" />
           <link rel="stylesheet" href="static/css/index.css" />
           <link rel="stylesheet" href="static/css/mobile.css" />
+          {process.env["NODE_ENV"] === "development" ? (
+            <link rel="stylesheet" href="static/css/dev.css" />
+          ) : null}
         </Head>
         <body>
           <div className="wf-nicomoji">

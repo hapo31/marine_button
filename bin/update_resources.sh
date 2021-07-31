@@ -2,4 +2,20 @@
 
 bin/audiolist.sh > static/audiolist.json
 bin/metainfo.sh > static/metainfo.json
-bin/create_font_subset.sh
+
+if [ "$NODE_ENV" = "development" ]; then
+  if [ ! -e ./static/font/nicomoji_plus.ttf ]; then
+    mkdir .temp
+    pushd .temp
+    wget http://nicofont.pupu.jp/nicomoji_u_2525/nicomoji-plus.zip
+    unzip nicomoji-plus.zip
+    mv ./nicomoji-plus/nicomoji-plus_1.11.ttf ../static/font/nicomoji_plus.ttf
+    popd
+    rm -rf .temp
+  else
+    echo "update not required, nothing to do."
+  fi
+else
+  bin/create_font_subset.sh
+fi
+
