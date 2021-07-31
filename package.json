@@ -52,6 +52,7 @@
   "license": "MIT",
   "scripts": {
     "updateResources": "./bin/update_resources.sh",
+    "updateResources:dev": "NODE_ENV=development ./bin/update_resources.sh",
     "postinstall": "yarn updateResources",
     "prebuild": "yarn updateResources",
     "build": "next build",
