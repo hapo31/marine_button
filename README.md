@@ -16,11 +16,7 @@ yarn dev
 
 ## リソースアップデート
 ```
-yarn
-```
-または
-```
-yarn updateResources
+yarn updateResources:dev
 ```
 
 ## ボタン追加方法
