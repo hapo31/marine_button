@@ -61,7 +61,8 @@
     "format": "eslint --fix './src/**/*.{ts,tsx}' && eslint --fix './pages/*.tsx'",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register test/**/*.test.ts",
     "clean": "rm -rf .cache && rm -rf .temp && rm -rf out/",
-    "fetchFile": "node ./bin/fetch_files_from_googledrive.js"
+    "fetchFile": "node ./bin/fetch_files_from_googledrive.js",
+    "fetchLocal": "node ./bin/fetch_files_from_local.js"
   },
   "husky": {
     "hooks": {
