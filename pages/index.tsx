@@ -91,7 +91,7 @@ export default (props: Props) => {
           <br />
           響-RadioStationで隔週水曜日更新で大好評配信中！！！
         </div>
-        <div>
+        {/* <div>
           <u style={{ fontWeight: "bold" }}>
             音声素材投稿フォームを作りました、以下のリンクよりよろしくお願いします。
           </u>
@@ -99,7 +99,7 @@ export default (props: Props) => {
           <ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSd8yXbENhDceuiI5pW0o9BRs3re9CaWq9I3KKy5JfjGvZq8jg/viewform">
             宝鐘マリンボタン 音声投稿フォーム
           </ExternalLink>
-        </div>
+        </div> */}
         <div
           className="last-updated-info text-very-small"
           style={{ textAlign: "right" }}
