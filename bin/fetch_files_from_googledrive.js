@@ -4,7 +4,6 @@
 require("dotenv").config();
 
 const open = require("open");
-const { google } = require("googleapis");
 const express = require("express");
 const fetch = require("node-fetch");
 const fs = require("fs/promises");
@@ -19,6 +18,9 @@ const folderId = env["DRIVE_FOLDER_ID"];
 const scope = encodeURIComponent(
   ["https://www.googleapis.com/auth/drive"].join(" ")
 );
+
+const tempDir = ".temp";
+
 const redirectUri = encodeURIComponent("http://localhost:3000/redirect");
 
 const oauthUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;
@@ -65,10 +67,10 @@ async function getFiles() {
     .map(file => {
       let isValidFileName = false;
       let fileName = file.name;
-      const match = fileName.match(/(\d+)_(.*)(\s-\s)(.*)(\.mp3)$/);
+      const match = fileName.match(/(\d+)_(.*)\s-\s.*\.mp3$/);
       if (match) {
-        const [, date, body, , name, ext] = match;
-        fileName = `${date}_${body}${ext}`;
+        const [, date, body] = match;
+        fileName = `${date}_${body}.mp3`;
         isValidFileName = true;
       } else {
         // 形式が守られてないファイルへの対処
@@ -82,7 +84,7 @@ async function getFiles() {
       return { name: fileName, id: file.id, isValidFileName };
     });
   try {
-    fs.mkdir(".tmp/invalid/", { recursive: true });
+    fs.mkdir(`${tempDir}/invalid/`, { recursive: true });
   } finally {
     /* nop */
   }
@@ -95,12 +97,12 @@ async function getFiles() {
 
       if (file.isValidFileName) {
         return await fs.writeFile(
-          `.tmp/${file.name}`,
+          `${tempDir}/${file.name}`,
           Buffer.from(arrayBuffer)
         );
       } else {
         return await fs.writeFile(
-          `.tmp/invalid/${file.name}`,
+          `${tempDir}/invalid/${file.name}`,
           Buffer.from(arrayBuffer)
         );
       }
