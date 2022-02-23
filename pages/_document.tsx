@@ -15,10 +15,8 @@ export default class Doc extends Document {
           ) : null}
         </Head>
         <body>
-          <div className="wf-nicomoji">
-            <Main />
-            <NextScript />
-          </div>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );

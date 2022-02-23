@@ -3,17 +3,7 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import playAudioReducer from "../src/reducers/PlayAudioReducer";
 import appReducer from "src/reducers/AppReducer";
-import { createTheme, StylesProvider, ThemeProvider } from "@material-ui/core";
-
-const theme = createTheme({
-  // eslint-disable-next-line
-  shadows: ["none"] as any,
-  palette: {
-    background: {
-      default: "var(--marine-sub-color)",
-    },
-  },
-});
+import styled from "styled-components";
 
 const store = createStore(
   combineReducers({ playAudio: playAudioReducer, app: appReducer })
@@ -27,12 +17,14 @@ export default ({
   Component: React.ComponentClass;
   pageProps: Record<string, unknown>;
 }) => (
-  <ThemeProvider theme={theme}>
-    <StylesProvider injectFirst>
-      <title>宝鐘マリンボタン🏴☠</title>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    </StylesProvider>
-  </ThemeProvider>
+  <Provider store={store}>
+    <title>宝鐘マリンボタン🏴☠</title>
+    <Container>
+      <Component {...pageProps} />
+    </Container>
+  </Provider>
 );
+
+const Container = styled.div`
+  width: 100%;
+`;
