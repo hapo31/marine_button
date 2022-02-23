@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useRef } from "react";
 
-export default function useDebounce<
-  T extends (...args: any[]) => Promise<void> | void
->(callback: T, delayMs: number) {
+export default function useDebounce<Arg, Value>(
+  callback: (...rest: Arg[]) => Value,
+  delayMs: number
+) {
   const timerRef = useRef<number>();
 
   const updateTimer = useCallback(
-    (...args: any[]) => {
+    (...rest: Arg[]) => {
       timerRef.current = window.setTimeout(async () => {
-        await callback(...args);
+        await callback(...rest);
         timerRef.current = undefined;
       }, delayMs);
     },
@@ -17,12 +18,12 @@ export default function useDebounce<
   );
 
   const debouncedFunc = useCallback(
-    (...args: any[]) => {
+    (...rest: Arg[]) => {
       if (timerRef.current == null) {
-        updateTimer(...args);
+        updateTimer(...rest);
       } else {
         window.clearTimeout(timerRef.current);
-        updateTimer(...args);
+        updateTimer(...rest);
       }
     },
     [updateTimer]
