@@ -64,6 +64,7 @@ export default (props: Props) => {
 };
 
 const StreachAppBar = styled.div`
+  width: 100%;
   height: var(--volume-controller-height);
   overflow: hidden;
   transition: 0.2s;
