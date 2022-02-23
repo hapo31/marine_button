@@ -2,10 +2,9 @@ import React from "react";
 import Static from "../../components/Static";
 import ExternalLink from "../../components/ExternalLink";
 
-import DelayedShow from "src/components/DelayedShow";
 import styled from "styled-components";
 
-export default () => {
+const HeaderContainer = () => {
   return (
     <Header className="app-header">
       <div>
@@ -30,7 +29,7 @@ export default () => {
             src="static/image/icon.png"
           />
 
-          <Nicomoji className="header-contantainer-title">
+          <Nicomoji className="header-container-title">
             宝鐘マリンボタン
           </Nicomoji>
         </HeaderArticle>
@@ -83,6 +82,8 @@ export default () => {
   );
 };
 
+export default HeaderContainer;
+
 const Header = styled.header`
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
   color: black;
@@ -93,6 +94,9 @@ const Nicomoji = styled.h3`
   display: inline;
   font-size: 48px;
   font-family: "Nico Moji Plus";
+  @media screen and (max-width: 500px) {
+    font-size: 38px;
+  }
 `;
 
 const HeaderArticle = styled.article`

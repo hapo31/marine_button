@@ -11,8 +11,8 @@
 }
 
 body {
-  width: 96vw;
-  padding: 10px;
+  width: 95vw;
+  padding: 10px 0;
   margin: 0;
   margin-bottom: calc(var(--volume-controller-height) + 10px);
   background-color: var(--marine-sub-color);
