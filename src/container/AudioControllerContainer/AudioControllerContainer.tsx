@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Slider, AppBar, Toolbar, ClickAwayListener } from "@material-ui/core";
-import VolumeUp from "@material-ui/icons/VolumeUp";
-import VolumeDown from "@material-ui/icons/VolumeDown";
+import { Slider, Toolbar, ClickAwayListener } from "@mui/material";
 
 import styled from "styled-components";
-import { ArrowDropUp } from "@material-ui/icons";
+import { ArrowDropUp, VolumeUp, VolumeDown } from "@mui/icons-material";
 import { useAppState } from "src/state/AppState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
 
@@ -12,11 +10,8 @@ type Props = {
   target?: HTMLAudioElement;
   className?: string;
   defaultVolume: number;
-  onChange: (event: React.ChangeEvent<{}>, newValue: number | number[]) => void;
-  onChangeCommited: (
-    event: React.ChangeEvent<{}>,
-    newValue: number | number[]
-  ) => void;
+  onChange: (newValue: number | number[]) => void;
+  onChangeCommited: (newValue: number | number[]) => void;
 };
 
 export default (props: Props) => {
@@ -27,23 +22,21 @@ export default (props: Props) => {
 
   return (
     <ClickAwayListener onClickAway={() => setIsExpand(false)}>
-      <StreachAppBar
-        className={isExpand ? "expand" : ""}
-        color="default"
-        position="fixed"
-      >
+      <StreachAppBar className={isExpand ? "expand" : ""} color="default">
         <Toolbar>
           <div className="volume-icon">
             <VolumeDown />
           </div>
           <Slider
-            onChange={(event, newValue) => {
+            onChange={(_, newValue) => {
               if (!Array.isArray(newValue)) {
                 setVolume(newValue);
-                props.onChange(event, newValue);
+                props.onChange(newValue);
               }
             }}
-            onChangeCommitted={props.onChangeCommited}
+            onChangeCommitted={(_, value) => {
+              props.onChangeCommited(value);
+            }}
             value={volume}
             step={1}
             min={0}
@@ -70,17 +63,18 @@ export default (props: Props) => {
   );
 };
 
-const StreachAppBar = styled(AppBar)`
+const StreachAppBar = styled.div`
   height: var(--volume-controller-height);
   overflow: hidden;
   transition: 0.2s;
   transition-property: height;
-  display: flex;
   border-top: solid lightgray 2px;
-  top: initial;
+  position: fixed;
   bottom: 0;
   font-family: "Nico Moji Plus", "Nico Moji Noto Sans JP";
   background-color: var(--marine-sub-color);
+  transition-property: height;
+  transition: 300ms;
   &.expand {
     height: auto;
     max-height: 90vh;

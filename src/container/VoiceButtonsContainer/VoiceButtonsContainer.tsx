@@ -5,12 +5,11 @@ import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionConta
 
 import { VoiceList, useAppState, AudioData } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/PlayAudioActions";
-import AudioControllerContainer from "../AudioControllerContainer.tsx/AudioControllerContainer";
+import AudioControllerContainer from "../AudioControllerContainer/AudioControllerContainer";
 
 import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
 import { ClientRenderedAction, SetHistory } from "src/actions/AppActions";
 import { usePlayAudioState } from "src/state/PlayAudioState";
-import styled from "styled-components";
 import getItem from "src/utils/getLocalStorage";
 
 type Props = {
@@ -24,8 +23,6 @@ export default (props: Props) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const { filename } = usePlayAudioState();
   const { localStorageRef, buttonHistory } = useAppState();
-
-  const [isShowUncategorized, setIsShowUncategorized] = useState(false);
 
   useDidMount(() => {
     dispatch(ClientRenderedAction(localStorage));
@@ -62,39 +59,13 @@ export default (props: Props) => {
         }
       }}
     >
-      {props.voiceList.map((category, index) =>
-        category.label === "未分類" ? (
-          <>
-            <ChangeUncategorizedLabel
-              onClick={() => {
-                setIsShowUncategorized(state => !state);
-              }}
-            >
-              ※ここをクリックすると、投稿されたけどまだ追加していないファイル一覧が表示されます。毎日0時頃に自動更新されます。
-              いつか追加するので気長にお待ち下さい。(現在
-              {category.sections[0].length}件)
-            </ChangeUncategorizedLabel>
-            {isShowUncategorized ? (
-              <>
-                {category.sections[0].map((audio, index) => (
-                  <UncategorizedFile key={`${audio.path}${index}`}>
-                    {audio.label}
-                  </UncategorizedFile>
-                ))}
-                <p>
-                  (あまりにも追加が遅い場合は気づいていない可能性が高いので引用RTで連絡ください、リプライは反応出来ません)
-                </p>
-              </>
-            ) : null}
-          </>
-        ) : (
-          <ButtonSectionContainer
-            key={index + category.label}
-            title={category.label}
-            groups={category.sections}
-          />
-        )
-      )}
+      {props.voiceList.map((category, index) => (
+        <ButtonSectionContainer
+          key={index + category.label}
+          title={category.label}
+          groups={category.sections}
+        />
+      ))}
       <audio
         id="player"
         ref={audioRef}
@@ -107,11 +78,11 @@ export default (props: Props) => {
 
       {localStorageRef != null ? (
         <AudioControllerContainer
-          onChange={(_, newValue) => {
+          onChange={newValue => {
             if (audioRef.current && !Array.isArray(newValue))
               audioRef.current.volume = newValue / 100;
           }}
-          onChangeCommited={(_, newValue) => {
+          onChangeCommited={newValue => {
             localStorageRef.setItem("volume", newValue.toString());
           }}
           defaultVolume={volume}
@@ -121,20 +92,3 @@ export default (props: Props) => {
     </main>
   );
 };
-
-const ChangeUncategorizedLabel = styled.p`
-  color: #333;
-  cursor: pointer;
-  :hover {
-    color: #444;
-    transition: 0.2s;
-  }
-`;
-
-const UncategorizedFile = styled.span`
-  display: inline-block;
-  margin: 5px;
-  padding: 3px;
-  border: 1px solid #efefef;
-  border-radius: 5px;
-`;
