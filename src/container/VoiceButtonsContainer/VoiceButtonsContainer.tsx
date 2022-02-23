@@ -11,6 +11,9 @@ import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
 import { ClientRenderedAction, SetHistory } from "src/actions/AppActions";
 import { usePlayAudioState } from "src/state/PlayAudioState";
 import getItem from "src/utils/getLocalStorage";
+import { TextField } from "@mui/material";
+import useDebounce from "src/hooks/useDebounce";
+import styled from "styled-components";
 
 type Props = {
   voiceList: VoiceList;
@@ -23,6 +26,12 @@ export default (props: Props) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const { filename } = usePlayAudioState();
   const { localStorageRef, buttonHistory } = useAppState();
+
+  const [searchInput, setSearchInput] = useState("");
+  const [debouncedSetInput] = useDebounce(
+    (value: string) => setSearchInput(value),
+    300
+  );
 
   useDidMount(() => {
     dispatch(ClientRenderedAction(localStorage));
@@ -59,11 +68,20 @@ export default (props: Props) => {
         }
       }}
     >
+      <TextFieldWrapper>
+        <TextField
+          variant="outlined"
+          placeholder="ボタンを絞り込む"
+          onChange={event => debouncedSetInput(event.target.value)}
+        />
+      </TextFieldWrapper>
+
       {props.voiceList.map((category, index) => (
         <ButtonSectionContainer
           key={index + category.label}
           title={category.label}
           groups={category.sections}
+          filter={searchInput}
         />
       ))}
       <audio
@@ -92,3 +110,15 @@ export default (props: Props) => {
     </main>
   );
 };
+
+const TextFieldWrapper = styled.div`
+  width: 100%;
+  margin: 10px 5px;
+  > .MuiTextField-root {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    > .Mui-focused > fieldset {
+      border-color: var(--marine-main-color);
+    }
+  }
+`;
