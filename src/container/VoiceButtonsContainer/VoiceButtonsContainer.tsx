@@ -7,7 +7,6 @@ import { VoiceList, useAppState, AudioData } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/PlayAudioActions";
 import AudioControllerContainer from "../AudioControllerContainer/AudioControllerContainer";
 
-import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
 import { ClientRenderedAction, SetHistory } from "src/actions/AppActions";
 import { usePlayAudioState } from "src/state/PlayAudioState";
 import getItem from "src/utils/getLocalStorage";
@@ -33,18 +32,23 @@ export default (props: Props) => {
     300
   );
 
-  useDidMount(() => {
-    dispatch(ClientRenderedAction(localStorage));
-    const recentVolume = getItem<number>("volume");
-    setVolume(recentVolume != null ? recentVolume : 75);
+  const [initialized, setInitialized] = useState(false);
 
-    const history = getItem<AudioData[]>("history");
-    if (history == null) {
-      localStorage.setItem("history", JSON.stringify([]));
-    } else {
-      dispatch(SetHistory(history));
+  useEffect(() => {
+    if (!initialized && localStorage) {
+      dispatch(ClientRenderedAction(localStorage));
+      const recentVolume = getItem<number>("volume");
+      setVolume(recentVolume != null ? recentVolume : 75);
+
+      const history = getItem<AudioData[]>("history");
+      if (history == null) {
+        localStorage.setItem("history", JSON.stringify([]));
+      } else {
+        dispatch(SetHistory(history));
+      }
+      setInitialized(true);
     }
-  });
+  }, [dispatch, initialized]);
 
   useEffect(() => {
     const handler = () => {
