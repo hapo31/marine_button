@@ -1,10 +1,9 @@
 import React from "react";
-import Static from "../../components/Static";
 import ExternalLink from "../../components/ExternalLink";
 
 import styled from "@emotion/styled";
 
-const HeaderContainer = () => {
+export default function HeaderContainer() {
   return (
     <Header className="app-header">
       <div>
@@ -75,9 +74,7 @@ const HeaderContainer = () => {
       </HeaderArticle>
     </Header>
   );
-};
-
-export default HeaderContainer;
+}
 
 const Header = styled.header`
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";

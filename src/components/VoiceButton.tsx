@@ -6,8 +6,10 @@ type Props = {
   onclick: () => void;
 };
 
-export default (props: Props) => (
-  <Button className={`serif voice-button`} onClick={props.onclick}>
-    <span className={`button-label`}>{props.children}</span>
-  </Button>
-);
+export default function VoiceButton(props: Props) {
+  return (
+    <Button className={`serif voice-button`} onClick={props.onclick}>
+      <span className={`button-label`}>{props.children}</span>
+    </Button>
+  );
+}

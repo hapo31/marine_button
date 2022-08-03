@@ -14,7 +14,7 @@ type Props = {
   onChangeCommited: (newValue: number | number[]) => void;
 };
 
-export default (props: Props) => {
+export default function AudioControllerContainer(props: Props) {
   const { buttonHistory } = useAppState();
   const [volume, setVolume] = useState(props.defaultVolume);
 
@@ -61,7 +61,7 @@ export default (props: Props) => {
       </StreachAppBar>
     </ClickAwayListener>
   );
-};
+}
 
 const StreachAppBar = styled.div`
   width: 100%;

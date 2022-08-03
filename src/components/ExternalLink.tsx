@@ -7,14 +7,16 @@ type Props = {
   children: React.ReactChild | React.ReactChild[];
 };
 
-export default (props: Props) => (
-  <a
-    href={props.href}
-    className={`mb-link ${props.className}`}
-    target="_blank"
-    style={props.style}
-    rel="noopener"
-  >
-    {props.children}
-  </a>
-);
+export default function ExternalLink(props: Props) {
+  return (
+    <a
+      href={props.href}
+      className={`mb-link ${props.className}`}
+      target="_blank"
+      style={props.style}
+      rel="noopener"
+    >
+      {props.children}
+    </a>
+  );
+}

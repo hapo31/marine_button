@@ -18,7 +18,7 @@ type Props = {
   voiceList: VoiceList;
 };
 
-export default (props: Props) => {
+export default function VoiceButtonsContainer(props: Props) {
   const [volume, setVolume] = useState(0);
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
@@ -113,7 +113,7 @@ export default (props: Props) => {
       ) : null}
     </main>
   );
-};
+}
 
 const TextFieldWrapper = styled.div`
   width: 100%;

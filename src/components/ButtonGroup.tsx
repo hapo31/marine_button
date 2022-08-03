@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
-  chidren?: React.ReactChildren;
+  chidren?: ReactNode;
 };
 
-export default (props: Props) => (
-  <div className="btn-container">{props.chidren}</div>
-);
+export default function ButtonGroup(props: Props) {
+  return <div className="btn-container">{props.chidren}</div>;
+}

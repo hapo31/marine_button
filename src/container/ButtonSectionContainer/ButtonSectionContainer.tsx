@@ -12,7 +12,11 @@ type Props = {
   filter?: string;
 };
 
-export default ({ title, groups: allGroups, filter }: Props) => {
+export default function ButtonSectionContainer({
+  title,
+  groups: allGroups,
+  filter,
+}: Props) {
   const dispatch = useDispatch();
 
   const groups = useMemo(
@@ -54,4 +58,4 @@ export default ({ title, groups: allGroups, filter }: Props) => {
       </section>
     </>
   ) : null;
-};
+}

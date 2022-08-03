@@ -5,7 +5,7 @@ type Props = {
   style?: CSSProperties;
 };
 
-export default (props: Props) => {
+export default function Notice(props: Props) {
   if (props.children) {
     return (
       <article className="notice-container">
@@ -20,4 +20,4 @@ export default (props: Props) => {
   } else {
     return <></>;
   }
-};
+}
