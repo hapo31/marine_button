@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";

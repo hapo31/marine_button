@@ -1,4 +1,3 @@
-import React from "react";
 import ExternalLink from "../../components/ExternalLink";
 
 import styled from "@emotion/styled";

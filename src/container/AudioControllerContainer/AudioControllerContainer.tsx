@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Slider, Toolbar, ClickAwayListener } from "@mui/material";
 
 import styled from "@emotion/styled";

@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../src/container/HeaderContainer/HeaderContainer";
 import Footer from "../src/container/FooterContainer/FooterContainer";
 import VoiceButtonsContainer from "../src/container/VoiceButtonsContainer/VoiceButtonsContainer";

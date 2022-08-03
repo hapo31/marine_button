@@ -1,4 +1,3 @@
-import React from "react";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { AddHistory } from "src/actions/AppActions";

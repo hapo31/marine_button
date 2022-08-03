@@ -1,10 +1,10 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 type Props = {
   href: string;
   className?: string;
   style?: CSSProperties;
-  children: React.ReactChild | React.ReactChild[];
+  children: ReactNode | ReactNode[];
 };
 
 export default function ExternalLink(props: Props) {
