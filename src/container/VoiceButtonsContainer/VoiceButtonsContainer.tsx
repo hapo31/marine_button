@@ -13,7 +13,7 @@ import { usePlayAudioState } from "src/state/PlayAudioState";
 import getItem from "src/utils/getLocalStorage";
 import { TextField } from "@mui/material";
 import useDebounce from "src/hooks/useDebounce";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 type Props = {
   voiceList: VoiceList;
