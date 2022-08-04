@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
@@ -7,19 +7,18 @@ import { VoiceList, useAppState, AudioData } from "../../state/AppState";
 import { StopAudioAction } from "../../actions/PlayAudioActions";
 import AudioControllerContainer from "../AudioControllerContainer/AudioControllerContainer";
 
-import { useDidMount } from "src/hooks/useClassComponentLikeLifeCycle";
 import { ClientRenderedAction, SetHistory } from "src/actions/AppActions";
 import { usePlayAudioState } from "src/state/PlayAudioState";
 import getItem from "src/utils/getLocalStorage";
 import { TextField } from "@mui/material";
 import useDebounce from "src/hooks/useDebounce";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 type Props = {
   voiceList: VoiceList;
 };
 
-export default (props: Props) => {
+export default function VoiceButtonsContainer(props: Props) {
   const [volume, setVolume] = useState(0);
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const dispatch = useDispatch();
@@ -33,18 +32,23 @@ export default (props: Props) => {
     300
   );
 
-  useDidMount(() => {
-    dispatch(ClientRenderedAction(localStorage));
-    const recentVolume = getItem<number>("volume");
-    setVolume(recentVolume != null ? recentVolume : 75);
+  const [initialized, setInitialized] = useState(false);
 
-    const history = getItem<AudioData[]>("history");
-    if (history == null) {
-      localStorage.setItem("history", JSON.stringify([]));
-    } else {
-      dispatch(SetHistory(history));
+  useEffect(() => {
+    if (!initialized && localStorage) {
+      dispatch(ClientRenderedAction(localStorage));
+      const recentVolume = getItem<number>("volume");
+      setVolume(recentVolume != null ? recentVolume : 75);
+
+      const history = getItem<AudioData[]>("history");
+      if (history == null) {
+        localStorage.setItem("history", JSON.stringify([]));
+      } else {
+        dispatch(SetHistory(history));
+      }
+      setInitialized(true);
     }
-  });
+  }, [dispatch, initialized]);
 
   useEffect(() => {
     const handler = () => {
@@ -109,7 +113,7 @@ export default (props: Props) => {
       ) : null}
     </main>
   );
-};
+}
 
 const TextFieldWrapper = styled.div`
   width: 100%;

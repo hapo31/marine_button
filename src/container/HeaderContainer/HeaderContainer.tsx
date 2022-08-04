@@ -1,10 +1,8 @@
-import React from "react";
-import Static from "../../components/Static";
 import ExternalLink from "../../components/ExternalLink";
 
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-const HeaderContainer = () => {
+export default function HeaderContainer() {
   return (
     <Header className="app-header">
       <div>
@@ -61,28 +59,21 @@ const HeaderContainer = () => {
         </ExternalLink>
       </div>
       <HeaderArticle>
-        <Static>
-          トゥイッターで共有→
-          <a
-            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-            className="twitter-share-button"
-            data-text="宝鐘マリンボタン 🏴☠ #マリンボタン"
-            data-url="https://hapo31.github.io/marine_button/"
-            data-show-count="false"
-          >
-            Tweet
-          </a>
-          <script
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8"
-          />
-        </Static>
+        トゥイッターで共有→
+        <a
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          className="twitter-share-button"
+          data-text="宝鐘マリンボタン 🏴☠ #マリンボタン"
+          data-url="https://hapo31.github.io/marine_button/"
+          data-show-count="false"
+        >
+          Tweet
+        </a>
+        <script src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
       </HeaderArticle>
     </Header>
   );
-};
-
-export default HeaderContainer;
+}
 
 const Header = styled.header`
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
