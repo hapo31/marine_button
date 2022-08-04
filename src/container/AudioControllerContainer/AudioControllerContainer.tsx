@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Slider, Toolbar, ClickAwayListener } from "@mui/material";
 
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { ArrowDropUp, VolumeUp, VolumeDown } from "@mui/icons-material";
 import { useAppState } from "src/state/AppState";
 import ButtonSectionContainer from "../ButtonSectionContainer/ButtonSectionContainer";
@@ -14,7 +14,7 @@ type Props = {
   onChangeCommited: (newValue: number | number[]) => void;
 };
 
-export default (props: Props) => {
+export default function AudioControllerContainer(props: Props) {
   const { buttonHistory } = useAppState();
   const [volume, setVolume] = useState(props.defaultVolume);
 
@@ -61,7 +61,7 @@ export default (props: Props) => {
       </StreachAppBar>
     </ClickAwayListener>
   );
-};
+}
 
 const StreachAppBar = styled.div`
   width: 100%;

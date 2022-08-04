@@ -1,9 +1,8 @@
-import React from "react";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import playAudioReducer from "../src/reducers/PlayAudioReducer";
 import appReducer from "src/reducers/AppReducer";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const store = createStore(
   combineReducers({ playAudio: playAudioReducer, app: appReducer })

@@ -1,8 +1,7 @@
-import React from "react";
 import ExternalLink from "../../components/ExternalLink";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-export default () => {
+export default function FooterContainer() {
   return (
     <Footer>
       <article className="footer-bar-toolbar-cation">
@@ -36,7 +35,7 @@ export default () => {
       </article>
     </Footer>
   );
-};
+}
 
 const Footer = styled.div`
   padding: 20px 0;

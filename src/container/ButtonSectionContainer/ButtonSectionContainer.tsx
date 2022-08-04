@@ -1,4 +1,3 @@
-import React from "react";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { AddHistory } from "src/actions/AppActions";
@@ -12,7 +11,11 @@ type Props = {
   filter?: string;
 };
 
-export default ({ title, groups: allGroups, filter }: Props) => {
+export default function ButtonSectionContainer({
+  title,
+  groups: allGroups,
+  filter,
+}: Props) {
   const dispatch = useDispatch();
 
   const groups = useMemo(
@@ -54,4 +57,4 @@ export default ({ title, groups: allGroups, filter }: Props) => {
       </section>
     </>
   ) : null;
-};
+}
