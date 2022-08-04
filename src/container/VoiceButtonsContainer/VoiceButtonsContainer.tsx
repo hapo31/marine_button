@@ -98,7 +98,7 @@ export default function VoiceButtonsContainer(props: Props) {
         autoPlay
       />
 
-      {localStorageRef != null ? (
+      {localStorageRef != null && initialized ? (
         <AudioControllerContainer
           onChange={newValue => {
             if (audioRef.current && !Array.isArray(newValue))
