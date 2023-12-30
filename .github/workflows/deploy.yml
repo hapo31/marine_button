@@ -69,6 +69,7 @@ jobs:
         env:
           GH_PAGES: true
           NEXT_TELEMETRY_DISABLED: 1
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
