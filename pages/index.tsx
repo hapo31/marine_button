@@ -18,7 +18,7 @@ type Props = {
   ogpInfo: Record<string, OGPInfo>;
 };
 
-export default ({ ogpInfo, voiceList }: Props) => {
+export default function MarinButtonPage({ ogpInfo, voiceList }: Props) {
   return (
     <>
       <Header x={ogpInfo["x"]} youtube={ogpInfo["youtube"]} />
@@ -29,7 +29,7 @@ export default ({ ogpInfo, voiceList }: Props) => {
       <Footer />
     </>
   );
-};
+}
 
 export async function getStaticProps(): Promise<{ props: Props }> {
   const voiceList = AudioList2Store(audioList);
