@@ -1,65 +1,64 @@
+import { OGPInfo } from "src/model/OGP/OGP";
 import ExternalLink from "../../components/ExternalLink";
 
 import styled from "@emotion/styled";
+import OGP from "src/components/OGP";
 
-export default function HeaderContainer() {
+type Props = {
+  x: OGPInfo;
+  youtube: OGPInfo;
+};
+
+export default function HeaderContainer({ x, youtube }: Props) {
   return (
     <Header className="app-header">
-      <div>
-        <HeaderArticle>
-          <ExternalLink
-            className="fork-me-on-github"
-            href="https://github.com/happou31/marine_button"
-          >
-            <img
-              width="120"
-              height="120"
-              src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149"
-              className="attachment-full size-full"
-              alt="Fork me on GitHub"
-              data-recalc-dims="1"
-            />
-          </ExternalLink>
-
-          <Logo
-            alt="宝鐘マリンボタン"
-            className="site-logo"
-            src="static/image/icon.png"
-          />
-
-          <Nicomoji className="header-container-title">
-            宝鐘マリンボタン
-          </Nicomoji>
-        </HeaderArticle>
-      </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <ExternalLink
-          className="social-icon-youtube"
-          href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
-        >
-          <YoutubeContainer>
-            <img
-              height="30px"
-              src="static/image/youtube_social_icon_red.png"
-              alt="Marine Ch. 宝鐘マリン"
-            />
-          </YoutubeContainer>
-        </ExternalLink>
-
-        <ExternalLink href="https://twitter.com/houshoumarine">
-          <TwitterContainer>
-            <img
-              width="50px"
-              height="50px"
-              src="static/image/Twitter_Logo_Blue.svg"
-              alt="
-              宝鐘マリン🏴‍☠️＠ホロライブ3期生"
-            />
-          </TwitterContainer>
-        </ExternalLink>
-      </div>
       <HeaderArticle>
-        トゥイッターで共有→
+        <ExternalLink
+          className="fork-me-on-github"
+          href="https://github.com/happou31/marine_button"
+        >
+          <img
+            width="120"
+            height="120"
+            src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149"
+            className="attachment-full size-full"
+            alt="Fork me on GitHub"
+            data-recalc-dims="1"
+          />
+        </ExternalLink>
+
+        <Logo
+          alt="宝鐘マリンボタン"
+          className="site-logo"
+          src="static/image/icon.png"
+        />
+
+        <Nicomoji className="header-container-title">宝鐘マリンボタン</Nicomoji>
+      </HeaderArticle>
+      <OGPContainer>
+        <OGP
+          href="https://www.youtube.com/channel/UCCzUftO8KOVkV4wQG1vkUvg"
+          serviceIcon="static/image/youtube_social_icon_red.png"
+          ogp={youtube}
+          colorTheme={{
+            color: "#ff0000",
+            backgroundColor: "#000",
+            fontColor: "#fff",
+          }}
+        />
+        <OGP
+          href="https://twitter.com/houshoumarine"
+          ogp={x}
+          serviceIcon="static/image/x-logo.svg"
+          colorTheme={{
+            color: "#000",
+            backgroundColor: "#fff",
+            fontColor: "#000",
+          }}
+        />
+      </OGPContainer>
+      <HeaderArticle>
+        宝鐘マリンボタンを共有→
         <a
           href="https://twitter.com/share?ref_src=twsrc%5Etfw"
           className="twitter-share-button"
@@ -78,7 +77,6 @@ export default function HeaderContainer() {
 const Header = styled.header`
   font-family: "Nico Moji Plus", "Nico Moji", "Noto Sans JP";
   color: black;
-  margin: 5px;
 `;
 
 const Nicomoji = styled.h3`
@@ -94,7 +92,7 @@ const HeaderArticle = styled.article`
   display: flex;
   height: 30px;
   align-items: center;
-  margin-bottom: 10px;
+  padding: 10px;
 `;
 
 const Logo = styled.img`
@@ -102,13 +100,13 @@ const Logo = styled.img`
   vertical-align: top;
 `;
 
-const TwitterContainer = styled.div`
-  object-fit: contain;
-  display: inline-block;
-`;
-
-const YoutubeContainer = styled.div`
-  object-fit: contain;
-  display: inline-block;
-  height: 32px;
+const OGPContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 5px 7px;
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
 `;

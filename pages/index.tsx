@@ -9,20 +9,23 @@ import audioList from "../static/audiolist.json";
 import styled from "@emotion/styled";
 
 import metainfo from "../static/metainfo.json";
+import { fetchOGP, type OGPInfo } from "src/model/OGP/OGP";
+import fetchYoutubeChannelOGP from "src/model/OGP/youtube";
 
 type Props = {
   isStatic: boolean;
   voiceList: VoiceList;
+  ogpInfo: Record<string, OGPInfo>;
 };
 
-export default (props: Props) => {
+export default ({ ogpInfo, voiceList }: Props) => {
   return (
     <>
-      <Header />
+      <Header x={ogpInfo["x"]} youtube={ogpInfo["youtube"]} />
       <ButtonCount>
         <div>button count: {metainfo.count}</div>
       </ButtonCount>
-      <VoiceButtonsContainer voiceList={props.voiceList} />
+      <VoiceButtonsContainer voiceList={voiceList} />
       <Footer />
     </>
   );
@@ -30,8 +33,19 @@ export default (props: Props) => {
 
 export async function getStaticProps(): Promise<{ props: Props }> {
   const voiceList = AudioList2Store(audioList);
+  const ogps = await Promise.all([
+    fetchYoutubeChannelOGP("UCCzUftO8KOVkV4wQG1vkUvg"),
+    fetchOGP("https://twitter.com/houshoumarine"),
+  ]);
   return {
-    props: { isStatic: true, voiceList },
+    props: {
+      isStatic: true,
+      voiceList,
+      ogpInfo: {
+        youtube: ogps[0],
+        x: ogps[1],
+      },
+    },
   };
 }
 

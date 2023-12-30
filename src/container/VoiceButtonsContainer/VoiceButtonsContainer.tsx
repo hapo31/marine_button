@@ -76,7 +76,7 @@ export default function VoiceButtonsContainer(props: Props) {
         <TextField
           variant="outlined"
           placeholder="ボタンを絞り込む"
-          onChange={event => debouncedSetInput(event.target.value)}
+          onChange={(event) => debouncedSetInput(event.target.value)}
         />
       </TextFieldWrapper>
 
@@ -100,11 +100,11 @@ export default function VoiceButtonsContainer(props: Props) {
 
       {localStorageRef != null && initialized ? (
         <AudioControllerContainer
-          onChange={newValue => {
+          onChange={(newValue) => {
             if (audioRef.current && !Array.isArray(newValue))
               audioRef.current.volume = newValue / 100;
           }}
-          onChangeCommited={newValue => {
+          onChangeCommited={(newValue) => {
             localStorageRef.setItem("volume", newValue.toString());
           }}
           defaultVolume={volume}

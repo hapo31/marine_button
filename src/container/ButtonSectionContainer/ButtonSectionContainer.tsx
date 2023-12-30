@@ -21,10 +21,10 @@ export default function ButtonSectionContainer({
   const groups = useMemo(
     () =>
       allGroups
-        .map(item =>
-          item.filter(itemm => filter == null || itemm.label.includes(filter))
+        .map((item) =>
+          item.filter((itemm) => filter == null || itemm.label.includes(filter))
         )
-        .filter(item => item.length > 0),
+        .filter((item) => item.length > 0),
     [allGroups, filter]
   );
 
@@ -39,7 +39,7 @@ export default function ButtonSectionContainer({
       <section className="border">
         {groups.map((group, i) => (
           <div key={`group-${i}`} className="btn-container">
-            {group.map(button => {
+            {group.map((button) => {
               return (
                 <VoiceButton
                   key={button.path + button.label}
