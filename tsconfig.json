@@ -22,9 +22,6 @@
       "mocha",
       "node"
     ],
-    "typeRoots": [
-      "types"
-    ],
     "jsx": "preserve",
     "incremental": true
   },

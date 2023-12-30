@@ -68,6 +68,7 @@ export default function HeaderContainer({ x, youtube }: Props) {
         >
           Tweet
         </a>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
       </HeaderArticle>
     </Header>

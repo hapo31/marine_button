@@ -10,6 +10,7 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
+    "next",
   ],
   globals: {
     Atomics: "readonly",
@@ -39,5 +40,7 @@ module.exports = {
         trailingComma: "es5",
       },
     ],
+    "jsx-a11y/alt-text": "off",
+    "@next/next/no-img-element": "off",
   },
 };
