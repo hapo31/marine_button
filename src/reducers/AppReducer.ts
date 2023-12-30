@@ -30,7 +30,7 @@ const appReducer = (state = initialState, action: Actions): AppState => {
 
     case ADD_HISTORY: {
       const isDuplicate = state.buttonHistory.some(
-        audio => audio.path === action.audioData.path
+        (audio) => audio.path === action.audioData.path
       );
       const newHistory = isDuplicate
         ? state.buttonHistory
