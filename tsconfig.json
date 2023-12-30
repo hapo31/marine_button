@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "lib": [
       "dom",
       "dom.iterable",
@@ -18,9 +18,15 @@
     "isolatedModules": true,
     "baseUrl": "./",
     "paths": {},
-    "types": ["mocha", "node"],
-    "typeRoots": ["types"],
-    "jsx": "preserve"
+    "types": [
+      "mocha",
+      "node"
+    ],
+    "typeRoots": [
+      "types"
+    ],
+    "jsx": "preserve",
+    "incremental": true
   },
   "exclude": [
     "node_modules"
