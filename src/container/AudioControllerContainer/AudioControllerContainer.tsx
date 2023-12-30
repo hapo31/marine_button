@@ -47,7 +47,7 @@ export default function AudioControllerContainer(props: Props) {
           </div>
           <DropButton
             onClick={() => {
-              setIsExpand(state => !state);
+              setIsExpand((state) => !state);
             }}
           >
             <ArrowDropUp

@@ -23,7 +23,7 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
-          node-version: "12.x"
+          node-version: "18.x"
       - name: Git configure
         run: |
           git config --local user.email "aciton@github.com"
@@ -69,6 +69,7 @@ jobs:
         env:
           GH_PAGES: true
           NEXT_TELEMETRY_DISABLED: 1
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
